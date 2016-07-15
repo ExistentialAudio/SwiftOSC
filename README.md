@@ -67,6 +67,6 @@ NotificationCenter.default.addObserver(
 ```
 ## About
 
-[Devin Roth](http://devinrothmusic.com) is a composer and programmer. He has worked on the music for numerous projects including *Hotel Transylvania 2*, *The Book of Life*, *Crazy-Ex Girlfriend*, and *Alvin and the Chipmunks: The Road Chip*. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
+[Devin Roth](http://devinrothmusic.com) is a composer and programmer. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
 
 
