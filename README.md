@@ -1,28 +1,27 @@
 # SwiftOSC v1.0
-SwiftOSC is a OSC client and server 3.0 framework for Swift 3.0. 
+SwiftOSC is a Open Sound Control 1.1 client and server framework for Swift 3. 
 
 ## Quick Start
-
-### Step 1
+### OSC Server
+#### Step 1
 Import SwiftOSC framework into your project
-```
+```swift
 import SwiftOSC
 ```
-### Step 2
-Setup client
-```
-var client = OSCClient(address: "localhost", port: 8080)
-```
-### Step 3
-Setup Server
-```
+#### Step 2
+Create Server
+```swift
 var server = OSCServer(address: "", port: 8080)
+```
+#### Step 3
+Start server
+```
 server.start()
 ```
 
-### Step 4
-Setup to receive notifications from Server
-```
+#### Step 4
+Receive notifications from server and handle incoming data
+```swift
 NotificationCenter.default.addObserver(
     forName: OSCServer.didReceiveMessage, 
     object: nil, 
@@ -33,9 +32,20 @@ NotificationCenter.default.addObserver(
     }
 )
 ```
-### Step 5
-Create a message
+### OSC Client
+#### Step 1
+Import SwiftOSC framework into your project
+```swift
+import SwiftOSC
 ```
+#### Step 2
+Create client
+```swift
+var client = OSCClient(address: "localhost", port: 8080)
+```
+#### Step 3
+Create a message
+```swift
 var message = OSCMessage(
     OSCAddressPattern("/"), 
     100, 
@@ -49,13 +59,15 @@ var message = OSCMessage(
     Timetag(1)
 )
 ```
-### Step 6
+#### Step 4
 Send message
-```
+```swift
 client.send(message)
 ```
 ## About
 
-[Devin Roth](http://devinrothmusic.com) is a composer and programmer. He has worked on the music for numerous projects including *Hotel Transylvania 2*, *The Book of Life*, *Crazy-Ex Girlfriend*, and *Alvin and the Chipmunks: The Road Chip*. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
+[Devin Roth](http://devinrothmusic.com) is a composer and programmer. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
+
+For additional information on Open Sound Control visit http://opensoundcontrol.org/.
 
 
