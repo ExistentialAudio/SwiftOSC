@@ -69,6 +69,6 @@ NotificationCenter.default.addObserver(
 
 [Devin Roth](http://devinrothmusic.com) is a composer and programmer. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
 
-For additional information on Open Sound Control visit (http://opensoundcontrol.org/)
+For additional information on Open Sound Control visit http://opensoundcontrol.org/.
 
 
