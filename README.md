@@ -23,8 +23,11 @@ server.start()
 ### Step 4
 Setup to receive notifications from Server
 ```
-NotificationCenter.default.addObserver(forName: OSCServer.didReceiveMessage, object: nil, queue: nil, using:
-    { (notification: Notification) in
+NotificationCenter.default.addObserver(
+    forName: OSCServer.didReceiveMessage, 
+    object: nil, 
+    queue: nil, 
+    using: { (notification: Notification) in
         let message = notification.object as! OSCMessage
         print(message)
     }
@@ -33,7 +36,18 @@ NotificationCenter.default.addObserver(forName: OSCServer.didReceiveMessage, obj
 ### Step 5
 Create a message
 ```
-var message = OSCMessage(OSCAddressPattern("/"), 100, 5.0, "Hello World", Blob(), true, false, nil, impulse, Timetag(1))
+var message = OSCMessage(
+    OSCAddressPattern("/"), 
+    100, 
+    5.0, 
+    "Hello World", 
+    Blob(), 
+    true, 
+    false, 
+    nil, 
+    impulse, 
+    Timetag(1)
+)
 ```
 ### Step 6
 Send message
