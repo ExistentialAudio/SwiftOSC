@@ -1,2 +1,6 @@
-# SwiftOSC
-OSC Client and Server for Swift 3.0
+# SwiftOSC v1.0
+===
+SwiftOSC is a simple OSC Client and Server for Swift.
+
+
+
