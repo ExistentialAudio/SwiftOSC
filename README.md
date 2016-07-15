@@ -2,7 +2,36 @@
 SwiftOSC is a Open Sound Control 1.1 client and server framework for Swift 3.0. 
 
 ## Quick Start
+### OSC Server
+#### Step 1
+Import SwiftOSC framework into your project
+```swift
+import SwiftOSC
+```
+#### Step 2
+Create Server
+```swift
+var server = OSCServer(address: "", port: 8080)
+```
+#### Step 3
+Start server
+```
+server.start()
+```
 
+#### Step 4
+Receive notifications from server and handle incoming data
+```swift
+NotificationCenter.default.addObserver(
+    forName: OSCServer.didReceiveMessage, 
+    object: nil, 
+    queue: nil, 
+    using: { (notification: Notification) in
+        let message = notification.object as! OSCMessage
+        print(message)
+    }
+)
+```
 ### OSC Client
 #### Step 1
 Import SwiftOSC framework into your project
@@ -34,36 +63,6 @@ var message = OSCMessage(
 Send message
 ```swift
 client.send(message)
-```
-### OSC Server
-#### Step 1
-Import SwiftOSC framework into your project
-```swift
-import SwiftOSC
-```
-#### Step 2
-Setup Server
-```swift
-var server = OSCServer(address: "", port: 8080)
-```
-#### Step 3
-Star server
-```
-server.start()
-```
-
-#### Step 4
-Receive notifications from server and handle incoming data
-```swift
-NotificationCenter.default.addObserver(
-    forName: OSCServer.didReceiveMessage, 
-    object: nil, 
-    queue: nil, 
-    using: { (notification: Notification) in
-        let message = notification.object as! OSCMessage
-        print(message)
-    }
-)
 ```
 ## About
 
