@@ -1,5 +1,5 @@
 # SwiftOSC v1.0
-SwiftOSC is a Open Sound Control client and server 3.0 framework for Swift 3.0. 
+SwiftOSC is a Open Sound Control 1.1 client and server 3.0 framework for Swift 3.0. 
 
 ## Quick Start
 
@@ -68,5 +68,7 @@ NotificationCenter.default.addObserver(
 ## About
 
 [Devin Roth](http://devinrothmusic.com) is a composer and programmer. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
+
+For additional information on Open Sound Control visit (http://opensoundcontrol.org/)
 
 
