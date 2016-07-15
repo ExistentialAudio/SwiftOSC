@@ -3,7 +3,7 @@ SwiftOSC is a Open Sound Control client and server 3.0 framework for Swift 3.0.
 
 ## Quick Start
 
-### Client
+### OSC Client
 #### Step 1
 Import SwiftOSC framework into your project
 ```swift
@@ -35,7 +35,7 @@ Send message
 ```swift
 client.send(message)
 ```
-### Server
+### OSC Server
 #### Step 1
 Import SwiftOSC framework into your project
 ```swift
