@@ -1,5 +1,4 @@
 # SwiftOSC v1.0
-===
 SwiftOSC is a OSC client and server 3.0 framework for Swift 3.0. 
 
 ## Quick Start
