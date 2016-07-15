@@ -1,5 +1,5 @@
 # SwiftOSC v1.0
-SwiftOSC is a Open Sound Control 1.1 client and server framework for Swift 3.0. 
+SwiftOSC is a Open Sound Control 1.1 client and server framework for Swift 3. 
 
 ## Quick Start
 ### OSC Server
