@@ -5,24 +5,24 @@ SwiftOSC is a OSC client and server 3.0 framework for Swift 3.0.
 
 ### Step 1
 Import SwiftOSC framework into your project
-```
+```swift
 import SwiftOSC
 ```
 ### Step 2
 Setup client
-```
+```swift
 var client = OSCClient(address: "localhost", port: 8080)
 ```
 ### Step 3
 Setup Server
-```
+```swift
 var server = OSCServer(address: "", port: 8080)
 server.start()
 ```
 
 ### Step 4
 Setup to receive notifications from Server
-```
+```swift
 NotificationCenter.default.addObserver(
     forName: OSCServer.didReceiveMessage, 
     object: nil, 
@@ -35,7 +35,7 @@ NotificationCenter.default.addObserver(
 ```
 ### Step 5
 Create a message
-```
+```swift
 var message = OSCMessage(
     OSCAddressPattern("/"), 
     100, 
@@ -51,7 +51,7 @@ var message = OSCMessage(
 ```
 ### Step 6
 Send message
-```
+```swift
 client.send(message)
 ```
 ## About
