@@ -65,15 +65,8 @@ class ViewController: NSViewController, NSTableViewDataSource {
         
         return nil
     }
-    @IBAction func changeIPAddress(_ sender: NSTextField) {
-        server.stop()
-        server.address = sender.stringValue
-//        server.start()
-    }
     @IBAction func changePort(_ sender: NSTextField) {
-        server.stop()
         server.port = sender.integerValue
-//        server.start()
     }
     
     @IBAction func changeOSCAddress(_ sender: AnyObject) {
