@@ -20,17 +20,15 @@ server.start()
 ```
 
 #### Step 4
-Receive notifications from server and handle incoming data
+Setup server delegate to handle incoming OSC Data
 ```swift
-NotificationCenter.default.addObserver(
-    forName: OSCServer.didReceiveMessage, 
-    object: nil, 
-    queue: nil, 
-    using: { (notification: Notification) in
-        let message = notification.object as! OSCMessage
+class OSCHandler: OSCServerDelegate {
+    
+    func didReceive(_ message: OSCMessage){
         print(message)
     }
-)
+}
+server.delegate =  OSCHandler()
 ```
 ### OSC Client
 #### Step 1
