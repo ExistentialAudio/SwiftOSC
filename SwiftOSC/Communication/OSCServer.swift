@@ -26,8 +26,9 @@ public class OSCServer {
             while self.running {
                 let (data,_,_) = server.recv(9216)
                 if let d = data {
-                    
-                    self.decodePacket(Data(bytes: d))
+                    if self.running {
+                        self.decodePacket(Data(bytes: d))
+                    }
                 }
             }
             _ = server.close()
