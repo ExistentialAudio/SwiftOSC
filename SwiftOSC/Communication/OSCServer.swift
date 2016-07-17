@@ -1,9 +1,23 @@
 import Foundation
 
 public class OSCServer {
-    public var address: String
-    public var port: Int
+    public var address: String {
+        didSet {
+            _ = server.close()
+            server = UDPServer(addr: self.address, port:self.port)
+            run()
+        }
+    }
+    public var port: Int {
+        didSet {
+            _ = server.close()
+            server = UDPServer(addr: self.address, port:self.port)
+            run()
+        }
+    }
+
     public var running = false
+    var server: UDPServer
     
     static public var didReceiveMessage = "didReceiveMessage" as NSNotification.Name
     static public var didReceiveBundle = "didReceiveBundle" as NSNotification.Name
@@ -11,27 +25,26 @@ public class OSCServer {
     public init(address: String, port: Int){
         self.address = address
         self.port = port
+        self.server = UDPServer(addr: self.address, port:self.port)
+        run()
     }
     
     public func start(){
-        let server = UDPServer(addr: self.address, port:self.port)
         running = true
-        run(server)
     }
     public func stop(){
         running = false
     }
-    func run(_ server: UDPServer) {
+    func run() {
         DispatchQueue.global(attributes: .qosDefault).async{
             while self.running {
-                let (data,_,_) = server.recv(9216)
+                let (data,_,_) = self.server.recv(9216)
                 if let d = data {
                     if self.running {
-                        self.decodePacket(Data(bytes: d))
+                        self.decodePacket(Data(bytes: d))   
                     }
                 }
             }
-            _ = server.close()
         }
     }
     
