@@ -11,6 +11,7 @@
 		033827B81D3999590065A3A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033827B71D3999590065A3A7 /* ViewController.swift */; };
 		033827BA1D3999590065A3A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033827B91D3999590065A3A7 /* Assets.xcassets */; };
 		033827BD1D3999590065A3A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033827BB1D3999590065A3A7 /* Main.storyboard */; };
+		03D25C2D1D3A2D2E00BE9674 /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D25C2C1D3A2D2E00BE9674 /* TableData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		033827B91D3999590065A3A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		033827BC1D3999590065A3A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		033827BE1D3999590065A3A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03D25C2C1D3A2D2E00BE9674 /* TableData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				033827B71D3999590065A3A7 /* ViewController.swift */,
 				033827B91D3999590065A3A7 /* Assets.xcassets */,
 				033827BB1D3999590065A3A7 /* Main.storyboard */,
+				03D25C2C1D3A2D2E00BE9674 /* TableData.swift */,
 				033827BE1D3999590065A3A7 /* Info.plist */,
 			);
 			path = OSCMonitor;
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D25C2D1D3A2D2E00BE9674 /* TableData.swift in Sources */,
 				033827B81D3999590065A3A7 /* ViewController.swift in Sources */,
 				033827B61D3999590065A3A7 /* AppDelegate.swift in Sources */,
 			);

@@ -142,7 +142,6 @@
 		0339A34A1D37FCEB0060ED91 = {
 			isa = PBXGroup;
 			children = (
-				03093B471D380B94002FD8A9 /* Playground.playground */,
 				0339A3561D37FCEB0060ED91 /* SwiftOSC */,
 				03AEB7B41D38280700F97DB1 /* SwiftOSCTests */,
 				0339A3551D37FCEB0060ED91 /* Products */,
