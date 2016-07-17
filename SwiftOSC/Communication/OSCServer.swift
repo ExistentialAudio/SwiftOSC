@@ -5,14 +5,12 @@ public class OSCServer {
         didSet {
             _ = server.close()
             server = UDPServer(addr: self.address, port:self.port)
-            run()
         }
     }
     public var port: Int {
         didSet {
             _ = server.close()
             server = UDPServer(addr: self.address, port:self.port)
-            run()
         }
     }
 
@@ -37,7 +35,7 @@ public class OSCServer {
     }
     func run() {
         DispatchQueue.global(attributes: .qosDefault).async{
-            while self.running {
+            while true {
                 let (data,_,_) = self.server.recv(9216)
                 if let d = data {
                     if self.running {
