@@ -1,5 +1,14 @@
 import Foundation
 
+public protocol OSCServerDelegate {
+    func didReceive(_ bundle: OSCBundle)
+    func didReceive(_ message: OSCMessage)
+}
+extension OSCServerDelegate {
+    public func didReceive(_ bundle: OSCBundle){}
+    public func didReceive(_ message: OSCMessage){}
+}
+
 public class OSCServer {
     public var address: String {
         didSet {
@@ -13,7 +22,7 @@ public class OSCServer {
             server = UDPServer(addr: self.address, port:self.port)
         }
     }
-
+    public var delegate: OSCServerDelegate?
     public var running = false
     var server: UDPServer
     
@@ -50,13 +59,13 @@ public class OSCServer {
         
             if "#bundle\0".toData() == data.subdata(in: Range(0...7)){//matches string #bundle
                 if let bundle = decodeBundle(data){
-                    self.postNotification(bundle)
+                    self.sendToDelegate(bundle)
                 } else {
                     print("invalid packet")
                 }
             } else {
                 if let message = decodeMessage(data){
-                    self.postNotification(message)
+                    self.sendToDelegate(message)
                 } else {
                     print("invalid packet")
                 }
@@ -153,15 +162,15 @@ public class OSCServer {
         }
         return message
     }
-    func postNotification(_ element: OSCElement){
+    func sendToDelegate(_ element: OSCElement){
         DispatchQueue.main.async {
             if let message = element as? OSCMessage {
-                NotificationCenter.default.post(name: OSCServer.didReceiveMessage, object: message)
+                self.delegate?.didReceive(message)
             }
             if let bundle = element as? OSCBundle {
-                NotificationCenter.default.post(name: OSCServer.didReceiveBundle, object: bundle)
+                self.delegate?.didReceive(bundle)
                 for element in bundle.elements {
-                    self.postNotification(element)
+                    self.sendToDelegate(element)
                 }
             }
         }
