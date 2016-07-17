@@ -16,17 +16,19 @@ import SwiftOSC
 var server = OSCServer(address: "", port: 8080)
 
 //: ### Step 3
-//: Create Server
+//: Start Server
 server.start()
 
 //: ### Step 4
-//: Handle notifications from Server
-NotificationCenter.default.addObserver(forName: OSCServer.didReceiveMessage, object: nil, queue: nil, using:
-    { (notification: Notification) in
-        let message = notification.object as! OSCMessage
+//: Setup server delegate
+class OSCHandler: OSCServerDelegate {
+    
+    func didReceive(_ message: OSCMessage){
         print(message)
     }
-)
+}
+server.delegate =  OSCHandler()
+
 //: ## Quick Start - Client
 //: ### Step 1
 //: Import SwiftOSC
