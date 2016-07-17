@@ -1,9 +1,30 @@
 import Foundation
 
+public protocol OSCServerDelegate {
+    func didReceive(_ bundle: OSCBundle)
+    func didReceive(_ message: OSCMessage)
+}
+extension OSCServerDelegate {
+    public func didReceive(_ bundle: OSCBundle){}
+    public func didReceive(_ message: OSCMessage){}
+}
+
 public class OSCServer {
-    public var address: String
-    public var port: Int
+    public var address: String {
+        didSet {
+            _ = server.close()
+            server = UDPServer(addr: self.address, port:self.port)
+        }
+    }
+    public var port: Int {
+        didSet {
+            _ = server.close()
+            server = UDPServer(addr: self.address, port:self.port)
+        }
+    }
+    public var delegate: OSCServerDelegate?
     public var running = false
+    var server: UDPServer
     
     static public var didReceiveMessage = "didReceiveMessage" as NSNotification.Name
     static public var didReceiveBundle = "didReceiveBundle" as NSNotification.Name
@@ -11,26 +32,26 @@ public class OSCServer {
     public init(address: String, port: Int){
         self.address = address
         self.port = port
+        self.server = UDPServer(addr: self.address, port:self.port)
+        run()
     }
     
     public func start(){
         running = true
-        run()
     }
     public func stop(){
         running = false
     }
     func run() {
         DispatchQueue.global(attributes: .qosDefault).async{
-            let server:UDPServer=UDPServer(addr: self.address, port:self.port)
-            while self.running {
-                let (data,_,_)=server.recv(9216)//(data,remoteip,remoteport)
-                if let d=data{
-                    
-                    self.decodePacket(Data(bytes: d))
+            while true {
+                let (data,_,_) = self.server.recv(9216)
+                if let d = data {
+                    if self.running {
+                        self.decodePacket(Data(bytes: d))   
+                    }
                 }
             }
-            _ = server.close()
         }
     }
     
@@ -38,13 +59,13 @@ public class OSCServer {
         
             if "#bundle\0".toData() == data.subdata(in: Range(0...7)){//matches string #bundle
                 if let bundle = decodeBundle(data){
-                    self.postNotification(bundle)
+                    self.sendToDelegate(bundle)
                 } else {
                     print("invalid packet")
                 }
             } else {
                 if let message = decodeMessage(data){
-                    self.postNotification(message)
+                    self.sendToDelegate(message)
                 } else {
                     print("invalid packet")
                 }
@@ -141,14 +162,16 @@ public class OSCServer {
         }
         return message
     }
-    func postNotification(_ element: OSCElement){
-        if let message = element as? OSCMessage {
-            NotificationCenter.default.post(name: OSCServer.didReceiveMessage, object: message)
-        }
-        if let bundle = element as? OSCBundle {
-            NotificationCenter.default.post(name: OSCServer.didReceiveBundle, object: bundle)
-            for element in bundle.elements {
-                self.postNotification(element)
+    func sendToDelegate(_ element: OSCElement){
+        DispatchQueue.main.async {
+            if let message = element as? OSCMessage {
+                self.delegate?.didReceive(message)
+            }
+            if let bundle = element as? OSCBundle {
+                self.delegate?.didReceive(bundle)
+                for element in bundle.elements {
+                    self.sendToDelegate(element)
+                }
             }
         }
     }

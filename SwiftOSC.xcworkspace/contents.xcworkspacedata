@@ -2,6 +2,20 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Playground.playground">
+   </FileRef>
+   <FileRef
       location = "group:SwiftOSC.xcodeproj">
    </FileRef>
+   <Group
+      location = "container:"
+      name = "Examples">
+      <Group
+         location = "container:"
+         name = "macOS">
+         <FileRef
+            location = "group:Examples/macOS/OSCMonitor/OSCMonitor.xcodeproj">
+         </FileRef>
+      </Group>
+   </Group>
 </Workspace>

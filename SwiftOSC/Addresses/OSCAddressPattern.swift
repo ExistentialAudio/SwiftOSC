@@ -18,10 +18,13 @@ public struct OSCAddressPattern {
                 self.string = oldValue
             } else {
                 self.regex = makeRegex(from: self.string)
+                self.regexPath = makeRegexPath(from: self.regex)
+                
             }
         }
     }
     internal var regex = ""
+    internal var regexPath = ""
     internal var data: Data {
         get {
             var data = self.string.data(using: String.Encoding.utf8)!
@@ -38,14 +41,17 @@ public struct OSCAddressPattern {
     public init(){
         self.string = "/"
         self.regex = "^/$"
+        self.regexPath = "^/$"
     }
     
     public init(_ addressPattern: String) {
         self.string = "/"
         self.regex = "^/$"
+        self.regexPath = "^/$"
         if valid(addressPattern) {
             self.string = addressPattern
             self.regex = makeRegex(from: self.string)
+            self.regex = makeRegexPath(from: self.regex)
         }
     }
     
@@ -76,6 +82,31 @@ public struct OSCAddressPattern {
         addressPattern.append("$")                  //matches end of string
         
         return addressPattern
+    }
+    internal func makeRegexPath(from regex: String) -> String {
+        var regex = regex
+        regex = String(regex.characters.dropLast())
+        regex = String(regex.characters.dropFirst())
+        regex = String(regex.characters.dropFirst())
+        
+        var components = regex.components(separatedBy: "/")
+        var regexContainer = "^/$|"
+        
+        for x in 0 ..< components.count {
+            
+            regexContainer += "^"
+            
+            for y in 0 ... x {
+                regexContainer += "/" + components[y]
+            }
+            
+            regexContainer += "$|"
+        }
+        
+        regexContainer = String(regexContainer.characters.dropLast())
+        
+        return regexContainer
+        
     }
     internal func valid(_ address: String) ->Bool {
         
@@ -131,6 +162,13 @@ public struct OSCAddressPattern {
     
     public func matches(_ address: OSCAddress)->Bool{
         if address.string.range(of: self.regex, options: .regularExpression) == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    public func matches(path: OSCAddress)->Bool{
+        if path.string.range(of: self.regexPath, options: .regularExpression) == nil {
             return false
         } else {
             return true
