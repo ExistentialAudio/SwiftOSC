@@ -12,6 +12,7 @@ import SwiftOSC
 class ViewController: NSViewController, NSTableViewDataSource {
     
     var tableData: [TableData] = []
+    var address = OSCAddress()
 
     @IBOutlet weak var tableView: NSTableView!
     override func viewDidLoad() {
@@ -41,9 +42,12 @@ class ViewController: NSViewController, NSTableViewDataSource {
     //print osc data from notification
     func addOSCMessage(notification: Notification) {
         let message = notification.object as! OSCMessage
-        let tableData = TableData(Date(), message)
-        self.tableData.append(tableData)
-        tableView.reloadData()
+        
+        if message.address.matches(path: self.address) {
+            let tableData = TableData(Date(), message)
+            self.tableData.append(tableData)
+            tableView.reloadData()
+        }
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -69,10 +73,13 @@ class ViewController: NSViewController, NSTableViewDataSource {
         server.port = sender.integerValue
     }
     
-    @IBAction func changeOSCAddress(_ sender: AnyObject) {
+    @IBAction func changeOSCAddress(_ sender: NSTextField) {
+        self.address = OSCAddress(sender.stringValue)
+        sender.stringValue = self.address.string
+        
     }
     @IBAction func clear(_ sender: NSButton) {
-        tableData = []
+        tableData.removeAll()
         tableView.reloadData()
     }
     @IBAction func saveToFile(_ sender: NSButton) {
