@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0311A2C91D3B3FD80036D859 /* SwiftOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0311A2C61D3B3FC20036D859 /* SwiftOSC.framework */; };
+		0311A2CA1D3B3FD80036D859 /* SwiftOSC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0311A2C61D3B3FC20036D859 /* SwiftOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		033827B61D3999590065A3A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033827B51D3999590065A3A7 /* AppDelegate.swift */; };
 		033827B81D3999590065A3A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033827B71D3999590065A3A7 /* ViewController.swift */; };
 		033827BA1D3999590065A3A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033827B91D3999590065A3A7 /* Assets.xcassets */; };
@@ -15,31 +17,45 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		030AF66A1D399A4E007CAA33 /* PBXContainerItemProxy */ = {
+		0311A2C51D3B3FC20036D859 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 030AF6651D399A4E007CAA33 /* SwiftOSC.xcodeproj */;
+			containerPortal = 0311A2C01D3B3FC20036D859 /* SwiftOSC.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0339A3541D37FCEB0060ED91;
 			remoteInfo = SwiftOSC;
 		};
-		030AF66C1D399A4E007CAA33 /* PBXContainerItemProxy */ = {
+		0311A2C71D3B3FC20036D859 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 030AF6651D399A4E007CAA33 /* SwiftOSC.xcodeproj */;
+			containerPortal = 0311A2C01D3B3FC20036D859 /* SwiftOSC.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 03AEB7B31D38280700F97DB1;
 			remoteInfo = SwiftOSCTests;
 		};
-		030AF66E1D399A60007CAA33 /* PBXContainerItemProxy */ = {
+		0311A2CB1D3B3FD80036D859 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 030AF6651D399A4E007CAA33 /* SwiftOSC.xcodeproj */;
+			containerPortal = 0311A2C01D3B3FC20036D859 /* SwiftOSC.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 0339A3531D37FCEB0060ED91;
 			remoteInfo = SwiftOSC;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0311A2CD1D3B3FD80036D859 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0311A2CA1D3B3FD80036D859 /* SwiftOSC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		030AF6651D399A4E007CAA33 /* SwiftOSC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftOSC.xcodeproj; path = ../../../SwiftOSC.xcodeproj; sourceTree = "<group>"; };
+		0311A2C01D3B3FC20036D859 /* SwiftOSC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftOSC.xcodeproj; path = ../../../SwiftOSC.xcodeproj; sourceTree = "<group>"; };
 		033827B21D3999590065A3A7 /* OSCMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033827B51D3999590065A3A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033827B71D3999590065A3A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,25 +70,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0311A2C91D3B3FD80036D859 /* SwiftOSC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		030AF6641D399A4E007CAA33 /* Frameworks */ = {
+		0311A2BF1D3B3FC20036D859 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				030AF6651D399A4E007CAA33 /* SwiftOSC.xcodeproj */,
+				0311A2C01D3B3FC20036D859 /* SwiftOSC.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		030AF6661D399A4E007CAA33 /* Products */ = {
+		0311A2C11D3B3FC20036D859 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				030AF66B1D399A4E007CAA33 /* SwiftOSC.framework */,
-				030AF66D1D399A4E007CAA33 /* SwiftOSCTests.xctest */,
+				0311A2C61D3B3FC20036D859 /* SwiftOSC.framework */,
+				0311A2C81D3B3FC20036D859 /* SwiftOSCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,7 +99,7 @@
 			children = (
 				033827B41D3999590065A3A7 /* OSCMonitor */,
 				033827B31D3999590065A3A7 /* Products */,
-				030AF6641D399A4E007CAA33 /* Frameworks */,
+				0311A2BF1D3B3FC20036D859 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,11 +134,12 @@
 				033827AE1D3999590065A3A7 /* Sources */,
 				033827AF1D3999590065A3A7 /* Frameworks */,
 				033827B01D3999590065A3A7 /* Resources */,
+				0311A2CD1D3B3FD80036D859 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				030AF66F1D399A60007CAA33 /* PBXTargetDependency */,
+				0311A2CC1D3B3FD80036D859 /* PBXTargetDependency */,
 			);
 			name = OSCMonitor;
 			productName = OSCMonitor;
@@ -159,8 +177,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 030AF6661D399A4E007CAA33 /* Products */;
-					ProjectRef = 030AF6651D399A4E007CAA33 /* SwiftOSC.xcodeproj */;
+					ProductGroup = 0311A2C11D3B3FC20036D859 /* Products */;
+					ProjectRef = 0311A2C01D3B3FC20036D859 /* SwiftOSC.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -171,18 +189,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		030AF66B1D399A4E007CAA33 /* SwiftOSC.framework */ = {
+		0311A2C61D3B3FC20036D859 /* SwiftOSC.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwiftOSC.framework;
-			remoteRef = 030AF66A1D399A4E007CAA33 /* PBXContainerItemProxy */;
+			remoteRef = 0311A2C51D3B3FC20036D859 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		030AF66D1D399A4E007CAA33 /* SwiftOSCTests.xctest */ = {
+		0311A2C81D3B3FC20036D859 /* SwiftOSCTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SwiftOSCTests.xctest;
-			remoteRef = 030AF66C1D399A4E007CAA33 /* PBXContainerItemProxy */;
+			remoteRef = 0311A2C71D3B3FC20036D859 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -213,10 +231,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		030AF66F1D399A60007CAA33 /* PBXTargetDependency */ = {
+		0311A2CC1D3B3FD80036D859 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftOSC;
-			targetProxy = 030AF66E1D399A60007CAA33 /* PBXContainerItemProxy */;
+			targetProxy = 0311A2CB1D3B3FD80036D859 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -321,10 +339,12 @@
 		033827C21D3999590065A3A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -334,10 +354,12 @@
 		033827C31D3999590065A3A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
