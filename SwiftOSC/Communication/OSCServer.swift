@@ -14,18 +14,18 @@ public class OSCServer {
     }
     
     public func start(){
+        let server = UDPServer(addr: self.address, port:self.port)
         running = true
-        run()
+        run(server)
     }
     public func stop(){
         running = false
     }
-    func run() {
+    func run(_ server: UDPServer) {
         DispatchQueue.global(attributes: .qosDefault).async{
-            let server:UDPServer=UDPServer(addr: self.address, port:self.port)
             while self.running {
-                let (data,_,_)=server.recv(9216)//(data,remoteip,remoteport)
-                if let d=data{
+                let (data,_,_) = server.recv(9216)
+                if let d = data {
                     
                     self.decodePacket(Data(bytes: d))
                 }
@@ -142,13 +142,15 @@ public class OSCServer {
         return message
     }
     func postNotification(_ element: OSCElement){
-        if let message = element as? OSCMessage {
-            NotificationCenter.default.post(name: OSCServer.didReceiveMessage, object: message)
-        }
-        if let bundle = element as? OSCBundle {
-            NotificationCenter.default.post(name: OSCServer.didReceiveBundle, object: bundle)
-            for element in bundle.elements {
-                self.postNotification(element)
+        DispatchQueue.main.async {
+            if let message = element as? OSCMessage {
+                NotificationCenter.default.post(name: OSCServer.didReceiveMessage, object: message)
+            }
+            if let bundle = element as? OSCBundle {
+                NotificationCenter.default.post(name: OSCServer.didReceiveBundle, object: bundle)
+                for element in bundle.elements {
+                    self.postNotification(element)
+                }
             }
         }
     }

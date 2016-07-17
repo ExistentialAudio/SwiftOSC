@@ -10,7 +10,7 @@ import Cocoa
 import SwiftOSC
 
 //create OSC server
-var server = OSCServer(address: "", port: 8080)
+var server = OSCServer(address: "", port: 9000)
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,12 +18,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
-        //start the server
-        server.start()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
     }
 
 }
