@@ -26,9 +26,6 @@ public class OSCServer {
     public var running = false
     var server: UDPServer
     
-    static public var didReceiveMessage = "didReceiveMessage" as NSNotification.Name
-    static public var didReceiveBundle = "didReceiveBundle" as NSNotification.Name
-    
     public init(address: String, port: Int){
         self.address = address
         self.port = port
