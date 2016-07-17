@@ -11,7 +11,7 @@ import SwiftOSC
 
 let defaults = UserDefaults.standard
 
-class ViewController: NSViewController, NSTableViewDataSource {
+class ViewController: NSViewController, NSTableViewDataSource, OSCServerDelegate {
     
     
     
@@ -32,14 +32,8 @@ class ViewController: NSViewController, NSTableViewDataSource {
             self.address.stringValue = address
         }
         
-        //set view to receive notifications from server
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(addOSCMessage),
-            name: OSCServer.didReceiveMessage,
-            object: nil
-        )
-
+        //setup to receive data from server
+        server.delegate = self
         tableView.dataSource = self
         
     }
@@ -50,10 +44,8 @@ class ViewController: NSViewController, NSTableViewDataSource {
         }
     }
 
-    //print osc data from notification
-    func addOSCMessage(notification: Notification) {
-        let message = notification.object as! OSCMessage
-        
+    //add osc data from notification
+    func didReceive(_ message: OSCMessage) {
         if message.address.matches(path: self.addressValue) {
             let tableData = TableData(Date(), message)
             self.tableData.append(tableData)
@@ -132,6 +124,5 @@ class ViewController: NSViewController, NSTableViewDataSource {
             
         }
     }
-
 }
 
