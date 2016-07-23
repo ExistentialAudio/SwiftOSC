@@ -30,15 +30,15 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import Foundation
 public class YSocket{
-    var addr:String
-    var port:Int
-    var fd:Int32?
+    var addr: String
+    var port: Int
+    var fd: Int32?
     init(){
-        self.addr=""
-        self.port=0
+        self.addr = ""
+        self.port = 0
     }
-    public init(addr a:String,port p:Int){
-        self.addr=a
-        self.port=p
+    public init(addr a:String, port p:Int){
+        self.addr = a
+        self.port = p
     }
 }

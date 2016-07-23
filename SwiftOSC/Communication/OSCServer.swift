@@ -1,10 +1,12 @@
 import Foundation
 
 public protocol OSCServerDelegate {
+    func didReceive(_ data: Data)
     func didReceive(_ bundle: OSCBundle)
     func didReceive(_ message: OSCMessage)
 }
 extension OSCServerDelegate {
+    public func didReceive(_ data: Data){}
     public func didReceive(_ bundle: OSCBundle){}
     public func didReceive(_ message: OSCMessage){}
 }
@@ -54,19 +56,23 @@ public class OSCServer {
     
     func decodePacket(_ data: Data){
         
-            if "#bundle\0".toData() == data.subdata(in: Range(0...7)){//matches string #bundle
-                if let bundle = decodeBundle(data){
-                    self.sendToDelegate(bundle)
-                } else {
-                    print("invalid packet")
-                }
+        DispatchQueue.main.async {
+            self.delegate?.didReceive(data)
+        }
+        
+        if "#bundle\0".toData() == data.subdata(in: Range(0...7)){//matches string #bundle
+            if let bundle = decodeBundle(data){
+                self.sendToDelegate(bundle)
             } else {
-                if let message = decodeMessage(data){
-                    self.sendToDelegate(message)
-                } else {
-                    print("invalid packet")
-                }
+                print("invalid packet")
             }
+        } else {
+            if let message = decodeMessage(data){
+                self.sendToDelegate(message)
+            } else {
+                print("invalid packet")
+            }
+        }
     }
     
     func decodeBundle(_ data: Data)->OSCBundle? {
@@ -171,5 +177,9 @@ public class OSCServer {
                 }
             }
         }
+    }
+    
+    deinit {
+        _ = server.close()
     }
 }

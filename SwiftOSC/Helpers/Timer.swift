@@ -42,7 +42,7 @@ class Timer {
         
         //set start time
         let calendar = Calendar.current
-        let dateComponents = DateComponents(year: 1990, timeZone: TimeZone(forSecondsFromGMT: 0))
+        let dateComponents = DateComponents(timeZone: TimeZone(forSecondsFromGMT: 0), year: 1990)
         let date = calendar.date(from: dateComponents)
         let timeInterval = Date().timeIntervalSince(date!)
         startNTP = UInt64(timeInterval * 0x1_0000_0000)
