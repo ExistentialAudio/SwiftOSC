@@ -40,7 +40,7 @@ var client = OSCClient(address: "localhost", port: 8080)
 
 //: ### Step 3
 //: Create a message
-var message = OSCMessage(OSCAddressPattern("/"), 100, 5.0, "Hello World", Blob(), true, false, nil, impulse, Timetag(1))
+var message = OSCMessage(OSCAddressPattern("/test"), 110, 5.0, "Hello World", Blob(), true, false, nil, impulse, Timetag(1))
 
 //: ### Step 4
 //: Send message

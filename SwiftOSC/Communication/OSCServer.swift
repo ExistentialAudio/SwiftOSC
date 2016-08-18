@@ -42,7 +42,7 @@ public class OSCServer {
         running = false
     }
     func run() {
-        DispatchQueue.global(attributes: .qosDefault).async{
+        DispatchQueue.global().async{
             while true {
                 let (data,_,_) = self.server.recv(9216)
                 if let d = data {
