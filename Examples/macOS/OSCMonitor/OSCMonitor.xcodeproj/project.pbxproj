@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0311A2C91D3B3FD80036D859 /* SwiftOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0311A2C61D3B3FC20036D859 /* SwiftOSC.framework */; };
 		0311A2CA1D3B3FD80036D859 /* SwiftOSC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0311A2C61D3B3FC20036D859 /* SwiftOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		033827B61D3999590065A3A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033827B51D3999590065A3A7 /* AppDelegate.swift */; };
 		033827B81D3999590065A3A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033827B71D3999590065A3A7 /* ViewController.swift */; };
@@ -70,7 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0311A2C91D3B3FD80036D859 /* SwiftOSC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				033827B41D3999590065A3A7 /* OSCMonitor */,
-				033827B31D3999590065A3A7 /* Products */,
 				0311A2BF1D3B3FC20036D859 /* Frameworks */,
+				033827B31D3999590065A3A7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,7 +151,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Devin Roth Music";
 				TargetAttributes = {
 					033827B11D3999590065A3A7 = {
@@ -265,8 +263,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -312,8 +312,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
