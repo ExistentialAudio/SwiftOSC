@@ -29,9 +29,9 @@ extension Date {
     init?(_ string: String){
         
         let RFC3339DateFormatter = DateFormatter()
-        RFC3339DateFormatter.locale = Locale(localeIdentifier: "en_US_POSIX")
+        RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
         RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        RFC3339DateFormatter.timeZone = TimeZone(forSecondsFromGMT: 0)
+        RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         
         let date = RFC3339DateFormatter.date(from: string)
         
@@ -84,7 +84,7 @@ extension String {
     func dataFromHexString() -> Data {
         var data = Data()
         
-        let regex = try! RegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
+        let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
         regex.enumerateMatches(in: self, options: [], range: NSMakeRange(0, characters.count)) { match, flags, stop in
             let byteString = (self as NSString).substring(with: match!.range)
             let num = UInt8(byteString.withCString { strtoul($0, nil, 16) })

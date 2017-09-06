@@ -38,7 +38,7 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCServerDelegate
         
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
@@ -56,7 +56,7 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCServerDelegate
     func numberOfRows(in tableView: NSTableView) -> Int {
         return tableData.count
     }
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         if tableColumn?.identifier == "Date" {
             let index = (tableData.count - 1 - row)
             return tableData[index].dateDescription
@@ -96,10 +96,7 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCServerDelegate
         if let url = savePanel.url {
             var url = url
             if url.pathExtension != "txt" {
-                do {
-                    try url.appendPathExtension("txt")
-                }
-                catch {/* error handling here */}
+                url.appendPathExtension("txt")
             }
             //generate data
             var text = ""

@@ -34,7 +34,7 @@ struct TableData {
     
     mutating func addDateDescription() {
         let calendar = Calendar.current
-        let components = calendar.components([.year,.month,.day,.hour, .minute, .second, .nanosecond], from: date)
+        let components = calendar.dateComponents([.year,.month,.day,.hour, .minute, .second, .nanosecond], from: date)
         
         let year = components.year!
         let month = components.month!

@@ -125,8 +125,8 @@ public class UDPClient: YSocket {
     //TODO add multycast and boardcast
 }
 
-public class UDPServer:YSocket{
-    public override init(addr a:String,port p:Int){
+public class UDPServer: YSocket{
+    public override init(addr a:String, port p:Int){
         super.init(addr: a, port: p)
         let fd:Int32 = c_yudpsocket_server(self.addr, port: Int32(self.port))
         if fd>0{
