@@ -3,7 +3,7 @@ import PlaygroundSupport
 /*:
 
 # SwiftOSC 
-A simple OSC Client and Server for Swift 3.0
+A simple OSC Client and Server written in Swift.
  
  */
 //: ## Quick Start - Server
