@@ -4,7 +4,75 @@
    <FileRef
       location = "group:Playground.playground">
    </FileRef>
-   <FileRef
-      location = "group:SwiftOSC.xcodeproj">
-   </FileRef>
+   <Group
+      location = "group:Examples"
+      name = "Examples">
+      <Group
+         location = "group:iOS"
+         name = "iOS">
+      </Group>
+      <Group
+         location = "group:macOS"
+         name = "macOS">
+         <Group
+            location = "group:OSCMonitor"
+            name = "OSCMonitor">
+            <Group
+               location = "group:OSCMonitor"
+               name = "OSCMonitor">
+               <FileRef
+                  location = "group:AppDelegate.swift">
+               </FileRef>
+               <Group
+                  location = "group:Assets.xcassets"
+                  name = "Assets.xcassets">
+                  <Group
+                     location = "group:AppIcon.appiconset"
+                     name = "AppIcon.appiconset">
+                     <FileRef
+                        location = "group:Contents.json">
+                     </FileRef>
+                  </Group>
+               </Group>
+               <Group
+                  location = "group:Base.lproj"
+                  name = "Base.lproj">
+                  <FileRef
+                     location = "group:Main.storyboard">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:Info.plist">
+               </FileRef>
+               <FileRef
+                  location = "group:TableData.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ViewController.swift">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:OSCMonitor.xcodeproj">
+            </FileRef>
+         </Group>
+      </Group>
+   </Group>
+   <Group
+      location = "group:Framework"
+      name = "Framework">
+      <Group
+         location = "group:iOS"
+         name = "iOS">
+         <FileRef
+            location = "group:SwiftOSC for iOS.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:macOS"
+         name = "macOS">
+         <FileRef
+            location = "group:SwiftOSC for macOS.xcodeproj">
+         </FileRef>
+      </Group>
+   </Group>
 </Workspace>
