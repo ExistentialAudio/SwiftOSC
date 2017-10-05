@@ -5,7 +5,7 @@
       location = "group:Playground.playground">
    </FileRef>
    <Group
-      location = "group:/Users/devin/Dropbox/Devin/Code/Xcode/SwiftOSC/Examples"
+      location = "group:Examples"
       name = "Examples">
       <Group
          location = "group:iOS"
@@ -60,11 +60,19 @@
    <Group
       location = "group:Framework"
       name = "Framework">
-      <FileRef
-         location = "group:iOS/SwiftOSC for iOS.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:macOS/SwiftOSC for macOS.xcodeproj">
-      </FileRef>
+      <Group
+         location = "group:iOS"
+         name = "iOS">
+         <FileRef
+            location = "group:SwiftOSC for iOS.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:macOS"
+         name = "macOS">
+         <FileRef
+            location = "group:SwiftOSC for macOS.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
 </Workspace>
