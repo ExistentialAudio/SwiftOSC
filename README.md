@@ -1,5 +1,23 @@
-# SwiftOSC v1.0
-SwiftOSC is a Open Sound Control 1.1 client and server framework for Swift 3. 
+# SwiftOSC v1.1
+SwiftOSC is a Swift Open Sound Control 1.1 client and server framework.
+
+
+
+## Installation
+
+###Step 1
+
+Clone or download repository from Github.
+
+###Step 2
+
+Open SwiftOSC.xcworkspace and build SwiftOSC frameworks. 
+
+###Step 3
+
+Embed SwiftOSC into project.
+
+
 
 ## Quick Start
 ### OSC Server
