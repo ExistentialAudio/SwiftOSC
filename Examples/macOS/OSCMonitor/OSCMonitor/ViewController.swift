@@ -57,15 +57,15 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCServerDelegate
         return tableData.count
     }
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        if tableColumn?.identifier == "Date" {
+        if (tableColumn?.identifier)!.rawValue == "Date" {
             let index = (tableData.count - 1 - row)
             return tableData[index].dateDescription
         }
-        if tableColumn?.identifier == "Address" {
+        if (tableColumn?.identifier)!.rawValue == "Address" {
             let index = (tableData.count - 1 - row)
             return tableData[index].message.address.string
         }
-        if tableColumn?.identifier == "Arguments" {
+        if (tableColumn?.identifier)!.rawValue == "Arguments" {
             let index = (tableData.count - 1 - row)
             return tableData[index].argumentsDescription
         }
