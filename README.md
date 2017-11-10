@@ -1,5 +1,7 @@
 # SwiftOSC v1.1
+
 SwiftOSC is a Swift Open Sound Control 1.1 client and server framework.
+
 
 
 
@@ -85,5 +87,3 @@ client.send(message)
 [Devin Roth](http://devinrothmusic.com) is a composer and programmer. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
 
 For additional information on Open Sound Control visit http://opensoundcontrol.org/.
-
-
