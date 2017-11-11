@@ -123,7 +123,7 @@ public class OSCServer {
             
             messageData = messageData.subdata(in: Range((typeEnd/4+1)*4..<messageData.count))
             
-            for char in type.characters {
+            for char in type {
                 switch char {
                 case "i"://int
                     message.add(Int(messageData.subdata(in: Range(0...3))))

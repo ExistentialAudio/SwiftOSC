@@ -85,9 +85,9 @@ public struct OSCAddressPattern {
     }
     internal func makeRegexPath(from regex: String) -> String {
         var regex = regex
-        regex = String(regex.characters.dropLast())
-        regex = String(regex.characters.dropFirst())
-        regex = String(regex.characters.dropFirst())
+        regex = String(regex.dropLast())
+        regex = String(regex.dropFirst())
+        regex = String(regex.dropFirst())
         
         var components = regex.components(separatedBy: "/")
         var regexContainer = "^/$|"
@@ -103,7 +103,7 @@ public struct OSCAddressPattern {
             regexContainer += "$|"
         }
         
-        regexContainer = String(regexContainer.characters.dropLast())
+        regexContainer = String(regexContainer.dropLast())
         
         return regexContainer
         
@@ -115,7 +115,7 @@ public struct OSCAddressPattern {
             return false
         }
         //must start with "/"
-        if address.characters.first != "/" {
+        if address.first != "/" {
             return false
         }
         //no more than two "/" in a row

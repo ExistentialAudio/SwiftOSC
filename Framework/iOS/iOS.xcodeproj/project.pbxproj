@@ -208,7 +208,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 036486701F820BBD00F3D6CE /* Build configuration list for PBXProject "SwiftOSC for iOS" */;
+			buildConfigurationList = 036486701F820BBD00F3D6CE /* Build configuration list for PBXProject "iOS" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -424,7 +424,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		036486701F820BBD00F3D6CE /* Build configuration list for PBXProject "SwiftOSC for iOS" */ = {
+		036486701F820BBD00F3D6CE /* Build configuration list for PBXProject "iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0364867C1F820BBD00F3D6CE /* Debug */,

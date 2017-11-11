@@ -11,7 +11,7 @@ import UIKit
 //import framework
 import SwiftOSC
 
-let address = OSCAddressPattern("/test")
+let address = OSCAddressPattern("/test/")
 
 class ViewController: UIViewController {
 
@@ -45,12 +45,16 @@ class ViewController: UIViewController {
         let message = OSCMessage(address)
         client.send(message)
     }
-    
+
+    var text = ""
     @IBAction func text(_ sender: UITextField) {
-        
-        let message = OSCMessage(address, sender.text!)
-        client.send(message)
+        text = sender.text!
     }
     
+    
+    @IBAction func sendText(_ sender: UIButton) {
+        let message = OSCMessage(address, text)
+        client.send(message)
+    }
 }
 

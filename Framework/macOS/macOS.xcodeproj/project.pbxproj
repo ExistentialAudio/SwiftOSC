@@ -212,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0339A34E1D37FCEB0060ED91 /* Build configuration list for PBXProject "SwiftOSC for macOS" */;
+			buildConfigurationList = 0339A34E1D37FCEB0060ED91 /* Build configuration list for PBXProject "macOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -397,7 +397,7 @@
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = all;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -419,7 +419,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = all;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -427,7 +427,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0339A34E1D37FCEB0060ED91 /* Build configuration list for PBXProject "SwiftOSC for macOS" */ = {
+		0339A34E1D37FCEB0060ED91 /* Build configuration list for PBXProject "macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0339A35A1D37FCEB0060ED91 /* Debug */,

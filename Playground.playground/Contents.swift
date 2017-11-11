@@ -48,3 +48,8 @@ client.send(message)
 
 //:Keeps playground running in order to send and receive OSC Data
 PlaygroundPage.current.needsIndefiniteExecution = true
+
+//: ## Known Issues
+//: Regex address matching is broken. Wild cards are not working.
+//: All OSC messages are delivered immediately. Timetags are ignored.
+

@@ -85,7 +85,7 @@ extension String {
         var data = Data()
         
         let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
-        regex.enumerateMatches(in: self, options: [], range: NSMakeRange(0, characters.count)) { match, flags, stop in
+        regex.enumerateMatches(in: self, options: [], range: NSMakeRange(0, self.count)) { match, flags, stop in
             let byteString = (self as NSString).substring(with: match!.range)
             let num = UInt8(byteString.withCString { strtoul($0, nil, 16) })
             data.append([num], count: 1)
@@ -99,7 +99,7 @@ extension String {
     //returns substring at the specified character index
     subscript(index: Int)->String? {
         get {
-            if index > self.characters.count - 1 || index < 0 {
+            if index > self.count - 1 || index < 0 {
                 return nil
             }
             let charIndex = self.index(self.startIndex, offsetBy: index)
