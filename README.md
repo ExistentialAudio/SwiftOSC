@@ -82,6 +82,12 @@ Send message
 ```swift
 client.send(message)
 ```
+
+## Known Issues
+
+* Regex address matching is broken. Wild cards are not working.
+* All OSC messages are delivered immediately. Timetags are ignored.
+
 ## About
 
 [Devin Roth](http://devinrothmusic.com) is a composer and programmer. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
