@@ -7,15 +7,15 @@ SwiftOSC is a Swift Open Sound Control 1.1 client and server framework.
 
 ## Installation
 
-###Step 1
+### Step 1
 
 Clone or download repository from Github.
 
-###Step 2
+### Step 2
 
 Open SwiftOSC.xcworkspace and build SwiftOSC frameworks. 
 
-###Step 3
+### Step 3
 
 Embed SwiftOSC into project.
 
