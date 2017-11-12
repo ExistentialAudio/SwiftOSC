@@ -51,7 +51,7 @@ public struct OSCAddressPattern {
         if valid(addressPattern) {
             self.string = addressPattern
             self.regex = makeRegex(from: self.string)
-            self.regex = makeRegexPath(from: self.regex)
+            self.regexPath = makeRegexPath(from: self.regex)
         }
     }
     
@@ -88,23 +88,23 @@ public struct OSCAddressPattern {
         regex = String(regex.dropLast())
         regex = String(regex.dropFirst())
         regex = String(regex.dropFirst())
-        
+
         var components = regex.components(separatedBy: "/")
         var regexContainer = "^/$|"
-        
+
         for x in 0 ..< components.count {
-            
+
             regexContainer += "^"
-            
+
             for y in 0 ... x {
                 regexContainer += "/" + components[y]
             }
-            
+
             regexContainer += "$|"
         }
-        
+
         regexContainer = String(regexContainer.dropLast())
-        
+
         return regexContainer
         
     }
@@ -160,6 +160,7 @@ public struct OSCAddressPattern {
         return true
     }
     
+    // Returns True if the address matches the address pattern.
     public func matches(_ address: OSCAddress)->Bool{
         if address.string.range(of: self.regex, options: .regularExpression) == nil {
             return false
@@ -167,6 +168,8 @@ public struct OSCAddressPattern {
             return true
         }
     }
+    
+    // Returns True if the address is along the path of the address pattern
     public func matches(path: OSCAddress)->Bool{
         if path.string.range(of: self.regexPath, options: .regularExpression) == nil {
             return false
