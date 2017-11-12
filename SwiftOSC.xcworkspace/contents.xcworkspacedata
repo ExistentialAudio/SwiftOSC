@@ -8,7 +8,7 @@
       location = "group:LICENSE">
    </FileRef>
    <FileRef
-      location = "group:/Users/devin/Dropbox/Devin/Code/Xcode/SwiftOSC/Playgrounds.playground">
+      location = "group:Playgrounds.playground">
    </FileRef>
    <Group
       location = "group:Examples"
@@ -32,10 +32,10 @@
       location = "group:Framework"
       name = "Framework">
       <FileRef
-         location = "group:/Users/devin/Dropbox/Devin/Code/Xcode/SwiftOSC/Framework/macOS/macOS.xcodeproj">
+         location = "group:iOS/iOS.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:/Users/devin/Dropbox/Devin/Code/Xcode/SwiftOSC/Framework/iOS/iOS.xcodeproj">
+         location = "group:macOS/macOS.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>

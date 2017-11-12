@@ -13,7 +13,7 @@ import SwiftOSC
 
 //: ### Step 2
 //: Create Server
-var server = OSCServer(address: "", port: 8080)
+var server = OSCServer(address: "", port: 9000)
 
 //: ### Step 3
 //: Start Server
@@ -36,7 +36,7 @@ import SwiftOSC
 
 //: ### Step 2
 //: Create client
-var client = OSCClient(address: "localhost", port: 8080)
+var client = OSCClient(address: "localhost", port: 9000)
 
 //: ### Step 3
 //: Create a message
