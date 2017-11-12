@@ -8,7 +8,7 @@
       location = "group:LICENSE">
    </FileRef>
    <FileRef
-      location = "group:Playground.playground">
+      location = "group:/Users/devin/Dropbox/Devin/Code/Xcode/SwiftOSC/Playgrounds.playground">
    </FileRef>
    <Group
       location = "group:Examples"
