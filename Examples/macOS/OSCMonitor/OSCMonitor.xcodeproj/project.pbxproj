@@ -297,7 +297,7 @@
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.OSCMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -313,7 +313,7 @@
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.OSCMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
