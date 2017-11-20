@@ -36,7 +36,7 @@ SwiftOSC is an Open Sound Control client and server framework written in Swift. 
   #   'SwiftOSC' => ['SwiftOSC/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Framework/iOS/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
