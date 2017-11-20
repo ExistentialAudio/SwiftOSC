@@ -96,8 +96,6 @@ client.send(message)
 ```
 
 ## Known Issues
-
-* Regex address matching is broken. Wild cards are not working.
 * All OSC messages are delivered immediately. Timetags are ignored.
 
 ## About
