@@ -1,8 +1,10 @@
 # SwiftOSC v1.1.0
 
+[![Build Status](https://travis-ci.org/SwiftOSC/SwiftOSC.svg)](https://travis-ci.org/SwiftOSC/SwiftOSC)
 [![Version](https://img.shields.io/cocoapods/v/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
 [![License](https://img.shields.io/cocoapods/l/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
+<img src="https://img.shields.io/badge/in-swift4.0-orange.svg">
 
 SwiftOSC is a Swift Open Sound Control 1.1 client and server framework.
 
