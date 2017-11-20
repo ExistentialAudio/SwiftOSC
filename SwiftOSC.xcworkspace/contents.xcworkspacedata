@@ -8,6 +8,9 @@
       location = "group:LICENSE">
    </FileRef>
    <FileRef
+      location = "group:SwiftOSC.podspec">
+   </FileRef>
+   <FileRef
       location = "group:Playgrounds.playground">
    </FileRef>
    <Group

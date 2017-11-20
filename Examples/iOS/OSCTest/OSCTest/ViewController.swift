@@ -14,7 +14,7 @@ import SwiftOSC
 // Setup Client. Change address from localhost if needed.
 var client = OSCClient(address: "localhost", port: 8080)
 
-var address = OSCAddressPattern("/test")
+var address = OSCAddressPattern("/")
 
 class ViewController: UIViewController {
     
