@@ -1,4 +1,4 @@
-# SwiftOSC v1.1.0
+# SwiftOSC v1.1.1
 
 [![Build Status](https://travis-ci.org/devinroth/SwiftOSC.svg)](https://travis-ci.org/devinroth/SwiftOSC)
 [![Version](https://img.shields.io/cocoapods/v/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
@@ -57,7 +57,11 @@ Setup server delegate to handle incoming OSC Data
 class OSCHandler: OSCServerDelegate {
     
     func didReceive(_ message: OSCMessage){
-        print(message)
+        if let integer = message.arguments[0] as Int {
+            print("Received int \(integer)"
+        } else {
+            print(message)
+        }
     }
 }
 server.delegate =  OSCHandler()
