@@ -1,4 +1,4 @@
-# SwiftOSC v1.1.1
+# SwiftOSC v1.1.3
 
 [![Build Status](https://travis-ci.org/devinroth/SwiftOSC.svg)](https://travis-ci.org/devinroth/SwiftOSC)
 [![Version](https://img.shields.io/cocoapods/v/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
