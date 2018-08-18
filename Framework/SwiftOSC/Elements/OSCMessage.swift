@@ -80,12 +80,22 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
         self.address = address
         self.arguments = arguments
     }
+    
+    public init(_ address: OSCAddressPattern,_ arguments:[OSCType?]){
+        self.address = address
+        self.arguments = arguments
+    }
+    
+    //MARK: Methods
     public func add(){
         self.arguments.append(nil)
     }
     
-    //MARK: Methods
     public func add(_ arguments: OSCType?...){
+        self.arguments += arguments
+    }
+    
+    public func add(_ arguments: [OSCType?]){
         self.arguments += arguments
     }
 }

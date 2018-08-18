@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0323C58B2128619600E10268 /* SwiftOSC.framework in Sources */ = {isa = PBXBuildFile; fileRef = 035F847F1FB6F39500C8C333 /* SwiftOSC.framework */; };
 		033827B61D3999590065A3A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033827B51D3999590065A3A7 /* AppDelegate.swift */; };
 		033827B81D3999590065A3A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033827B71D3999590065A3A7 /* ViewController.swift */; };
 		033827BA1D3999590065A3A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033827B91D3999590065A3A7 /* Assets.xcassets */; };
@@ -166,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0323C58B2128619600E10268 /* SwiftOSC.framework in Sources */,
 				03D25C2D1D3A2D2E00BE9674 /* TableData.swift in Sources */,
 				033827B81D3999590065A3A7 /* ViewController.swift in Sources */,
 				033827B61D3999590065A3A7 /* AppDelegate.swift in Sources */,
@@ -297,7 +299,7 @@
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.OSCMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -313,7 +315,7 @@
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.OSCMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

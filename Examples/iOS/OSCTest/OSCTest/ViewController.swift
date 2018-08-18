@@ -11,9 +11,17 @@ import UIKit
 //import framework
 import SwiftOSC
 
-let address = OSCAddressPattern("/test/")
+// Setup Client. Change address from localhost if needed.
+var client = OSCClient(address: "localhost", port: 8080)
+
+var address = OSCAddressPattern("/")
 
 class ViewController: UIViewController {
+    
+    //Variables
+    var ipAddress = "localhost"
+    var port = 8080
+    var text = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +34,32 @@ class ViewController: UIViewController {
     }
     
     //Connect UI and send OSC message
+    @IBAction func ipAddressTextField(_ sender: UITextField) {
+        
+        if let text = sender.text {
+            ipAddress = text
+            client = OSCClient(address: ipAddress, port: port)
+        }
+    }
+    
+    @IBAction func portTextField(_ sender: UITextField) {
+        
+        if let text = sender.text {
+            if let number = Int(text) {
+                print(number)
+                port = number
+                client = OSCClient(address: ipAddress, port: port)
+            }
+        }
+    }
+    
+    @IBAction func addressPatternTextField(_ sender: UITextField) {
+        
+        if let text = sender.text {
+            address = OSCAddressPattern(text)
+        }
+    }
+    
     @IBAction func stepper(_ sender: UIStepper) {
         let message = OSCMessage(address, Int(sender.value))
         client.send(message)
@@ -46,15 +80,17 @@ class ViewController: UIViewController {
         client.send(message)
     }
 
-    var text = ""
     @IBAction func text(_ sender: UITextField) {
+
         text = sender.text!
     }
-    
     
     @IBAction func sendText(_ sender: UIButton) {
         let message = OSCMessage(address, text)
         client.send(message)
     }
+    
+
+    
 }
 

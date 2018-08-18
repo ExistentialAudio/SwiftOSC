@@ -46,7 +46,8 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCServerDelegate
 
     //add osc data from notification
     func didReceive(_ message: OSCMessage) {
-        if message.address.matches(path: self.addressValue) {
+        print(message)
+        if message.address.matches(self.addressValue) {
             let tableData = TableData(Date(), message)
             self.tableData.append(tableData)
             tableView.reloadData()

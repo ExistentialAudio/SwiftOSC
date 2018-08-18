@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftOSC'
-  s.version          = '1.1.3'
+  s.version          = '1.2.0'
   s.summary          = 'SwiftOSC is an Open Sound Control client and server framework written in Swift. '
 
   s.description      = <<-DESC
@@ -17,6 +17,5 @@ SwiftOSC is an Open Sound Control client and server framework written in Swift. 
 
   s.ios.source_files = "Framework/iOS/iOS}" , "Framework/iOS/**/*.{c,h,m,swift}", "Framework/SwiftOSC/**/*.{c,h,m,swift}"
   s.macos.source_files = "Framework/macOS/macOS","Framework/macOS/**/*.{c,h,m,swift}", "Framework/SwiftOSC/**/*.{c,h,m,swift}"
-
 
 end
