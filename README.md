@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
 <img src="https://img.shields.io/badge/in-swift4.0-orange.svg">
 
-SwiftOSC is a Swift Open Sound Control 1.1 client and server framework.
+SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server framework.
 
 
 
