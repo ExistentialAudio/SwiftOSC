@@ -133,7 +133,7 @@ public class OSCServer {
                     messageData = messageData.subdata(in: Range(4..<messageData.count))
                 case "s"://string
                     let stringEnd = messageData.index(of: 0x00)!
-                    message.add(String(messageData.subdata(in: Range(0...stringEnd))))
+                    message.add(String(messageData.subdata(in: Range(0..<stringEnd))))
                     messageData = messageData.subdata(in: Range((stringEnd/4+1)*4..<messageData.count))
                 case "b": //blob
                     var length = Int(messageData.subdata(in: Range(0...3)).toInt32())
