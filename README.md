@@ -1,4 +1,4 @@
-# SwiftOSC v1.1
+# SwiftOSC v1.2
 
 SwiftOSC is a Swift Open Sound Control 1.1 client and server framework.
 
