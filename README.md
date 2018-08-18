@@ -1,11 +1,23 @@
 # SwiftOSC v1.2
 
+[![Build Status](https://travis-ci.org/devinroth/SwiftOSC.svg)](https://travis-ci.org/devinroth/SwiftOSC)
+[![Version](https://img.shields.io/cocoapods/v/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
+[![License](https://img.shields.io/cocoapods/l/SwiftOSC.svg?style=flat)](https://github.com/devinroth/SwiftOSC/blob/master/LICENSE)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
+<img src="https://img.shields.io/badge/in-swift4.0-orange.svg">
+
 SwiftOSC is a Swift Open Sound Control 1.1 client and server framework.
 
 
 
 
 ## Installation
+
+```
+pod 'SwiftOSC', '~> 1.2'
+```
+
+OR
 
 ### Step 1
 
@@ -45,7 +57,11 @@ Setup server delegate to handle incoming OSC Data
 class OSCHandler: OSCServerDelegate {
     
     func didReceive(_ message: OSCMessage){
-        print(message)
+        if let integer = message.arguments[0] as Int {
+            print("Received int \(integer)"
+        } else {
+            print(message)
+        }
     }
 }
 server.delegate =  OSCHandler()
@@ -84,8 +100,6 @@ client.send(message)
 ```
 
 ## Known Issues
-
-* Regex address matching is broken. Wild cards are not working.
 * All OSC messages are delivered immediately. Timetags are ignored.
 
 ## About
