@@ -12,6 +12,7 @@
 		031ABE751FB64DC7005184D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031ABE731FB64DC7005184D4 /* Main.storyboard */; };
 		031ABE771FB64DC7005184D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031ABE761FB64DC7005184D4 /* Assets.xcassets */; };
 		031ABE7A1FB64DC7005184D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031ABE781FB64DC7005184D4 /* LaunchScreen.storyboard */; };
+		0323C58C212861B200E10268 /* SwiftOSC.framework in Sources */ = {isa = PBXBuildFile; fileRef = 03F4BBF01FB6E2B900193238 /* SwiftOSC.framework */; };
 		03F4BBF11FB6E2C100193238 /* SwiftOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F4BBF01FB6E2B900193238 /* SwiftOSC.framework */; };
 		03F4BBF21FB6E2C100193238 /* SwiftOSC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03F4BBF01FB6E2B900193238 /* SwiftOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -164,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0323C58C212861B200E10268 /* SwiftOSC.framework in Sources */,
 				031ABE721FB64DC7005184D4 /* ViewController.swift in Sources */,
 				031ABE701FB64DC7005184D4 /* AppDelegate.swift in Sources */,
 			);
