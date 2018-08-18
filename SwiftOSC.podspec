@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftOSC'
-  s.version          = '1.2.1'
+  s.version          = '1.2.2'
   s.summary          = 'SwiftOSC is an Open Sound Control client and server framework written in Swift. '
 
   s.description      = <<-DESC
