@@ -78,14 +78,14 @@ public class OSCServer {
     func decodeBundle(_ data: Data)->OSCBundle? {
         
         //extract timetag
-        let bundle = OSCBundle(Timetag(data.subdata(in: Range(8..<16))))
+        let bundle = OSCBundle(Timetag(data.subdata(in: 8..<16)))
     
-        var bundleData = data.subdata(in: Range(16..<data.count))
+        var bundleData = data.subdata(in: 16..<data.count)
         
         while bundleData.count > 0 {
             let length = Int(bundleData.subdata(in: Range(0...3)).toInt32())
-            let nextData = bundleData.subdata(in: Range(4..<length+4))
-            bundleData = bundleData.subdata(in: Range(length+4..<bundleData.count))
+            let nextData = bundleData.subdata(in: 4..<length+4)
+            bundleData = bundleData.subdata(in:length+4..<bundleData.count)
             if "#bundle\0".toData() == nextData.subdata(in: Range(0...7)){//matches string #bundle
                 if let newbundle = self.decodeBundle(nextData){
                     bundle.add(newbundle)
@@ -110,39 +110,39 @@ public class OSCServer {
         
         //extract address and check if valid
         let addressEnd = messageData.index(of: 0x00)!
-        let addressString = messageData.subdata(in: Range(0..<addressEnd)).toString()
+        let addressString = messageData.subdata(in: 0..<addressEnd).toString()
         var address = OSCAddressPattern()
         if address.valid(addressString) {
             address.string = addressString
             message = OSCMessage(address)
             
             //extract types
-            messageData = messageData.subdata(in: Range((addressEnd/4+1)*4..<messageData.count))
+            messageData = messageData.subdata(in: (addressEnd/4+1)*4..<messageData.count)
             let typeEnd = messageData.index(of: 0x00)!
-            let type = messageData.subdata(in: Range(1..<typeEnd)).toString()
+            let type = messageData.subdata(in: 1..<typeEnd).toString()
             
-            messageData = messageData.subdata(in: Range((typeEnd/4+1)*4..<messageData.count))
+            messageData = messageData.subdata(in: (typeEnd/4+1)*4..<messageData.count)
             
             for char in type {
                 switch char {
                 case "i"://int
                     message.add(Int(messageData.subdata(in: Range(0...3))))
-                    messageData = messageData.subdata(in: Range(4..<messageData.count))
+                    messageData = messageData.subdata(in: 4..<messageData.count)
                 case "f"://float
                     message.add(Float(messageData.subdata(in: Range(0...3))))
-                    messageData = messageData.subdata(in: Range(4..<messageData.count))
+                    messageData = messageData.subdata(in: 4..<messageData.count)
                 case "s"://string
                     let stringEnd = messageData.index(of: 0x00)!
-                    message.add(String(messageData.subdata(in: Range(0..<stringEnd))))
-                    messageData = messageData.subdata(in: Range((stringEnd/4+1)*4..<messageData.count))
+                    message.add(String(messageData.subdata(in: 0..<stringEnd)))
+                    messageData = messageData.subdata(in: (stringEnd/4+1)*4..<messageData.count)
                 case "b": //blob
                     var length = Int(messageData.subdata(in: Range(0...3)).toInt32())
-                    messageData = messageData.subdata(in: Range(4..<messageData.count))
-                    message.add(Blob(messageData.subdata(in: Range(0..<length))))
+                    messageData = messageData.subdata(in: 4..<messageData.count)
+                    message.add(Blob(messageData.subdata(in: 0..<length)))
                     while length%4 != 0 {//remove null ending
                         length += 1
                     }
-                    messageData = messageData.subdata(in: Range(length..<messageData.count))
+                    messageData = messageData.subdata(in: length..<messageData.count)
                     
                 case "T"://true
                     message.add(true)
@@ -154,7 +154,7 @@ public class OSCServer {
                     message.add(Impulse())
                 case "t"://timetag
                     message.add(Timetag(messageData.subdata(in: Range(0...7))))
-                    messageData = messageData.subdata(in: Range(8..<messageData.count))
+                    messageData = messageData.subdata(in: 8..<messageData.count)
                 default:
                     print("unknown osc type")
                     return nil

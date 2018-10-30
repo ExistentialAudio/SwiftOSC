@@ -20,7 +20,7 @@ extension Blob: OSCType {
         get {
             let length = UInt32(self.count)
             var data = Data()
-            
+
             data.append(length.toData())
             
             data.append(self)
