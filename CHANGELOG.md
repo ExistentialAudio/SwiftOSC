@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.3] - 2018-10-30
+### Changed
+- Updated syntax/settings to Swift 4.2/Xcode 10.0
+
 ## [1.2.0] - 2018-08-18
 ### Added
 - Changelog
