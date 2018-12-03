@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import Network
 
 //import framework
 import SwiftOSC
 
-// Setup Client. Change address from localhost if needed.
-var client = OSCClient(address: "localhost", port: 8080)
 
-var address = OSCAddressPattern("/")
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, OSCDelegate {
     
     //Variables
-    var ipAddress = "localhost"
-    var port = 8080
+    var host = NWEndpoint.Host("localhost")
+    var port = NWEndpoint.Port(integerLiteral: 8080)
     var text = ""
+    
+    // Setup Client. Change address from localhost if needed.
+    var client = OSCClient(host: "localhost", port: 8080)
+    var address = OSCAddressPattern("/")\
+    
+    var clientDelegate = self
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,18 +41,17 @@ class ViewController: UIViewController {
     @IBAction func ipAddressTextField(_ sender: UITextField) {
         
         if let text = sender.text {
-            ipAddress = text
-            client = OSCClient(address: ipAddress, port: port)
+            host = NWEndpoint.Host(text)
+            client = OSCClient(host: host, port: port)
         }
     }
     
     @IBAction func portTextField(_ sender: UITextField) {
         
         if let text = sender.text {
-            if let number = Int(text) {
-                print(number)
-                port = number
-                client = OSCClient(address: ipAddress, port: port)
+            if let number = UInt16(text) {
+                port = NWEndpoint.Port(integerLiteral: number)
+                client = OSCClient(host: host, port: port)
             }
         }
     }
@@ -88,9 +91,13 @@ class ViewController: UIViewController {
     @IBAction func sendText(_ sender: UIButton) {
         let message = OSCMessage(address, text)
         client.send(message)
+        print("Client Sent: " message)
     }
     
-
+    //add osc data from notification
+    func didReceive(_ message: OSCMessage) {
+        print("Client Received: " message)
+    }
     
 }
 

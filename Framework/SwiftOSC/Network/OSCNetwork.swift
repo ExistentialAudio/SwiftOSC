@@ -1,58 +1,30 @@
+//
+//  OSCNetwork.swift
+//  SwiftOSC
+//
+//  Created by Devin Roth on 2018-12-01.
+//  Copyright © 2018 Devin Roth. All rights reserved.
+//
+
 import Foundation
+import Network
 
-public protocol OSCServerDelegate {
-    func didReceive(_ data: Data)
-    func didReceive(_ bundle: OSCBundle)
-    func didReceive(_ message: OSCMessage)
-}
-extension OSCServerDelegate {
-    public func didReceive(_ data: Data){}
-    public func didReceive(_ bundle: OSCBundle){}
-    public func didReceive(_ message: OSCMessage){}
+protocol OSCNetwork {
+    
+    var delegate: OSCDelegate? { get set }
+    
+    var connection: NWConnection? { get set }
+    var queue: DispatchQueue { get set }
+    
+    func decodePacket(_ data: Data)
+    func decodeBundle(_ data: Data)->OSCBundle?
+    func decodeMessage(_ data: Data)->OSCMessage?
+    func sendToDelegate(_ element: OSCElement)
+    
+    func send(_ element: OSCElement)
 }
 
-public class OSCServer {
-    public var address: String {
-        didSet {
-            _ = server.close()
-            server = UDPServer(addr: self.address, port:self.port)
-        }
-    }
-    public var port: Int {
-        didSet {
-            _ = server.close()
-            server = UDPServer(addr: self.address, port:self.port)
-        }
-    }
-    public var delegate: OSCServerDelegate?
-    public var running = false
-    var server: UDPServer
-    
-    public init(address: String, port: Int){
-        self.address = address
-        self.port = port
-        self.server = UDPServer(addr: self.address, port:self.port)
-        run()
-    }
-    
-    public func start(){
-        running = true
-    }
-    public func stop(){
-        running = false
-    }
-    func run() {
-        DispatchQueue.global().async{
-            while true {
-                let (data,_,_) = self.server.recv(9216)
-                if let d = data {
-                    if self.running {
-                        self.decodePacket(Data(bytes: d))   
-                    }
-                }
-            }
-        }
-    }
+extension OSCNetwork {
     
     func decodePacket(_ data: Data){
         
@@ -79,7 +51,7 @@ public class OSCServer {
         
         //extract timetag
         let bundle = OSCBundle(Timetag(data.subdata(in: 8..<16)))
-    
+        
         var bundleData = data.subdata(in: 16..<data.count)
         
         while bundleData.count > 0 {
@@ -179,7 +151,16 @@ public class OSCServer {
         }
     }
     
-    deinit {
-        _ = server.close()
+    // receive
+    func receive() {
+        connection?.receiveMessage { (content, context, isCompleted, error) in
+            if let data = content {
+                self.decodePacket(data)
+            }
+
+            if error == nil {
+                self.receive()
+            }
+        }
     }
 }

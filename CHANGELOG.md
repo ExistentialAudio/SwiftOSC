@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.0]
+### Change
+- Removed ysocket and replaced with Swift Network Framework.
+- Remove playground. Playground support for SwiftOSC was extremely buggy.
+- Removed OSCTest app for iOS and OSCMonitor for macOS and replaced with new OSCClientTest and OSCServerTest apps. 
+
+### Added
+- Client and server classes are now bidirectional. After initial connection is established both client and server can send and receive.
+- Client and server recognize timetags and send the messages to the delegate after the requested time.
+
+### Fixed
+
 ## [1.2.3] - 2018-10-30
 ### Changed
 - Updated syntax/settings to Swift 4.2/Xcode 10.0
@@ -20,3 +32,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Chaged
 - Fix string decoding. String arg comparisons now work as expected.
+ 

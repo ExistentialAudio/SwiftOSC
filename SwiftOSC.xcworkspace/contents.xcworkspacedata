@@ -13,15 +13,15 @@
    <FileRef
       location = "group:SwiftOSC.podspec">
    </FileRef>
-   <FileRef
-      location = "group:Playgrounds.playground">
-   </FileRef>
    <Group
       location = "group:Examples"
       name = "Examples">
       <Group
          location = "group:iOS"
          name = "iOS">
+         <FileRef
+            location = "group:OSCServerTest/OSCServerTest.xcodeproj">
+         </FileRef>
          <FileRef
             location = "group:OSCTest/OSCTest.xcodeproj">
          </FileRef>

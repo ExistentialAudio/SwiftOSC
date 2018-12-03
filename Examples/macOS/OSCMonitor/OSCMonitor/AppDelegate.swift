@@ -10,7 +10,7 @@ import Cocoa
 import SwiftOSC
 
 //create OSC server
-var server = OSCServer(address: "", port: 8080)
+//var server = OSCServer(port: 8080)
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

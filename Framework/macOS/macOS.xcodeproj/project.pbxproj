@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		032E3DC41F82A2A900DC931B /* OSCAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C90C1F829EBC00CBA6A7 /* OSCAddress.swift */; };
 		032E3DC51F82A2A900DC931B /* OSCAddressPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C90D1F829EBC00CBA6A7 /* OSCAddressPattern.swift */; };
-		032E3DC61F82A2A900DC931B /* OSCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C90F1F829EBC00CBA6A7 /* OSCClient.swift */; };
-		032E3DC71F82A2A900DC931B /* OSCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9101F829EBC00CBA6A7 /* OSCServer.swift */; };
-		032E3DC81F82A2A900DC931B /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9121F829EBC00CBA6A7 /* ysocket.swift */; };
-		032E3DC91F82A2A900DC931B /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9131F829EBC00CBA6A7 /* yudpsocket.c */; };
-		032E3DCA1F82A2A900DC931B /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9141F829EBC00CBA6A7 /* yudpsocket.swift */; };
 		032E3DCB1F82A2A900DC931B /* OSCBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9161F829EBC00CBA6A7 /* OSCBundle.swift */; };
 		032E3DCC1F82A2A900DC931B /* OSCElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9171F829EBC00CBA6A7 /* OSCElementProtocol.swift */; };
 		032E3DCD1F82A2A900DC931B /* OSCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9181F829EBC00CBA6A7 /* OSCMessage.swift */; };
@@ -28,16 +23,12 @@
 		032E3DD61F82A2A900DC931B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9251F829EBC00CBA6A7 /* String.swift */; };
 		032E3DD71F82A2A900DC931B /* Timetag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9261F829EBC00CBA6A7 /* Timetag.swift */; };
 		0332C9291F82A16700CBA6A7 /* SwiftOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0332C91D1F829EBC00CBA6A7 /* SwiftOSC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0339172921B3BC150025B726 /* OSCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339172821B3BC140025B726 /* OSCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0332C90C1F829EBC00CBA6A7 /* OSCAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCAddress.swift; sourceTree = "<group>"; };
 		0332C90D1F829EBC00CBA6A7 /* OSCAddressPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCAddressPattern.swift; sourceTree = "<group>"; };
-		0332C90F1F829EBC00CBA6A7 /* OSCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCClient.swift; sourceTree = "<group>"; };
-		0332C9101F829EBC00CBA6A7 /* OSCServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCServer.swift; sourceTree = "<group>"; };
-		0332C9121F829EBC00CBA6A7 /* ysocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
-		0332C9131F829EBC00CBA6A7 /* yudpsocket.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
-		0332C9141F829EBC00CBA6A7 /* yudpsocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		0332C9161F829EBC00CBA6A7 /* OSCBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCBundle.swift; sourceTree = "<group>"; };
 		0332C9171F829EBC00CBA6A7 /* OSCElementProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCElementProtocol.swift; sourceTree = "<group>"; };
 		0332C9181F829EBC00CBA6A7 /* OSCMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCMessage.swift; sourceTree = "<group>"; };
@@ -53,6 +44,10 @@
 		0332C9241F829EBC00CBA6A7 /* OSCTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCTypeProtocol.swift; sourceTree = "<group>"; };
 		0332C9251F829EBC00CBA6A7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0332C9261F829EBC00CBA6A7 /* Timetag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetag.swift; sourceTree = "<group>"; };
+		0339171421B3BB860025B726 /* OSCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCClient.swift; sourceTree = "<group>"; };
+		0339171521B3BB860025B726 /* OSCServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCServer.swift; sourceTree = "<group>"; };
+		0339171621B3BB860025B726 /* OSCNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCNetwork.swift; sourceTree = "<group>"; };
+		0339172821B3BC140025B726 /* OSCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCDelegate.swift; sourceTree = "<group>"; };
 		0339A3541D37FCEB0060ED91 /* SwiftOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,8 +65,8 @@
 		0332C90A1F829EBC00CBA6A7 /* SwiftOSC */ = {
 			isa = PBXGroup;
 			children = (
+				0339171721B3BB860025B726 /* Network */,
 				0332C90B1F829EBC00CBA6A7 /* Addresses */,
-				0332C90E1F829EBC00CBA6A7 /* Communication */,
 				0332C9151F829EBC00CBA6A7 /* Elements */,
 				0332C9191F829EBC00CBA6A7 /* Helpers */,
 				0332C91E1F829EBC00CBA6A7 /* Types */,
@@ -87,26 +82,6 @@
 				0332C90D1F829EBC00CBA6A7 /* OSCAddressPattern.swift */,
 			);
 			path = Addresses;
-			sourceTree = "<group>";
-		};
-		0332C90E1F829EBC00CBA6A7 /* Communication */ = {
-			isa = PBXGroup;
-			children = (
-				0332C90F1F829EBC00CBA6A7 /* OSCClient.swift */,
-				0332C9101F829EBC00CBA6A7 /* OSCServer.swift */,
-				0332C9111F829EBC00CBA6A7 /* ysocket */,
-			);
-			path = Communication;
-			sourceTree = "<group>";
-		};
-		0332C9111F829EBC00CBA6A7 /* ysocket */ = {
-			isa = PBXGroup;
-			children = (
-				0332C9121F829EBC00CBA6A7 /* ysocket.swift */,
-				0332C9131F829EBC00CBA6A7 /* yudpsocket.c */,
-				0332C9141F829EBC00CBA6A7 /* yudpsocket.swift */,
-			);
-			path = ysocket;
 			sourceTree = "<group>";
 		};
 		0332C9151F829EBC00CBA6A7 /* Elements */ = {
@@ -141,6 +116,17 @@
 				0332C9261F829EBC00CBA6A7 /* Timetag.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		0339171721B3BB860025B726 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0339172821B3BC140025B726 /* OSCDelegate.swift */,
+				0339171621B3BB860025B726 /* OSCNetwork.swift */,
+				0339171421B3BB860025B726 /* OSCClient.swift */,
+				0339171521B3BB860025B726 /* OSCServer.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		0339A34A1D37FCEB0060ED91 = {
@@ -246,11 +232,6 @@
 			files = (
 				032E3DC41F82A2A900DC931B /* OSCAddress.swift in Sources */,
 				032E3DC51F82A2A900DC931B /* OSCAddressPattern.swift in Sources */,
-				032E3DC61F82A2A900DC931B /* OSCClient.swift in Sources */,
-				032E3DC71F82A2A900DC931B /* OSCServer.swift in Sources */,
-				032E3DC81F82A2A900DC931B /* ysocket.swift in Sources */,
-				032E3DC91F82A2A900DC931B /* yudpsocket.c in Sources */,
-				032E3DCA1F82A2A900DC931B /* yudpsocket.swift in Sources */,
 				032E3DCB1F82A2A900DC931B /* OSCBundle.swift in Sources */,
 				032E3DCC1F82A2A900DC931B /* OSCElementProtocol.swift in Sources */,
 				032E3DCD1F82A2A900DC931B /* OSCMessage.swift in Sources */,
@@ -261,6 +242,7 @@
 				032E3DD21F82A2A900DC931B /* Float.swift in Sources */,
 				032E3DD31F82A2A900DC931B /* Impulse.swift in Sources */,
 				032E3DD41F82A2A900DC931B /* Int.swift in Sources */,
+				0339172921B3BC150025B726 /* OSCDelegate.swift in Sources */,
 				032E3DD51F82A2A900DC931B /* OSCTypeProtocol.swift in Sources */,
 				032E3DD61F82A2A900DC931B /* String.swift in Sources */,
 				032E3DD71F82A2A900DC931B /* Timetag.swift in Sources */,
@@ -395,7 +377,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.SwiftOSC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,7 +402,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.SwiftOSC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

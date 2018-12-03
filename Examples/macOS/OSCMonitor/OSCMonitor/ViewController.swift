@@ -11,9 +11,9 @@ import SwiftOSC
 
 let defaults = UserDefaults.standard
 
-class ViewController: NSViewController, NSTableViewDataSource, OSCServerDelegate {
+class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
     
-    
+    var server = OSCServer()
     
     var tableData: [TableData] = []
     var addressValue = OSCAddress()
