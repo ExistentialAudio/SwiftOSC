@@ -23,7 +23,7 @@
             location = "group:OSCServerTest/OSCServerTest.xcodeproj">
          </FileRef>
          <FileRef
-            location = "group:OSCTest/OSCTest.xcodeproj">
+            location = "group:OSCClientTest/OSCClientTest.xcodeproj">
          </FileRef>
       </Group>
       <Group

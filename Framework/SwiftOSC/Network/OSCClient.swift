@@ -22,6 +22,8 @@ public class OSCClient: OSCNetwork {
                 self?.receive()
             case .failed(let error):
                 print("SwiftOSC Client failed with error \(error)")
+            case .cancelled:
+                print("SwiftOSC Client connection cancelled.")
             default:
                 break
             }
@@ -38,6 +40,7 @@ public class OSCClient: OSCNetwork {
             connection?.send(content: data, completion: .contentProcessed({ (error) in
                 if let error = error {
                     print("Send error: \(error)")
+                    self.connection?.start(queue: self.queue)
                 }
             }))
         }

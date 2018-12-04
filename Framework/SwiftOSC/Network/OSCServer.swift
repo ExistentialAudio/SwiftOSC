@@ -48,11 +48,16 @@ public class OSCServer: OSCNetwork {
         if data.count > 9216 {
             print("OSCPacket is too large. Must be smaller than 9200 bytes.")
         } else {
-            connection?.send(content: data, completion: .contentProcessed({ (error) in
-                if let error = error {
-                    print("Send error: \(error)")
-                }
-            }))
+            if let connection = connection {
+                connection.send(content: data, completion: .contentProcessed({ (error) in
+                    if let error = error {
+                        print("Send error: \(error)")
+                    }
+                }))
+            } else {
+                print("No clients connected to server")
+            }
+
         }
     }
     
