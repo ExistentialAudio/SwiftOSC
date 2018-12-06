@@ -12,9 +12,8 @@ import Network
 protocol OSCNetwork {
     
     var delegate: OSCDelegate? { get set }
-    
-    var connection: NWConnection? { get set }
     var queue: DispatchQueue { get set }
+    var connection: NWConnection? { get set }
     
     func decodePacket(_ data: Data)
     func decodeBundle(_ data: Data)->OSCBundle?
@@ -167,7 +166,7 @@ extension OSCNetwork {
                 self.decodePacket(data)
             }
 
-            if error == nil {
+            if error == nil && self.connection != nil{
                 self.receive()
             }
         }

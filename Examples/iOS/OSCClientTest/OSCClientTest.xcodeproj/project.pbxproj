@@ -12,8 +12,8 @@
 		03E4CFD621B4FCD900D20889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E4CFD421B4FCD900D20889 /* Main.storyboard */; };
 		03E4CFD821B4FCDA00D20889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E4CFD721B4FCDA00D20889 /* Assets.xcassets */; };
 		03E4CFDB21B4FCDA00D20889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E4CFD921B4FCDA00D20889 /* LaunchScreen.storyboard */; };
-		9CDB130A21B70DB4008415F9 /* SwiftOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB130921B70DB4008415F9 /* SwiftOSC.framework */; };
-		9CDB130B21B70DB4008415F9 /* SwiftOSC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB130921B70DB4008415F9 /* SwiftOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C70446E21B834E50078F8F5 /* SwiftOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C70446D21B834E50078F8F5 /* SwiftOSC.framework */; };
+		9C70446F21B834E50078F8F5 /* SwiftOSC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C70446D21B834E50078F8F5 /* SwiftOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9CDB130B21B70DB4008415F9 /* SwiftOSC.framework in Embed Frameworks */,
+				9C70446F21B834E50078F8F5 /* SwiftOSC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +38,7 @@
 		03E4CFD721B4FCDA00D20889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03E4CFDA21B4FCDA00D20889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03E4CFDC21B4FCDA00D20889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CDB130921B70DB4008415F9 /* SwiftOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C70446D21B834E50078F8F5 /* SwiftOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CDB130A21B70DB4008415F9 /* SwiftOSC.framework in Frameworks */,
+				9C70446E21B834E50078F8F5 /* SwiftOSC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 		03E4CFC421B4FCD900D20889 = {
 			isa = PBXGroup;
 			children = (
-				9CDB130921B70DB4008415F9 /* SwiftOSC.framework */,
+				9C70446D21B834E50078F8F5 /* SwiftOSC.framework */,
 				03E4CFCF21B4FCD900D20889 /* OSCClientTest */,
 				03E4CFCE21B4FCD900D20889 /* Products */,
 			);
