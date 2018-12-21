@@ -56,8 +56,8 @@ Setup server delegate to handle incoming OSC Data
 class OSCHandler: OSCServerDelegate {
     
     func didReceive(_ message: OSCMessage){
-        if let integer = message.arguments[0] as Int {
-            print("Received int \(integer)"
+        if let integer = message.arguments[0] as? Int {
+            print("Received int \(integer)")
         } else {
             print(message)
         }
