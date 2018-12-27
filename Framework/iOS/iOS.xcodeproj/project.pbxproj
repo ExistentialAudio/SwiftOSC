@@ -14,16 +14,15 @@
 		032E3DB91F82A25400DC931B /* OSCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C8FB1F829EA200CBA6A7 /* OSCMessage.swift */; };
 		032E3DBA1F82A25400DC931B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C8FD1F829EA200CBA6A7 /* Extensions.swift */; };
 		032E3DBB1F82A25400DC931B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C8FE1F829EA200CBA6A7 /* Timer.swift */; };
-		032E3DBC1F82A25400DC931B /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9021F829EA200CBA6A7 /* Blob.swift */; };
+		032E3DBC1F82A25400DC931B /* OSCBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9021F829EA200CBA6A7 /* OSCBlob.swift */; };
 		032E3DBD1F82A25400DC931B /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9031F829EA200CBA6A7 /* Bool.swift */; };
 		032E3DBE1F82A25400DC931B /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9041F829EA200CBA6A7 /* Float.swift */; };
 		032E3DBF1F82A25400DC931B /* Impulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9051F829EA200CBA6A7 /* Impulse.swift */; };
 		032E3DC01F82A25400DC931B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9061F829EA200CBA6A7 /* Int.swift */; };
 		032E3DC11F82A25400DC931B /* OSCTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9071F829EA200CBA6A7 /* OSCTypeProtocol.swift */; };
 		032E3DC21F82A25400DC931B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9081F829EA200CBA6A7 /* String.swift */; };
-		032E3DC31F82A25400DC931B /* Timetag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9091F829EA200CBA6A7 /* Timetag.swift */; };
+		032E3DC31F82A25400DC931B /* OSCTimetag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9091F829EA200CBA6A7 /* OSCTimetag.swift */; };
 		0332C92A1F82A18300CBA6A7 /* SwiftOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0332C9281F82A11600CBA6A7 /* SwiftOSC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0339172321B3BBD20025B726 /* OSCNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339171D21B3BBD20025B726 /* OSCNetwork.swift */; };
 		0339172421B3BBD20025B726 /* OSCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339171E21B3BBD20025B726 /* OSCServer.swift */; };
 		0339172521B3BBD20025B726 /* OSCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339171F21B3BBD20025B726 /* OSCClient.swift */; };
 		0339172721B3BC010025B726 /* OSCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339172621B3BC010025B726 /* OSCDelegate.swift */; };
@@ -37,17 +36,16 @@
 		0332C8FB1F829EA200CBA6A7 /* OSCMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCMessage.swift; sourceTree = "<group>"; };
 		0332C8FD1F829EA200CBA6A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0332C8FE1F829EA200CBA6A7 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		0332C9021F829EA200CBA6A7 /* Blob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
+		0332C9021F829EA200CBA6A7 /* OSCBlob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCBlob.swift; sourceTree = "<group>"; };
 		0332C9031F829EA200CBA6A7 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		0332C9041F829EA200CBA6A7 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		0332C9051F829EA200CBA6A7 /* Impulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impulse.swift; sourceTree = "<group>"; };
 		0332C9061F829EA200CBA6A7 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		0332C9071F829EA200CBA6A7 /* OSCTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCTypeProtocol.swift; sourceTree = "<group>"; };
 		0332C9081F829EA200CBA6A7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		0332C9091F829EA200CBA6A7 /* Timetag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetag.swift; sourceTree = "<group>"; };
+		0332C9091F829EA200CBA6A7 /* OSCTimetag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCTimetag.swift; sourceTree = "<group>"; };
 		0332C9271F82A11600CBA6A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0332C9281F82A11600CBA6A7 /* SwiftOSC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOSC.h; sourceTree = "<group>"; };
-		0339171D21B3BBD20025B726 /* OSCNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCNetwork.swift; sourceTree = "<group>"; };
 		0339171E21B3BBD20025B726 /* OSCServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCServer.swift; sourceTree = "<group>"; };
 		0339171F21B3BBD20025B726 /* OSCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCClient.swift; sourceTree = "<group>"; };
 		0339172621B3BC010025B726 /* OSCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCDelegate.swift; sourceTree = "<group>"; };
@@ -109,14 +107,14 @@
 		0332C9011F829EA200CBA6A7 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				0332C9021F829EA200CBA6A7 /* Blob.swift */,
-				0332C9031F829EA200CBA6A7 /* Bool.swift */,
-				0332C9041F829EA200CBA6A7 /* Float.swift */,
-				0332C9051F829EA200CBA6A7 /* Impulse.swift */,
-				0332C9061F829EA200CBA6A7 /* Int.swift */,
 				0332C9071F829EA200CBA6A7 /* OSCTypeProtocol.swift */,
+				0332C9061F829EA200CBA6A7 /* Int.swift */,
+				0332C9041F829EA200CBA6A7 /* Float.swift */,
 				0332C9081F829EA200CBA6A7 /* String.swift */,
-				0332C9091F829EA200CBA6A7 /* Timetag.swift */,
+				0332C9031F829EA200CBA6A7 /* Bool.swift */,
+				0332C9051F829EA200CBA6A7 /* Impulse.swift */,
+				0332C9021F829EA200CBA6A7 /* OSCBlob.swift */,
+				0332C9091F829EA200CBA6A7 /* OSCTimetag.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				0339172621B3BC010025B726 /* OSCDelegate.swift */,
-				0339171D21B3BBD20025B726 /* OSCNetwork.swift */,
 				0339171E21B3BBD20025B726 /* OSCServer.swift */,
 				0339171F21B3BBD20025B726 /* OSCClient.swift */,
 			);
@@ -238,17 +235,16 @@
 				032E3DB91F82A25400DC931B /* OSCMessage.swift in Sources */,
 				032E3DBA1F82A25400DC931B /* Extensions.swift in Sources */,
 				032E3DBB1F82A25400DC931B /* Timer.swift in Sources */,
-				032E3DBC1F82A25400DC931B /* Blob.swift in Sources */,
+				032E3DBC1F82A25400DC931B /* OSCBlob.swift in Sources */,
 				032E3DBD1F82A25400DC931B /* Bool.swift in Sources */,
 				0339172421B3BBD20025B726 /* OSCServer.swift in Sources */,
 				032E3DBE1F82A25400DC931B /* Float.swift in Sources */,
 				032E3DBF1F82A25400DC931B /* Impulse.swift in Sources */,
 				032E3DC01F82A25400DC931B /* Int.swift in Sources */,
 				032E3DC11F82A25400DC931B /* OSCTypeProtocol.swift in Sources */,
-				0339172321B3BBD20025B726 /* OSCNetwork.swift in Sources */,
 				0339172721B3BC010025B726 /* OSCDelegate.swift in Sources */,
 				032E3DC21F82A25400DC931B /* String.swift in Sources */,
-				032E3DC31F82A25400DC931B /* Timetag.swift in Sources */,
+				032E3DC31F82A25400DC931B /* OSCTimetag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
