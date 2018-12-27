@@ -8,9 +8,9 @@
 
 import Foundation
 
-public typealias Timetag = UInt64
+public typealias OSCTimetag = UInt64
 
-extension Timetag: OSCType {
+extension OSCTimetag: OSCType {
     public var oscTag: String {
         get {
             return "t"
