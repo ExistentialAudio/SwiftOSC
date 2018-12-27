@@ -9,12 +9,12 @@
 import Foundation
 
 extension String: OSCType {
-    public var tag: String {
+    public var oscTag: String {
         get {
             return "s"
         }
     }
-    public var data: Data {
+    public var oscData: Data {
         get {
             var data = self.data(using: String.Encoding.utf8)!
             

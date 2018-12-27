@@ -15,12 +15,12 @@ public struct Impulse {
 }
 
 extension Impulse: OSCType {
-    public var tag: String {
+    public var oscTag: String {
         get {
             return "I"
         }
     }
-    public var data: Data {
+    public var oscData: Data {
         get {
             return Data()
         }

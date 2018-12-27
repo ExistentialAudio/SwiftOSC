@@ -9,7 +9,7 @@
 import Foundation
 
 extension Bool: OSCType {
-    public var tag: String {
+    public var oscTag: String {
         get {
             if self == true {
                 return "T"
@@ -18,7 +18,7 @@ extension Bool: OSCType {
             }
         }
     }
-    public var data: Data {
+    public var oscData: Data {
         get {
             return Data()
         }

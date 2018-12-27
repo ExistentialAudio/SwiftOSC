@@ -11,12 +11,12 @@ import Foundation
 public typealias Timetag = UInt64
 
 extension Timetag: OSCType {
-    public var tag: String {
+    public var oscTag: String {
         get {
             return "t"
         }
     }
-    public var data: Data {
+    public var oscData: Data {
         get {
             var int = self.bigEndian
             let buffer = UnsafeBufferPointer(start: &int, count: 1)

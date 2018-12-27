@@ -9,12 +9,12 @@
 import Foundation
 
 extension Int: OSCType {
-    public var tag: String {
+    public var oscTag: String {
         get {
             return "i"
         }
     }
-    public var data: Data {
+    public var oscData: Data {
         get {
             var int = Int32(self).bigEndian
             let buffer = UnsafeBufferPointer(start: &int, count: 1)

@@ -11,12 +11,12 @@ import Foundation
 public typealias Blob = Data
 
 extension Blob: OSCType {
-    public var tag: String {
+    public var oscTag: String {
         get {
             return "b"
         }
     }
-    public var data: Data {
+    public var oscData: Data {
         get {
             let length = UInt32(self.count)
             var data = Data()

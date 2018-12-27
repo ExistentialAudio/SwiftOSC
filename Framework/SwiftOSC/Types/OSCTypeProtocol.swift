@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol OSCType {
-    var tag: String { get }
-    var data: Data { get }
+    var oscTag: String { get }
+    var oscData: Data { get }
 }

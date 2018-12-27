@@ -9,12 +9,12 @@
 import Foundation
 
 extension Float: OSCType {
-    public var tag: String {
+    public var oscTag: String {
         get {
             return "f"
         }
     }
-    public var data: Data {
+    public var oscData: Data {
         get {
             var float = CFConvertFloat32HostToSwapped(Float32(self))
             let buffer = UnsafeBufferPointer(start: &float, count: 1)
@@ -31,12 +31,12 @@ extension Float: OSCType {
 
 //convert double to float for ease of access
 extension Double: OSCType {
-    public var tag: String {
+    public var oscTag: String {
         get {
             return "f"
         }
     }
-    public var data: Data {
+    public var oscData: Data {
         get {
             var float = CFConvertFloat32HostToSwapped(Float32(self))
             let buffer = UnsafeBufferPointer(start: &float, count: 1)
