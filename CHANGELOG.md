@@ -12,9 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Removed ysocket and replaced with Swift Network Framework.
 - Remove playground. Playground support for SwiftOSC was extremely buggy.
 - Removed OSCTest app for iOS and OSCMonitor for macOS and replaced with new OSCClientTest and OSCServerTest apps. 
+- Renamed Blob to OSCBlob
+- Renamed Timetag to OSCTimetag
+- Changed OSCType internal variables to oscData and oscTag
 
 ### Added
-- Client and server classes are now bidirectional. After initial connection is established both client and server can send and receive.
 - Client and server recognize timetags and send the messages to the delegate after the requested time.
 - More validation on incoming data. Server would previously crash if certain invalid data was received.
 
