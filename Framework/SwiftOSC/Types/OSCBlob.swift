@@ -8,9 +8,9 @@
 
 import Foundation
 
-public typealias Blob = Data
+public typealias OSCBlob = Data
 
-extension Blob: OSCType {
+extension OSCBlob: OSCType {
     public var oscTag: String {
         get {
             return "b"
