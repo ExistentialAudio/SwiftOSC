@@ -14,27 +14,28 @@ let defaults = UserDefaults.standard
 
 class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
     
-    var server = OSCServer()
+    var server: OSCServer?
     
     var tableData: [TableData] = []
     var addressValue = OSCAddress()
 
     @IBOutlet weak var port: NSTextField!
-    @IBOutlet weak var address: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        server.port = defaults.integer(forKey: "Port")
-        self.port.stringValue = String(server.port)
-        if let address = defaults.string(forKey: "Address") {
-            self.addressValue.string = address
-            self.address.stringValue = address
+        let defaultPort = defaults.integer(forKey: "Port")
+        if defaultPort == 0 {
+            server = OSCServer(port: defaultPort)
+            self.port.stringValue = String(defaultPort)
+        } else {
+            server = OSCServer(port: 8080)
+            self.port.stringValue = String(8080)
         }
         
         //setup to receive data from server
-        server.delegate = self
+        server?.delegate = self
         tableView.dataSource = self
         
     }
@@ -47,12 +48,9 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
 
     //add osc data from notification
     func didReceive(_ message: OSCMessage) {
-        print(message)
-        if message.address.matches(self.addressValue) {
-            let tableData = TableData(Date(), message)
-            self.tableData.append(tableData)
-            tableView.reloadData()
-        }
+        let tableData = TableData(Date(), message)
+        self.tableData.append(tableData)
+        tableView.reloadData()
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -75,8 +73,10 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
         return nil
     }
     @IBAction func changePort(_ sender: NSTextField) {
-        server.port = sender.integerValue
-        defaults.set(sender.integerValue, forKey: "Port")
+        if sender.integerValue != defaults.integer(forKey: "Port") {
+            _ = server?.change(port: sender.integerValue)
+            defaults.set(sender.integerValue, forKey: "Port")
+        }
     }
     
     @IBAction func changeOSCAddress(_ sender: NSTextField) {
@@ -113,15 +113,6 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
             catch {/* error handling here */}
         }
     }
-    @IBAction func startServer(_ sender: NSButton) {
-        if sender.integerValue == 0 {
-            sender.title = "Start"
-            server.stop()
-        } else {
-            server.start()
-            sender.title = "Stop"
-            
-        }
-    }
+
 }
 

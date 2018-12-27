@@ -24,6 +24,8 @@
 		032E3DD71F82A2A900DC931B /* OSCTimetag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9261F829EBC00CBA6A7 /* OSCTimetag.swift */; };
 		0332C9291F82A16700CBA6A7 /* SwiftOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0332C91D1F829EBC00CBA6A7 /* SwiftOSC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0339172921B3BC150025B726 /* OSCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339172821B3BC140025B726 /* OSCDelegate.swift */; };
+		037CBFB121D5412E0076F280 /* OSCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339171421B3BB860025B726 /* OSCClient.swift */; };
+		037CBFB221D541320076F280 /* OSCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339171521B3BB860025B726 /* OSCServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -228,6 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037CBFB221D541320076F280 /* OSCServer.swift in Sources */,
+				037CBFB121D5412E0076F280 /* OSCClient.swift in Sources */,
 				032E3DC41F82A2A900DC931B /* OSCAddress.swift in Sources */,
 				032E3DC51F82A2A900DC931B /* OSCAddressPattern.swift in Sources */,
 				032E3DCB1F82A2A900DC931B /* OSCBundle.swift in Sources */,
