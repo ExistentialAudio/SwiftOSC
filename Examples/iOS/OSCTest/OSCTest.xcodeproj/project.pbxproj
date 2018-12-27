@@ -12,8 +12,6 @@
 		03E4CFD621B4FCD900D20889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E4CFD421B4FCD900D20889 /* Main.storyboard */; };
 		03E4CFD821B4FCDA00D20889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E4CFD721B4FCDA00D20889 /* Assets.xcassets */; };
 		03E4CFDB21B4FCDA00D20889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E4CFD921B4FCDA00D20889 /* LaunchScreen.storyboard */; };
-		9C70446E21B834E50078F8F5 /* SwiftOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C70446D21B834E50078F8F5 /* SwiftOSC.framework */; };
-		9C70446F21B834E50078F8F5 /* SwiftOSC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C70446D21B834E50078F8F5 /* SwiftOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9C70446F21B834E50078F8F5 /* SwiftOSC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0372D8C621D584F500608ED7 /* SwiftOSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftOSC.framework; path = "../../../../../../../../../Library/Developer/Xcode/DerivedData/SwiftOSC-cjbpufttinyzqndhvioygecubmhs/Build/Products/Debug-iphoneos/SwiftOSC.framework"; sourceTree = "<group>"; };
 		03E4CFCD21B4FCD900D20889 /* OSCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E4CFD021B4FCD900D20889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03E4CFD221B4FCD900D20889 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,7 +36,6 @@
 		03E4CFD721B4FCDA00D20889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03E4CFDA21B4FCDA00D20889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03E4CFDC21B4FCDA00D20889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C70446D21B834E50078F8F5 /* SwiftOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,18 +43,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C70446E21B834E50078F8F5 /* SwiftOSC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0372D8C521D584DC00608ED7 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				0372D8C621D584F500608ED7 /* SwiftOSC.framework */,
+			);
+			name = Framework;
+			path = OSCTest;
+			sourceTree = "<group>";
+		};
 		03E4CFC421B4FCD900D20889 = {
 			isa = PBXGroup;
 			children = (
-				9C70446D21B834E50078F8F5 /* SwiftOSC.framework */,
 				03E4CFCF21B4FCD900D20889 /* OSCTest */,
+				0372D8C521D584DC00608ED7 /* Framework */,
 				03E4CFCE21B4FCD900D20889 /* Products */,
 			);
 			sourceTree = "<group>";
