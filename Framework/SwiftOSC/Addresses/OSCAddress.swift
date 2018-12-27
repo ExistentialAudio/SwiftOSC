@@ -14,7 +14,6 @@ public struct OSCAddress {
     public var string: String {
         didSet {
             if !valid(self.string) {
-                NSLog("\"\(self.string)\" is an invalid address")
                 self.string = oldValue
             }
         }
@@ -28,8 +27,6 @@ public struct OSCAddress {
         self.string = "/"
         if valid(address) {
             self.string = address
-        } else {
-            NSLog("\"\(address)\" is an invalid address")
         }
     }
     
@@ -37,7 +34,10 @@ public struct OSCAddress {
     func valid(_ address: String) ->Bool {
         //invalid characters: space * , ? [ ] { } OR two or more / in a row AND must start with / AND no empty strings
         if address.range(of: "[\\s\\*,?\\[\\]\\{\\}]|/{2,}|^[^/]|^$", options: .regularExpression) != nil {
+        
             //returns false if there are any matches
+            NSLog("\"\(self.string)\" is an invalid address. Invalid characters include: space * , ? [ ] { }. No more than two consecutive \"/\". Address must start with /. No empty strings")
+            
             return false
         } else {
             return true
