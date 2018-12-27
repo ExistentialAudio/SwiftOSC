@@ -17,7 +17,7 @@
 		032E3DBC1F82A25400DC931B /* OSCBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9021F829EA200CBA6A7 /* OSCBlob.swift */; };
 		032E3DBD1F82A25400DC931B /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9031F829EA200CBA6A7 /* Bool.swift */; };
 		032E3DBE1F82A25400DC931B /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9041F829EA200CBA6A7 /* Float.swift */; };
-		032E3DBF1F82A25400DC931B /* Impulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9051F829EA200CBA6A7 /* Impulse.swift */; };
+		032E3DBF1F82A25400DC931B /* OSCImpulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9051F829EA200CBA6A7 /* OSCImpulse.swift */; };
 		032E3DC01F82A25400DC931B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9061F829EA200CBA6A7 /* Int.swift */; };
 		032E3DC11F82A25400DC931B /* OSCTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9071F829EA200CBA6A7 /* OSCTypeProtocol.swift */; };
 		032E3DC21F82A25400DC931B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9081F829EA200CBA6A7 /* String.swift */; };
@@ -39,7 +39,7 @@
 		0332C9021F829EA200CBA6A7 /* OSCBlob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCBlob.swift; sourceTree = "<group>"; };
 		0332C9031F829EA200CBA6A7 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		0332C9041F829EA200CBA6A7 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
-		0332C9051F829EA200CBA6A7 /* Impulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impulse.swift; sourceTree = "<group>"; };
+		0332C9051F829EA200CBA6A7 /* OSCImpulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCImpulse.swift; sourceTree = "<group>"; };
 		0332C9061F829EA200CBA6A7 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		0332C9071F829EA200CBA6A7 /* OSCTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCTypeProtocol.swift; sourceTree = "<group>"; };
 		0332C9081F829EA200CBA6A7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				0332C9041F829EA200CBA6A7 /* Float.swift */,
 				0332C9081F829EA200CBA6A7 /* String.swift */,
 				0332C9031F829EA200CBA6A7 /* Bool.swift */,
-				0332C9051F829EA200CBA6A7 /* Impulse.swift */,
+				0332C9051F829EA200CBA6A7 /* OSCImpulse.swift */,
 				0332C9021F829EA200CBA6A7 /* OSCBlob.swift */,
 				0332C9091F829EA200CBA6A7 /* OSCTimetag.swift */,
 			);
@@ -239,7 +239,7 @@
 				032E3DBD1F82A25400DC931B /* Bool.swift in Sources */,
 				0339172421B3BBD20025B726 /* OSCServer.swift in Sources */,
 				032E3DBE1F82A25400DC931B /* Float.swift in Sources */,
-				032E3DBF1F82A25400DC931B /* Impulse.swift in Sources */,
+				032E3DBF1F82A25400DC931B /* OSCImpulse.swift in Sources */,
 				032E3DC01F82A25400DC931B /* Int.swift in Sources */,
 				032E3DC11F82A25400DC931B /* OSCTypeProtocol.swift in Sources */,
 				0339172721B3BC010025B726 /* OSCDelegate.swift in Sources */,

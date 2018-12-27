@@ -122,7 +122,7 @@ public class OSCServer {
     func decodeBundle(_ data: Data)->OSCBundle? {
         
         //extract timetag
-        let bundle = OSCBundle(Timetag(data.subdata(in: 8..<16)))
+        let bundle = OSCBundle(OSCTimetag(data.subdata(in: 8..<16)))
         
         var bundleData = data.subdata(in: 16..<data.count)
         
@@ -183,7 +183,7 @@ public class OSCServer {
                     case "b": //blob
                         var length = Int(messageData.subdata(in: Range(0...3)).toInt32())
                         messageData = messageData.subdata(in: 4..<messageData.count)
-                        message.add(Blob(messageData.subdata(in: 0..<length)))
+                        message.add(OSCBlob(messageData.subdata(in: 0..<length)))
                         while length%4 != 0 {//remove null ending
                             length += 1
                         }
@@ -196,9 +196,9 @@ public class OSCServer {
                     case "N"://null
                         message.add()
                     case "I"://impulse
-                        message.add(Impulse())
+                        message.add(OSCImpulse())
                     case "t"://timetag
-                        message.add(Timetag(messageData.subdata(in: Range(0...7))))
+                        message.add(OSCTimetag(messageData.subdata(in: Range(0...7))))
                         messageData = messageData.subdata(in: 8..<messageData.count)
                     default:
                         print("unknown osc type")

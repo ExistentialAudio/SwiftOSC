@@ -15,7 +15,7 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
             var types = ","
             for argument in self.arguments {
                 if let argument = argument {
-                    types += argument.tag
+                    types += argument.oscTag
                 } else {
                     //add null tag if nil argument
                     types += "N"
@@ -26,7 +26,7 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
             //get arguments data
             for argument in arguments {
                 if let argument = argument {
-                    data.append(argument.data)
+                    data.append(argument.oscData)
                 }
             }
             
@@ -50,7 +50,7 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
             if let string = argument as? String {
                 description += " String<\(string)>"
             }
-            if let blob = argument as? Blob {
+            if let blob = argument as? OSCBlob {
                 description += " Blob\(blob)"
             }
             if let bool = argument as? Bool {
@@ -59,10 +59,10 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
             if argument == nil {
                 description += " <null>"
             }
-            if argument is Impulse {
+            if argument is OSCImpulse {
                 description += " <impulse>"
             }
-            if let timetag = argument as? Timetag {
+            if let timetag = argument as? OSCTimetag {
                 description += " Timetag<\(timetag)>"
             }
         }

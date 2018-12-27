@@ -2,7 +2,7 @@ import Foundation
 
 public class OSCBundle: OSCElement, CustomStringConvertible {
     //MARK: Properties
-    public var timetag: Timetag
+    public var timetag: OSCTimetag
     public var elements:[OSCElement] = []
     public var data: Data {
         get {
@@ -11,7 +11,7 @@ public class OSCBundle: OSCElement, CustomStringConvertible {
             data.append("#bundle".toDataBase32())
             
             //add timetag
-            data.append(timetag.data)
+            data.append(timetag.oscData)
             
             //add elements data
             for element in elements {
@@ -29,11 +29,11 @@ public class OSCBundle: OSCElement, CustomStringConvertible {
     }
     
     //MARK: Initializers
-    public init(_ timetag: Timetag){
+    public init(_ timetag: OSCTimetag){
         self.timetag = timetag
     }
     
-    public init (_ timetag: Timetag, _ elements: OSCElement...){
+    public init (_ timetag: OSCTimetag, _ elements: OSCElement...){
         self.timetag = timetag
         self.elements = elements
     }

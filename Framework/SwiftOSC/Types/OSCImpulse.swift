@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct Impulse {
+public struct OSCImpulse {
     public init(){
         
     }
 }
 
-extension Impulse: OSCType {
+extension OSCImpulse: OSCType {
     public var oscTag: String {
         get {
             return "I"
@@ -26,5 +26,3 @@ extension Impulse: OSCType {
         }
     }
 }
-
-public let impulse = Impulse()
