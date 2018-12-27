@@ -14,7 +14,7 @@ public class OSCServer {
         
         // check port range
         if port > 65535 && port >= 0{
-            print("Invalid Port: Out of range.")
+            NSLog("Invalid Port: Out of range.")
             return nil
         }
         
@@ -27,7 +27,7 @@ public class OSCServer {
     public func change(port: Int)->Bool{
         // check port range
         if port > 65535 && port >= 0{
-            print("Invalid Port: Out of range.")
+            NSLog("Invalid Port: Out of range.")
             return false
         }
         self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
@@ -49,11 +49,11 @@ public class OSCServer {
         // handle incoming connections server will only respond to the latest connection
         listener?.newConnectionHandler = { [weak self] (newConnection) in
             
-            print("New Connection from \(String(describing: newConnection))")
+            NSLog("New Connection from \(String(describing: newConnection))")
             
             // cancel previous connection
             if self?.connection != nil {
-                print("Cancelling conecction: \(String(describing: newConnection))")
+                NSLog("Cancelling conecction: \(String(describing: newConnection))")
                 self?.connection?.cancel()
             }
             
@@ -66,11 +66,11 @@ public class OSCServer {
         listener?.stateUpdateHandler = { [weak self] (newState) in
             switch newState {
             case .ready:
-                print("Listening on port \(String(describing: self?.listener?.port))")
+                NSLog("Listening on port \(String(describing: self?.listener?.port))")
             case .failed(let error):
-                print("Listener failed with error \(error)")
+                NSLog("Listener failed with error \(error)")
             case .cancelled:
-                print("Listener cancelled")
+                NSLog("Listener cancelled")
             default:
                 break
             }
@@ -104,18 +104,18 @@ public class OSCServer {
             if let message = decodeMessage(data){
                 self.sendToDelegate(message)
             } else {
-                print("invalid message")
+                NSLog("invalid message")
             }
         } else if data.count > 8 {//make sure we have at least 8 bytes before checking if a bundle.
             if "#bundle\0".toData() == data.subdata(in: Range(0...7)){//matches string #bundle
                 if let bundle = decodeBundle(data){
                     self.sendToDelegate(bundle)
                 } else {
-                    print("invalid bundle")
+                    NSLog("invalid bundle")
                 }
             }
         } else {
-            print("invalid packet")
+            NSLog("invalid packet")
         }
     }
     
@@ -201,7 +201,7 @@ public class OSCServer {
                         message.add(OSCTimetag(messageData.subdata(in: Range(0...7))))
                         messageData = messageData.subdata(in: 8..<messageData.count)
                     default:
-                        print("unknown osc type")
+                        NSLog("unknown osc type")
                         return nil
                     }
                 }
@@ -234,9 +234,5 @@ public class OSCServer {
         
         // setup new listener
         setupListener()
-    }
-    
-    deinit {
-        print("deinit server")
     }
 }

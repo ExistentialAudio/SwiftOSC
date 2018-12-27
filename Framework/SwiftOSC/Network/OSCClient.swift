@@ -14,12 +14,12 @@ public class OSCClient {
         // check if string is empty
         if host == "" {
             
-            print("Invalid Hostname: No empty strings allowed.")
+            NSLog("Invalid Hostname: No empty strings allowed.")
             return nil
             
         }
         if port > 65535 && port >= 0{
-            print("Invalid Port: Out of range.")
+            NSLog("Invalid Port: Out of range.")
             return nil
         }
         
@@ -35,11 +35,11 @@ public class OSCClient {
         // check if string is empty
         if host == "" {
             
-            print("Invalid Hostname: No empty strings allowed")
+            NSLog("Invalid Hostname: No empty strings allowed")
             return false
             
         } else if port > 65535 && port >= 0{
-            print("Invalid Port: Out of range.")
+            NSLog("Invalid Port: Out of range.")
             return false
             
         } else {
@@ -63,7 +63,7 @@ public class OSCClient {
             return true
             
         } else {
-            print("Invalid Hostname: No empty strings allowed")
+            NSLog("Invalid Hostname: No empty strings allowed")
             return false
         }
     }
@@ -72,7 +72,7 @@ public class OSCClient {
         
         // check port range
         if port > 65535 && port >= 0{
-            print("Invalid Port: Out of range.")
+            NSLog("Invalid Port: Out of range.")
             return false
         }
         
@@ -92,19 +92,19 @@ public class OSCClient {
         connection?.stateUpdateHandler = { [weak self] (newState) in
             switch newState {
             case .ready:
-                print("SwiftOSC Client is ready. \(String(describing: self?.connection))")
+                NSLog("SwiftOSC Client is ready. \(String(describing: self?.connection))")
             case .failed(let error):
-                print("SwiftOSC Client failed with error \(error)")
-                print("SWiftOSC Client is restarting.")
+                NSLog("SwiftOSC Client failed with error \(error)")
+                NSLog("SWiftOSC Client is restarting.")
                 self?.setupConnection()
             case .cancelled:
-                print("SwiftOSC Client connection cancelled.")
+                NSLog("SwiftOSC Client connection cancelled.")
             case .waiting(let error):
-                print("SwiftOSC Client waiting with error \(error)")
+                NSLog("SwiftOSC Client waiting with error \(error)")
             case .preparing:
-                print("SwiftOSC Client preparing")
+                NSLog("SwiftOSC Client preparing")
             case .setup:
-                print("SwiftOSC Client setup")
+                NSLog("SwiftOSC Client setup")
             }
         }
         
@@ -117,7 +117,7 @@ public class OSCClient {
         let data = element.data
         connection?.send(content: data, completion: .contentProcessed({ (error) in
             if let error = error {
-                print("Send error: \(error)")
+                NSLog("Send error: \(error)")
             }
         }))
     }
@@ -128,9 +128,5 @@ public class OSCClient {
         
         // setup new listener
         setupConnection()
-    }
-    
-    deinit {
-        print("deinit client")
     }
 }
