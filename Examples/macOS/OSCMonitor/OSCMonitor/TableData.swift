@@ -64,7 +64,7 @@ struct TableData {
             if let string = argument as? String {
                 description += " String<\(string)>"
             }
-            if let blob = argument as? Blob {
+            if let blob = argument as? OSCBlob {
                 description += " Blob\(blob)"
             }
             if let bool = argument as? Bool {
@@ -73,10 +73,10 @@ struct TableData {
             if argument == nil {
                 description += " <null>"
             }
-            if argument is Impulse {
+            if argument is OSCImpulse {
                 description += " <impulse>"
             }
-            if let timetag = argument as? Timetag {
+            if let timetag = argument as? OSCTimetag {
                 description += " Timetag<\(timetag)>"
             }
         }

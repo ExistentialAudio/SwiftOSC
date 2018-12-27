@@ -127,7 +127,7 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
         client?.send(message)
     }
     @IBAction func sendImpulse(_ sender: UIButton) {
-        let message = OSCMessage(destinationAddressPattern, impulse)
+        let message = OSCMessage(destinationAddressPattern, OSCImpulse())
         client?.send(message)
     }
     
@@ -145,7 +145,7 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
                 if let bool = argument as? Bool {
                     booleanSwitch.setOn(bool, animated: true)
                 }
-                if argument is Impulse {
+                if argument is OSCImpulse {
                     let alertController = UIAlertController(title: "BANG", message:
                         "", preferredStyle: UIAlertController.Style.alert)
                     alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default,handler: nil))
