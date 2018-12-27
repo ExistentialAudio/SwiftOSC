@@ -1,33 +1,86 @@
 import Foundation
 import Network
 
-public class OSCClient: OSCNetwork {
-    
-    public var delegate: OSCDelegate?
+public class OSCClient {
     
     var connection: NWConnection?
     var queue: DispatchQueue
     
-    public var host: NWEndpoint.Host {
-        didSet {
-            connection?.cancel()
-            setupConnection()
+    var host: NWEndpoint.Host
+    var port: NWEndpoint.Port
+    
+    public init?(host: String, port: Int) {
+        
+        // check if string is empty
+        if host == "" {
+            
+            print("Invalid Hostname: No empty strings allowed.")
+            return nil
+            
         }
+        if port > 65535 && port >= 0{
+            print("Invalid Port: Out of range.")
+            return nil
+        }
+        
+        self.host = NWEndpoint.Host(host)
+        self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
+        
+        queue = DispatchQueue(label: "SwiftOSC Client")
+        setupConnection()
     }
-    public var port: NWEndpoint.Port {
-        didSet {
+    
+    public func change(host: String, port: Int)->Bool{
+        
+        // check if string is empty
+        if host == "" {
+            
+            print("Invalid Hostname: No empty strings allowed")
+            return false
+            
+        } else if port > 65535 && port >= 0{
+            print("Invalid Port: Out of range.")
+            return false
+            
+        } else {
+            
+            self.host = NWEndpoint.Host(host)
+            self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
+            
             connection?.cancel()
             setupConnection()
+            return true
+            
         }
     }
     
-    public init(host: NWEndpoint.Host, port: NWEndpoint.Port) {
-        self.host = host
-        self.port = port
+    public func change(host: String)->Bool {
+        if host != "" {
+            self.host = NWEndpoint.Host(host)
+            
+            connection?.cancel()
+            setupConnection()
+            return true
+            
+        } else {
+            print("Invalid Hostname: No empty strings allowed")
+            return false
+        }
+    }
+    
+    public func change(port: Int)->Bool {
         
-        queue = DispatchQueue(label: "SwiftOSC Client")
+        // check port range
+        if port > 65535 && port >= 0{
+            print("Invalid Port: Out of range.")
+            return false
+        }
         
+        self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
+        
+        connection?.cancel()
         setupConnection()
+        return true
     }
     
     func setupConnection(){
@@ -36,19 +89,22 @@ public class OSCClient: OSCNetwork {
         connection = NWConnection(host: host, port: port, using: .udp)
         
         // setup state update handler
-        connection?.stateUpdateHandler = { (newState) in
+        connection?.stateUpdateHandler = { [weak self] (newState) in
             switch newState {
             case .ready:
-                print("SwiftOSC Client is ready. \(String(describing: self.connection))")
-                self.receive()
+                print("SwiftOSC Client is ready. \(String(describing: self?.connection))")
             case .failed(let error):
                 print("SwiftOSC Client failed with error \(error)")
                 print("SWiftOSC Client is restarting.")
-                self.setupConnection()
+                self?.setupConnection()
             case .cancelled:
                 print("SwiftOSC Client connection cancelled.")
-            default:
-                break
+            case .waiting(let error):
+                print("SwiftOSC Client waiting with error \(error)")
+            case .preparing:
+                print("SwiftOSC Client preparing")
+            case .setup:
+                print("SwiftOSC Client setup")
             }
         }
         
@@ -64,5 +120,17 @@ public class OSCClient: OSCNetwork {
                 print("Send error: \(error)")
             }
         }))
+    }
+    public func restart() {
+        // destroy connection and listener
+        connection?.forceCancel()
+
+        
+        // setup new listener
+        setupConnection()
+    }
+    
+    deinit {
+        print("deinit client")
     }
 }
