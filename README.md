@@ -13,7 +13,7 @@ SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server framework.
 ## Installation
 
 ```
-pod 'SwiftOSC', '~> 1.2'
+pod 'SwiftOSC', '~> 2.0'
 ```
 
 OR
@@ -44,13 +44,8 @@ Create Server
 ```swift
 var server = OSCServer(address: "", port: 8080)
 ```
-#### Step 3
-Start server
-```
-server.start()
-```
 
-#### Step 4
+#### Step 3
 Setup server delegate to handle incoming OSC Data
 ```swift
 class OSCHandler: OSCServerDelegate {
@@ -80,16 +75,16 @@ var client = OSCClient(address: "localhost", port: 8080)
 Create a message
 ```swift
 var message = OSCMessage(
-    OSCAddressPattern("/"), 
-    100, 
-    5.0, 
-    "Hello World", 
-    Blob(), 
-    true, 
-    false, 
-    nil, 
-    impulse, 
-    Timetag(1)
+    OSCAddressPattern("/"),
+    100,                        // Int
+    5.0,                        // float
+    "Hello World",              // string 
+    true,                       // bool
+    false,                      // bool
+    nil,                        // null
+    OSCBlob(),                  // OSCBlob    aka Data()
+    OSCImpulse(),               // OSCImpulse
+    OSCTimetag(1)               // OSCTimetag aka UInt64()
 )
 ```
 #### Step 4
