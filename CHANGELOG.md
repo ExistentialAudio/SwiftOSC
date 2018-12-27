@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+ - Client and server recognize timetags and send the messages to the delegate after the requested time.o,[
+
 
 ## [2.0]
 ### Change
@@ -17,10 +19,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Changed OSCType internal variables to oscData and oscTag
 
 ### Added
-- Client and server recognize timetags and send the messages to the delegate after the requested time.
-- More validation on incoming data. Server would previously crash if certain invalid data was received.
+- Add watchOS Framework
+- Add tvOS Framework
 
 ### Fixed
+ - Server would previously crash if certain invalid data was received.  Added more validation on incoming data. 
 
 ## [1.2.3] - 2018-10-30
 ### Changed
