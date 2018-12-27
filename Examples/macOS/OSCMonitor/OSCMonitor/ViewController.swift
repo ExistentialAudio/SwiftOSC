@@ -26,7 +26,7 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
 
         // Do any additional setup after loading the view.
         let defaultPort = defaults.integer(forKey: "Port")
-        if defaultPort == 0 {
+        if defaultPort != 0 {
             server = OSCServer(port: defaultPort)
             self.port.stringValue = String(defaultPort)
         } else {
