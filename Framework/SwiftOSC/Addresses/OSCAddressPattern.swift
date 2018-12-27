@@ -14,7 +14,6 @@ public struct OSCAddressPattern {
     public var string: String {
         didSet {
             if !valid(self.string) {
-                NSLog("\"\(self.string)\" is an invalid address")
                 self.string = oldValue
             } else {
                 self.regex = makeRegex(from: self.string)
@@ -112,47 +111,57 @@ public struct OSCAddressPattern {
         
         //no empty strings
         if address == "" {
+            NSLog("\"\(self.string)\" is an invalid address: Address is empty.")
             return false
         }
         //must start with "/"
         if address.first != "/" {
+            NSLog("\"\(self.string)\" is an invalid address. Address must begin with \"/\".")
             return false
         }
         //no more than two "/" in a row
         if address.range(of: "/{3,}", options: .regularExpression) != nil {
+            NSLog("\"\(self.string)\" is an invalid address. Address must not contain more than two consecutive \"/\".")
             return false
         }
         //no spaces
         if address.range(of: "\\s", options: .regularExpression) != nil {
+            NSLog("\"\(self.string)\" is an invalid address. Address must not contain spaces.")
             return false
         }
         //[ must be closed, no invalid characters inside
         if address.range(of: "\\[(?![^\\[\\{\\},?\\*/]+\\])", options: .regularExpression) != nil {
+            NSLog("\"\(self.string)\" is an invalid address. [] must not contain invalid characters: \\[(?![^\\[\\{\\},?\\*/]+\\])")
             return false
         }
         var open = address.components(separatedBy: "[").count
         var close = address.components(separatedBy: "]").count
         
         if open != close {
+            NSLog("\"\(self.string)\" is an invalid address. [] must be closed.")
             return false
         }
         
         //{ must be closed, no invalid characters inside
         if address.range(of: "\\{(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
+            NSLog("\"\(self.string)\" is an invalid address. {} must not contain invalid characters: \\{(?![^\\{\\[\\]?\\*/]+\\})")
             return false
         }
         open = address.components(separatedBy: "{").count
         close = address.components(separatedBy: "}").count
         
         if open != close {
+            NSLog("\"\(self.string)\" is an invalid address. {} must be closed.")
             return false
         }
         
         //"," only inside {}
         if address.range(of: ",(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
+            NSLog("\"\(self.string)\" is an invalid address. Must only contain \",\" inside {}.")
             return false
         }
         if address.range(of: ",(?<!\\{[^\\{\\[\\]?\\*/]+)", options: .regularExpression) != nil {
+            NSLog("\"\(self.string)\" is an invalid address. Must only contain \",\" inside {}.")
             return false
         }
         
