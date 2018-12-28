@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'SwiftOSC'
     s.version          = '2.0.0'
-    s.summary          = 'SwiftOSC is an Open Sound Control client and server framework written in Swift. '
+    s.summary          = 'SwiftOSC is an Open Sound Control v1.1 client and server framework written in Swift.'
 
     s.description      = <<-DESC
 SwiftOSC is an Open Sound Control client and server framework written in Swift. SwiftOSC impliments all the functionality of the OSC 1.0 specifications (http://opensoundcontrol.org/spec-1_0) and is also exteneded to include the features of OSC 1.1 (https://hangar.org/webnou/wp-content/uploads/2012/01/Nime09OSCfinal.pdf).
