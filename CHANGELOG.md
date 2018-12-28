@@ -6,7 +6,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
- - Client and server recognize timetags and send the messages to the delegate after the requested time.
  - Add watchOS Framework
 
 
@@ -24,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
  - Server would previously crash if certain invalid data was received.  Added more validation on incoming data. 
+ - Client and server recognize timetags and send the messages to the delegate after the requested time.
 
 ## [1.2.3] - 2018-10-30
 ### Changed
