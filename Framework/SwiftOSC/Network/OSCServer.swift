@@ -53,7 +53,7 @@ public class OSCServer {
             
             // cancel previous connection
             if self?.connection != nil {
-                NSLog("Cancelling conecction: \(String(describing: newConnection))")
+                NSLog("Cancelling connection: \(String(describing: newConnection))")
                 self?.connection?.cancel()
             }
             

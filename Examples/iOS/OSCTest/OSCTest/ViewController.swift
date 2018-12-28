@@ -60,37 +60,45 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
     
     @IBAction func changeClientHost(_ sender: UITextField) {
         if let host = sender.text{
-            
-            if (client?.change(host: host))! {
-                clientHost = host
-                defaults.set(clientHost, forKey: "clientHost")
-                clientHostTextField.text = clientHost
+            if host != clientHost {
+                if (client?.change(host: host))! {
+                    clientHost = host
+                    defaults.set(clientHost, forKey: "clientHost")
+                    clientHostTextField.text = clientHost
+                }
             }
         }
+        clientHostTextField.text = clientHost
     }
     
     @IBAction func changeClientPort(_ sender: UITextField) {
         if let text = sender.text {
-            if let port = Int(text) {
-                if (client?.change(port: port))! {
-                    clientPort = port
-                    defaults.set(clientPort, forKey: "clientPort")
-                    clientPortTextField.text = String(clientPort)
+            if let port = Int(text) { // if integer
+                if port != clientPort {
+                    if (client?.change(port: port))! { // if different port
+                        clientPort = port
+                        defaults.set(clientPort, forKey: "clientPort")
+                        clientPortTextField.text = String(clientPort)
+                    }
                 }
             }
         }
+        clientPortTextField.text = String(clientPort)
     }
     
     @IBAction func changeServerPort(_ sender: UITextField) {
         if let text = sender.text {
-            if let port = Int(text) {
-                if (server?.change(port: port))! {
-                    serverPort = port
-                    defaults.set(serverPort, forKey: "serverPort")
-                    serverPortTextField.text = String(serverPort)
+            if let port = Int(text) { // if integer
+                if port != serverPort { // if different port
+                    if (server?.change(port: port))! {
+                        serverPort = port
+                        defaults.set(serverPort, forKey: "serverPort")
+                        serverPortTextField.text = String(serverPort)
+                    }
                 }
             }
         }
+        serverPortTextField.text = String(serverPort)
     }
     
     @IBAction func changeDestinationAddressPattern(_ sender: UITextField) {
