@@ -76,15 +76,15 @@ Create a message
 ```swift
 var message = OSCMessage(
     OSCAddressPattern("/"),
-    100,                        // Int
-    5.0,                        // float
-    "Hello World",              // string 
-    true,                       // bool
-    false,                      // bool
-    nil,                        // null
-    OSCBlob(),                  // OSCBlob    aka Data()
-    OSCImpulse(),               // OSCImpulse
-    OSCTimetag(1)               // OSCTimetag aka UInt64()
+    100,
+    5.0,
+    "Hello World",
+    true,
+    false,
+    nil,
+    OSCBlob(),                  // aka Data()
+    OSCImpulse(),
+    OSCTimetag(1)               // aka UInt64()
 )
 ```
 #### Step 4
@@ -92,9 +92,8 @@ Send message
 ```swift
 client.send(message)
 ```
-
 ## Known Issues
-* All OSC messages are delivered immediately. Timetags are ignored.
+ - OSCClient loses connection following returning from being in the background. Call client.restart() in this situation.
 
 ## About
 
