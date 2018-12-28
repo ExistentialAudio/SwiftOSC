@@ -5,25 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
- - Add watchOS Framework
+## [2.1.0 Unreleased]
+### Added
+ - Support for watchOS
+ 
+ ### Changed
+ - Fixed OSCClient connection issue following returning from the background in iOS.
 
-## [2.0]
+## [2.0.0]
+
 ### Change
 - Removed ysocket and replaced with Swift Network Framework.
-- Remove playground. Playground support for SwiftOSC was extremely buggy.
-- Removed OSCTest app for iOS and OSCMonitor for macOS and replaced with new OSCClientTest and OSCServerTest apps. 
+- Removed playground. Playground support for SwiftOSC was extremely buggy.
+- Removed OSCTest app for iOS and replaced with new OSCTest app. 
 - Renamed Blob to OSCBlob
 - Renamed Timetag to OSCTimetag
 - Changed OSCType internal variables to oscData and oscTag
-- Renamed and reorganized files.
 
 ### Added
-- Add tvOS Framework
+- Support for tvOS
 
 ### Fixed
  - Server would previously crash if certain invalid data was received.  Added more validation on incoming data. 
  - Client and server recognize timetags and send the messages to the delegate after the requested time.
+ 
+ ### Known Issues
+ - OSCClient loses connection following returning from the background in IOS. 
+            Workaround: Restart OSCClient after returning from the background.
 
 ## [1.2.3] - 2018-10-30
 ### Changed
