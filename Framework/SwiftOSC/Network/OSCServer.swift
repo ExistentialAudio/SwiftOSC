@@ -111,7 +111,7 @@ public class OSCServer {
                 }
             }
         } else {
-            NSLog("Invalid OSCPacket: data must begin with #bundle\0 or /")
+            NSLog("Invalid OSCPacket: data must begin with #bundle\\0 or /")
         }
     }
     
@@ -132,7 +132,7 @@ public class OSCServer {
                 } else {
                     return nil
                 }
-            } else if data[0] == 0x2f {
+            } else if nextData[0] == 0x2f { // matches /
                 
                 if let message = self.decodeMessage(nextData) {
                     bundle.add(message)
@@ -140,7 +140,7 @@ public class OSCServer {
                     return nil
                 }
             } else {
-                NSLog("Invalid OSCBundle: Bundle data must begin with #bundle\0 or /.")
+                NSLog("Invalid OSCBundle: Bundle data must begin with #bundle\\0 or /.")
                 return nil
             }
         }
@@ -220,9 +220,20 @@ public class OSCServer {
                 self.delegate?.didReceive(message)
             }
             if let bundle = element as? OSCBundle {
-                self.delegate?.didReceive(bundle)
-                for element in bundle.elements {
-                    self.sendToDelegate(element)
+                
+                // send to delegate at the correct time
+                if bundle.timetag.secondsSinceNow < 0 {
+                    self.delegate?.didReceive(bundle)
+                    for element in bundle.elements {
+                        self.sendToDelegate(element)
+                    }
+                } else {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + bundle.timetag.secondsSinceNow, execute: {
+                        self.delegate?.didReceive(bundle)
+                        for element in bundle.elements {
+                            self.sendToDelegate(element)
+                        }
+                    })
                 }
             }
         }
