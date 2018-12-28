@@ -7,13 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		034EDFED21D6129000C4DD61 /* SwiftOSC in Resources */ = {isa = PBXBuildFile; fileRef = 034EDFEC21D6129000C4DD61 /* SwiftOSC */; };
-		034EDFF221D612FA00C4DD61 /* SwiftOSC in Sources */ = {isa = PBXBuildFile; fileRef = 034EDFEC21D6129000C4DD61 /* SwiftOSC */; };
+		034EE07721D615A100C4DD61 /* OSCFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE05E21D615A100C4DD61 /* OSCFloat.swift */; };
+		034EE07821D615A100C4DD61 /* OSCTimetag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE05F21D615A100C4DD61 /* OSCTimetag.swift */; };
+		034EE07921D615A100C4DD61 /* OSCBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06021D615A100C4DD61 /* OSCBlob.swift */; };
+		034EE07A21D615A100C4DD61 /* OSCImpulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06121D615A100C4DD61 /* OSCImpulse.swift */; };
+		034EE07B21D615A100C4DD61 /* OSCInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06221D615A100C4DD61 /* OSCInt.swift */; };
+		034EE07C21D615A100C4DD61 /* OSCTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06321D615A100C4DD61 /* OSCTypeProtocol.swift */; };
+		034EE07D21D615A100C4DD61 /* OSCString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06421D615A100C4DD61 /* OSCString.swift */; };
+		034EE07E21D615A100C4DD61 /* OSCBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06521D615A100C4DD61 /* OSCBool.swift */; };
+		034EE07F21D615A100C4DD61 /* OSCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06721D615A100C4DD61 /* OSCDelegate.swift */; };
+		034EE08021D615A100C4DD61 /* OSCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06821D615A100C4DD61 /* OSCServer.swift */; };
+		034EE08121D615A100C4DD61 /* OSCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06921D615A100C4DD61 /* OSCClient.swift */; };
+		034EE08221D615A100C4DD61 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06B21D615A100C4DD61 /* Date.swift */; };
+		034EE08321D615A100C4DD61 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06C21D615A100C4DD61 /* Array.swift */; };
+		034EE08421D615A100C4DD61 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06D21D615A100C4DD61 /* Data.swift */; };
+		034EE08521D615A100C4DD61 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06E21D615A100C4DD61 /* Int.swift */; };
+		034EE08621D615A100C4DD61 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE06F21D615A100C4DD61 /* String.swift */; };
+		034EE08721D615A100C4DD61 /* OSCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE07121D615A100C4DD61 /* OSCMessage.swift */; };
+		034EE08821D615A100C4DD61 /* OSCElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE07221D615A100C4DD61 /* OSCElementProtocol.swift */; };
+		034EE08921D615A100C4DD61 /* OSCBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE07321D615A100C4DD61 /* OSCBundle.swift */; };
+		034EE08A21D615A100C4DD61 /* OSCAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE07521D615A100C4DD61 /* OSCAddress.swift */; };
+		034EE08B21D615A100C4DD61 /* OSCAddressPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EE07621D615A100C4DD61 /* OSCAddressPattern.swift */; };
 		039A7B8A21D5753200C52251 /* SwiftOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 039A7B8821D5753200C52251 /* SwiftOSC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		034EDFEC21D6129000C4DD61 /* SwiftOSC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftOSC; path = ../SwiftOSC; sourceTree = "<group>"; };
+		034EE05E21D615A100C4DD61 /* OSCFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCFloat.swift; sourceTree = "<group>"; };
+		034EE05F21D615A100C4DD61 /* OSCTimetag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCTimetag.swift; sourceTree = "<group>"; };
+		034EE06021D615A100C4DD61 /* OSCBlob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCBlob.swift; sourceTree = "<group>"; };
+		034EE06121D615A100C4DD61 /* OSCImpulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCImpulse.swift; sourceTree = "<group>"; };
+		034EE06221D615A100C4DD61 /* OSCInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCInt.swift; sourceTree = "<group>"; };
+		034EE06321D615A100C4DD61 /* OSCTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCTypeProtocol.swift; sourceTree = "<group>"; };
+		034EE06421D615A100C4DD61 /* OSCString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCString.swift; sourceTree = "<group>"; };
+		034EE06521D615A100C4DD61 /* OSCBool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCBool.swift; sourceTree = "<group>"; };
+		034EE06721D615A100C4DD61 /* OSCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCDelegate.swift; sourceTree = "<group>"; };
+		034EE06821D615A100C4DD61 /* OSCServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCServer.swift; sourceTree = "<group>"; };
+		034EE06921D615A100C4DD61 /* OSCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCClient.swift; sourceTree = "<group>"; };
+		034EE06B21D615A100C4DD61 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		034EE06C21D615A100C4DD61 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		034EE06D21D615A100C4DD61 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		034EE06E21D615A100C4DD61 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		034EE06F21D615A100C4DD61 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		034EE07121D615A100C4DD61 /* OSCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCMessage.swift; sourceTree = "<group>"; };
+		034EE07221D615A100C4DD61 /* OSCElementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCElementProtocol.swift; sourceTree = "<group>"; };
+		034EE07321D615A100C4DD61 /* OSCBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCBundle.swift; sourceTree = "<group>"; };
+		034EE07521D615A100C4DD61 /* OSCAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCAddress.swift; sourceTree = "<group>"; };
+		034EE07621D615A100C4DD61 /* OSCAddressPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCAddressPattern.swift; sourceTree = "<group>"; };
 		039A7B8521D5753200C52251 /* SwiftOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		039A7B8821D5753200C52251 /* SwiftOSC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOSC.h; sourceTree = "<group>"; };
 		039A7B8921D5753200C52251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,12 +69,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		034EE05C21D615A100C4DD61 /* SwiftOSC */ = {
+			isa = PBXGroup;
+			children = (
+				034EE05D21D615A100C4DD61 /* Types */,
+				034EE06621D615A100C4DD61 /* Network */,
+				034EE06A21D615A100C4DD61 /* Extensions */,
+				034EE07021D615A100C4DD61 /* Elements */,
+				034EE07421D615A100C4DD61 /* Addresses */,
+			);
+			name = SwiftOSC;
+			path = ../SwiftOSC;
+			sourceTree = "<group>";
+		};
+		034EE05D21D615A100C4DD61 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				034EE05E21D615A100C4DD61 /* OSCFloat.swift */,
+				034EE05F21D615A100C4DD61 /* OSCTimetag.swift */,
+				034EE06021D615A100C4DD61 /* OSCBlob.swift */,
+				034EE06121D615A100C4DD61 /* OSCImpulse.swift */,
+				034EE06221D615A100C4DD61 /* OSCInt.swift */,
+				034EE06321D615A100C4DD61 /* OSCTypeProtocol.swift */,
+				034EE06421D615A100C4DD61 /* OSCString.swift */,
+				034EE06521D615A100C4DD61 /* OSCBool.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		034EE06621D615A100C4DD61 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				034EE06721D615A100C4DD61 /* OSCDelegate.swift */,
+				034EE06821D615A100C4DD61 /* OSCServer.swift */,
+				034EE06921D615A100C4DD61 /* OSCClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		034EE06A21D615A100C4DD61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				034EE06B21D615A100C4DD61 /* Date.swift */,
+				034EE06C21D615A100C4DD61 /* Array.swift */,
+				034EE06D21D615A100C4DD61 /* Data.swift */,
+				034EE06E21D615A100C4DD61 /* Int.swift */,
+				034EE06F21D615A100C4DD61 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		034EE07021D615A100C4DD61 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				034EE07121D615A100C4DD61 /* OSCMessage.swift */,
+				034EE07221D615A100C4DD61 /* OSCElementProtocol.swift */,
+				034EE07321D615A100C4DD61 /* OSCBundle.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		034EE07421D615A100C4DD61 /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				034EE07521D615A100C4DD61 /* OSCAddress.swift */,
+				034EE07621D615A100C4DD61 /* OSCAddressPattern.swift */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
 		039A7B7B21D5753200C52251 = {
 			isa = PBXGroup;
 			children = (
 				039A7B8821D5753200C52251 /* SwiftOSC.h */,
 				039A7B8921D5753200C52251 /* Info.plist */,
-				034EDFEC21D6129000C4DD61 /* SwiftOSC */,
+				034EE05C21D615A100C4DD61 /* SwiftOSC */,
 				039A7B8621D5753200C52251 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				034EDFED21D6129000C4DD61 /* SwiftOSC in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +234,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				034EDFF221D612FA00C4DD61 /* SwiftOSC in Sources */,
+				034EE08021D615A100C4DD61 /* OSCServer.swift in Sources */,
+				034EE07721D615A100C4DD61 /* OSCFloat.swift in Sources */,
+				034EE08921D615A100C4DD61 /* OSCBundle.swift in Sources */,
+				034EE07E21D615A100C4DD61 /* OSCBool.swift in Sources */,
+				034EE07821D615A100C4DD61 /* OSCTimetag.swift in Sources */,
+				034EE08121D615A100C4DD61 /* OSCClient.swift in Sources */,
+				034EE07D21D615A100C4DD61 /* OSCString.swift in Sources */,
+				034EE07F21D615A100C4DD61 /* OSCDelegate.swift in Sources */,
+				034EE08721D615A100C4DD61 /* OSCMessage.swift in Sources */,
+				034EE08421D615A100C4DD61 /* Data.swift in Sources */,
+				034EE08A21D615A100C4DD61 /* OSCAddress.swift in Sources */,
+				034EE08221D615A100C4DD61 /* Date.swift in Sources */,
+				034EE07921D615A100C4DD61 /* OSCBlob.swift in Sources */,
+				034EE08321D615A100C4DD61 /* Array.swift in Sources */,
+				034EE07C21D615A100C4DD61 /* OSCTypeProtocol.swift in Sources */,
+				034EE08521D615A100C4DD61 /* Int.swift in Sources */,
+				034EE08821D615A100C4DD61 /* OSCElementProtocol.swift in Sources */,
+				034EE07A21D615A100C4DD61 /* OSCImpulse.swift in Sources */,
+				034EE08621D615A100C4DD61 /* String.swift in Sources */,
+				034EE07B21D615A100C4DD61 /* OSCInt.swift in Sources */,
+				034EE08B21D615A100C4DD61 /* OSCAddressPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
