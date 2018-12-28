@@ -3,7 +3,7 @@
 //  SwiftOSC
 //
 //  Created by Devin Roth on 6/26/16.
-//  Copyright © 2016 Devin Roth Music. All rights reserved.
+//  Copyright © 2019 Devin Roth Music. All rights reserved.
 //
 
 import Foundation
