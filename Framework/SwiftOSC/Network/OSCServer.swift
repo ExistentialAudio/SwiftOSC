@@ -99,23 +99,19 @@ public class OSCServer {
             self.delegate?.didReceive(data)
         }
         
-        //
         if data[0] == 0x2f { // check if first character is "/"
             if let message = decodeMessage(data){
                 self.sendToDelegate(message)
-            } else {
-                NSLog("invalid message")
             }
+            
         } else if data.count > 8 {//make sure we have at least 8 bytes before checking if a bundle.
             if "#bundle\0".toData() == data.subdata(in: Range(0...7)){//matches string #bundle
                 if let bundle = decodeBundle(data){
                     self.sendToDelegate(bundle)
-                } else {
-                    NSLog("invalid bundle")
                 }
             }
         } else {
-            NSLog("invalid packet")
+            NSLog("Invalid OSCPacket: data must begin with #bundle\0 or /")
         }
     }
     
@@ -136,13 +132,16 @@ public class OSCServer {
                 } else {
                     return nil
                 }
-            } else {
+            } else if data[0] == 0x2f {
                 
                 if let message = self.decodeMessage(nextData) {
                     bundle.add(message)
                 } else {
                     return nil
                 }
+            } else {
+                NSLog("Invalid OSCBundle: Bundle data must begin with #bundle\0 or /.")
+                return nil
             }
         }
         return bundle
@@ -201,15 +200,17 @@ public class OSCServer {
                         message.add(OSCTimetag(messageData.subdata(in: Range(0...7))))
                         messageData = messageData.subdata(in: 8..<messageData.count)
                     default:
-                        NSLog("unknown osc type")
+                        NSLog("Invalid OSCMessage: Unknown OSC type.")
                         return nil
                     }
                 }
             } else {
+                NSLog("Invalid OSCMessage: Invalid address.")
                 return nil
             }
             return message
         } else {
+            NSLog("Invalid OSCMessage: Missing address terminator.")
             return nil
         }
     }
