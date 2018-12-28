@@ -13,7 +13,6 @@
 		032E3DB81F82A25400DC931B /* OSCElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C8FA1F829EA200CBA6A7 /* OSCElementProtocol.swift */; };
 		032E3DB91F82A25400DC931B /* OSCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C8FB1F829EA200CBA6A7 /* OSCMessage.swift */; };
 		032E3DBA1F82A25400DC931B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C8FD1F829EA200CBA6A7 /* Extensions.swift */; };
-		032E3DBB1F82A25400DC931B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C8FE1F829EA200CBA6A7 /* Timer.swift */; };
 		032E3DBC1F82A25400DC931B /* OSCBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9021F829EA200CBA6A7 /* OSCBlob.swift */; };
 		032E3DBD1F82A25400DC931B /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9031F829EA200CBA6A7 /* Bool.swift */; };
 		032E3DBE1F82A25400DC931B /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332C9041F829EA200CBA6A7 /* Float.swift */; };
@@ -35,7 +34,6 @@
 		0332C8FA1F829EA200CBA6A7 /* OSCElementProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCElementProtocol.swift; sourceTree = "<group>"; };
 		0332C8FB1F829EA200CBA6A7 /* OSCMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCMessage.swift; sourceTree = "<group>"; };
 		0332C8FD1F829EA200CBA6A7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0332C8FE1F829EA200CBA6A7 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		0332C9021F829EA200CBA6A7 /* OSCBlob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCBlob.swift; sourceTree = "<group>"; };
 		0332C9031F829EA200CBA6A7 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		0332C9041F829EA200CBA6A7 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				0332C8FD1F829EA200CBA6A7 /* Extensions.swift */,
-				0332C8FE1F829EA200CBA6A7 /* Timer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -234,7 +231,6 @@
 				032E3DB81F82A25400DC931B /* OSCElementProtocol.swift in Sources */,
 				032E3DB91F82A25400DC931B /* OSCMessage.swift in Sources */,
 				032E3DBA1F82A25400DC931B /* Extensions.swift in Sources */,
-				032E3DBB1F82A25400DC931B /* Timer.swift in Sources */,
 				032E3DBC1F82A25400DC931B /* OSCBlob.swift in Sources */,
 				032E3DBD1F82A25400DC931B /* Bool.swift in Sources */,
 				0339172421B3BBD20025B726 /* OSCServer.swift in Sources */,
