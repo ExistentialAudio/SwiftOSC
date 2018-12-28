@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Renamed Blob to OSCBlob
 - Renamed Timetag to OSCTimetag
 - Changed OSCType internal variables to oscData and oscTag
+- Renamed and reorganized files.
 
 ### Added
 - Add tvOS Framework
