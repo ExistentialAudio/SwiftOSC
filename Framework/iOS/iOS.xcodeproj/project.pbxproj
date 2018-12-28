@@ -72,11 +72,11 @@
 		034EDFFC21D6159300C4DD61 /* SwiftOSC */ = {
 			isa = PBXGroup;
 			children = (
-				034EDFFD21D6159300C4DD61 /* Types */,
-				034EE00621D6159300C4DD61 /* Network */,
-				034EE00A21D6159300C4DD61 /* Extensions */,
-				034EE01021D6159300C4DD61 /* Elements */,
 				034EE01421D6159300C4DD61 /* Addresses */,
+				034EE01021D6159300C4DD61 /* Elements */,
+				034EE00A21D6159300C4DD61 /* Extensions */,
+				034EE00621D6159300C4DD61 /* Network */,
+				034EDFFD21D6159300C4DD61 /* Types */,
 			);
 			name = SwiftOSC;
 			path = ../SwiftOSC;
