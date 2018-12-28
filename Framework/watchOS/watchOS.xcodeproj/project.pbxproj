@@ -8,48 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0331114221D56AE3003C4866 /* SwiftOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0331114021D56AE3003C4866 /* SwiftOSC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03A4427821D56EC0005E421B /* OSCTimetag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426221D56EC0005E421B /* OSCTimetag.swift */; };
-		03A4427921D56EC0005E421B /* OSCBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426321D56EC0005E421B /* OSCBlob.swift */; };
-		03A4427A21D56EC0005E421B /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426421D56EC0005E421B /* Int.swift */; };
-		03A4427B21D56EC0005E421B /* OSCImpulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426521D56EC0005E421B /* OSCImpulse.swift */; };
-		03A4427C21D56EC0005E421B /* OSCTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426621D56EC0005E421B /* OSCTypeProtocol.swift */; };
-		03A4427D21D56EC0005E421B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426721D56EC0005E421B /* String.swift */; };
-		03A4427E21D56EC0005E421B /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426821D56EC0005E421B /* Bool.swift */; };
-		03A4427F21D56EC0005E421B /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426921D56EC0005E421B /* Float.swift */; };
-		03A4428021D56EC0005E421B /* OSCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426B21D56EC0005E421B /* OSCDelegate.swift */; };
-		03A4428121D56EC0005E421B /* OSCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426C21D56EC0005E421B /* OSCServer.swift */; };
-		03A4428221D56EC0005E421B /* OSCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426D21D56EC0005E421B /* OSCClient.swift */; };
-		03A4428321D56EC0005E421B /* OSCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4426F21D56EC0005E421B /* OSCMessage.swift */; };
-		03A4428421D56EC0005E421B /* OSCElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4427021D56EC0005E421B /* OSCElementProtocol.swift */; };
-		03A4428521D56EC0005E421B /* OSCBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4427121D56EC0005E421B /* OSCBundle.swift */; };
-		03A4428621D56EC0005E421B /* OSCAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4427321D56EC0005E421B /* OSCAddress.swift */; };
-		03A4428721D56EC0005E421B /* OSCAddressPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4427421D56EC0005E421B /* OSCAddressPattern.swift */; };
-		03A4428821D56EC0005E421B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4427621D56EC0005E421B /* Timer.swift */; };
-		03A4428921D56EC0005E421B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4427721D56EC0005E421B /* Extensions.swift */; };
+		034EDFEF21D6129A00C4DD61 /* SwiftOSC in Resources */ = {isa = PBXBuildFile; fileRef = 034EDFEE21D6129A00C4DD61 /* SwiftOSC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0331113D21D56AE3003C4866 /* SwiftOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0331114021D56AE3003C4866 /* SwiftOSC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOSC.h; sourceTree = "<group>"; };
 		0331114121D56AE3003C4866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03A4426221D56EC0005E421B /* OSCTimetag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCTimetag.swift; sourceTree = "<group>"; };
-		03A4426321D56EC0005E421B /* OSCBlob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCBlob.swift; sourceTree = "<group>"; };
-		03A4426421D56EC0005E421B /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		03A4426521D56EC0005E421B /* OSCImpulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCImpulse.swift; sourceTree = "<group>"; };
-		03A4426621D56EC0005E421B /* OSCTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCTypeProtocol.swift; sourceTree = "<group>"; };
-		03A4426721D56EC0005E421B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		03A4426821D56EC0005E421B /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
-		03A4426921D56EC0005E421B /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
-		03A4426B21D56EC0005E421B /* OSCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCDelegate.swift; sourceTree = "<group>"; };
-		03A4426C21D56EC0005E421B /* OSCServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCServer.swift; sourceTree = "<group>"; };
-		03A4426D21D56EC0005E421B /* OSCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCClient.swift; sourceTree = "<group>"; };
-		03A4426F21D56EC0005E421B /* OSCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCMessage.swift; sourceTree = "<group>"; };
-		03A4427021D56EC0005E421B /* OSCElementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCElementProtocol.swift; sourceTree = "<group>"; };
-		03A4427121D56EC0005E421B /* OSCBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCBundle.swift; sourceTree = "<group>"; };
-		03A4427321D56EC0005E421B /* OSCAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCAddress.swift; sourceTree = "<group>"; };
-		03A4427421D56EC0005E421B /* OSCAddressPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCAddressPattern.swift; sourceTree = "<group>"; };
-		03A4427621D56EC0005E421B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		03A4427721D56EC0005E421B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		034EDFEE21D6129A00C4DD61 /* SwiftOSC */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftOSC; path = ../SwiftOSC; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +32,9 @@
 		0331113321D56AE3003C4866 = {
 			isa = PBXGroup;
 			children = (
-				03A4426021D56EC0005E421B /* SwiftOSC */,
 				0331114021D56AE3003C4866 /* SwiftOSC.h */,
 				0331114121D56AE3003C4866 /* Info.plist */,
+				034EDFEE21D6129A00C4DD61 /* SwiftOSC */,
 				0331113E21D56AE3003C4866 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,72 +45,6 @@
 				0331113D21D56AE3003C4866 /* SwiftOSC.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		03A4426021D56EC0005E421B /* SwiftOSC */ = {
-			isa = PBXGroup;
-			children = (
-				03A4426121D56EC0005E421B /* Types */,
-				03A4426A21D56EC0005E421B /* Network */,
-				03A4426E21D56EC0005E421B /* Elements */,
-				03A4427221D56EC0005E421B /* Addresses */,
-				03A4427521D56EC0005E421B /* Helpers */,
-			);
-			name = SwiftOSC;
-			path = ../SwiftOSC;
-			sourceTree = "<group>";
-		};
-		03A4426121D56EC0005E421B /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				03A4426221D56EC0005E421B /* OSCTimetag.swift */,
-				03A4426321D56EC0005E421B /* OSCBlob.swift */,
-				03A4426421D56EC0005E421B /* Int.swift */,
-				03A4426521D56EC0005E421B /* OSCImpulse.swift */,
-				03A4426621D56EC0005E421B /* OSCTypeProtocol.swift */,
-				03A4426721D56EC0005E421B /* String.swift */,
-				03A4426821D56EC0005E421B /* Bool.swift */,
-				03A4426921D56EC0005E421B /* Float.swift */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		03A4426A21D56EC0005E421B /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				03A4426B21D56EC0005E421B /* OSCDelegate.swift */,
-				03A4426C21D56EC0005E421B /* OSCServer.swift */,
-				03A4426D21D56EC0005E421B /* OSCClient.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		03A4426E21D56EC0005E421B /* Elements */ = {
-			isa = PBXGroup;
-			children = (
-				03A4426F21D56EC0005E421B /* OSCMessage.swift */,
-				03A4427021D56EC0005E421B /* OSCElementProtocol.swift */,
-				03A4427121D56EC0005E421B /* OSCBundle.swift */,
-			);
-			path = Elements;
-			sourceTree = "<group>";
-		};
-		03A4427221D56EC0005E421B /* Addresses */ = {
-			isa = PBXGroup;
-			children = (
-				03A4427321D56EC0005E421B /* OSCAddress.swift */,
-				03A4427421D56EC0005E421B /* OSCAddressPattern.swift */,
-			);
-			path = Addresses;
-			sourceTree = "<group>";
-		};
-		03A4427521D56EC0005E421B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				03A4427621D56EC0005E421B /* Timer.swift */,
-				03A4427721D56EC0005E421B /* Extensions.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034EDFEF21D6129A00C4DD61 /* SwiftOSC in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,24 +126,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03A4428121D56EC0005E421B /* OSCServer.swift in Sources */,
-				03A4428921D56EC0005E421B /* Extensions.swift in Sources */,
-				03A4428321D56EC0005E421B /* OSCMessage.swift in Sources */,
-				03A4427D21D56EC0005E421B /* String.swift in Sources */,
-				03A4427A21D56EC0005E421B /* Int.swift in Sources */,
-				03A4428421D56EC0005E421B /* OSCElementProtocol.swift in Sources */,
-				03A4428521D56EC0005E421B /* OSCBundle.swift in Sources */,
-				03A4427C21D56EC0005E421B /* OSCTypeProtocol.swift in Sources */,
-				03A4428221D56EC0005E421B /* OSCClient.swift in Sources */,
-				03A4427921D56EC0005E421B /* OSCBlob.swift in Sources */,
-				03A4428021D56EC0005E421B /* OSCDelegate.swift in Sources */,
-				03A4428621D56EC0005E421B /* OSCAddress.swift in Sources */,
-				03A4428721D56EC0005E421B /* OSCAddressPattern.swift in Sources */,
-				03A4427F21D56EC0005E421B /* Float.swift in Sources */,
-				03A4427821D56EC0005E421B /* OSCTimetag.swift in Sources */,
-				03A4427B21D56EC0005E421B /* OSCImpulse.swift in Sources */,
-				03A4427E21D56EC0005E421B /* Bool.swift in Sources */,
-				03A4428821D56EC0005E421B /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +275,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Debug;
 		};
@@ -418,6 +302,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;
 		};
