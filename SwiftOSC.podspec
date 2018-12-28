@@ -21,7 +21,4 @@ SwiftOSC is an Open Sound Control client and server framework written in Swift. 
     s.tvos.deployment_target = '12.0'
     s.tvos.source_files = "Framework/tvOS/tvOS","Framework/tvOS/**/*.{c,h,m,swift}", "Framework/SwiftOSC/**/*.{c,h,m,swift}"
 
-    s.watchos.deployment_target = '5.0'
-    s.watchos.source_files = "Framework/watchOS/watchOS","Framework/watchOS/**/*.{c,h,m,swift}", "Framework/SwiftOSC/**/*.{c,h,m,swift}"
-
 end
