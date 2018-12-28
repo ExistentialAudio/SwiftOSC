@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		034EDFED21D6129000C4DD61 /* SwiftOSC in Resources */ = {isa = PBXBuildFile; fileRef = 034EDFEC21D6129000C4DD61 /* SwiftOSC */; };
+		034EDFF221D612FA00C4DD61 /* SwiftOSC in Sources */ = {isa = PBXBuildFile; fileRef = 034EDFEC21D6129000C4DD61 /* SwiftOSC */; };
 		039A7B8A21D5753200C52251 /* SwiftOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 039A7B8821D5753200C52251 /* SwiftOSC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034EDFF221D612FA00C4DD61 /* SwiftOSC in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
