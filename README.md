@@ -8,8 +8,6 @@
 SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server framework.
 
 
-
-
 ## Installation
 
 ```
