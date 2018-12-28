@@ -93,7 +93,8 @@ Send message
 client.send(message)
 ```
 ## Known Issues
- - OSCClient loses connection following returning from being in the background. Call client.restart() in this situation.
+ - OSCClient loses connection following returning from being in the background. Call client.restart() in this situation.\
+ 
 
 ## About
 
