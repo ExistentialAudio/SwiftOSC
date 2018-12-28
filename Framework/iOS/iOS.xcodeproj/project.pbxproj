@@ -85,12 +85,12 @@
 		034EDFFD21D6159300C4DD61 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				034EE00321D6159300C4DD61 /* OSCTypeProtocol.swift */,
 				034EDFFE21D6159300C4DD61 /* OSCFloat.swift */,
 				034EDFFF21D6159300C4DD61 /* OSCTimetag.swift */,
 				034EE00021D6159300C4DD61 /* OSCBlob.swift */,
 				034EE00121D6159300C4DD61 /* OSCImpulse.swift */,
 				034EE00221D6159300C4DD61 /* OSCInt.swift */,
-				034EE00321D6159300C4DD61 /* OSCTypeProtocol.swift */,
 				034EE00421D6159300C4DD61 /* OSCString.swift */,
 				034EE00521D6159300C4DD61 /* OSCBool.swift */,
 			);

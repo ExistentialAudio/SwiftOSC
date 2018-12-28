@@ -43,8 +43,5 @@
       <FileRef
          location = "group:tvOS/tvOS.xcodeproj">
       </FileRef>
-      <FileRef
-         location = "group:watchOS/watchOS.xcodeproj">
-      </FileRef>
    </Group>
 </Workspace>
