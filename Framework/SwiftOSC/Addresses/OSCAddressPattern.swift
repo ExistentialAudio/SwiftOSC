@@ -83,7 +83,7 @@ public struct OSCAddressPattern {
         }
         // [ must be closed, no invalid characters inside
         if addressPattern.range(of: "\\[(?![^\\[\\{\\},?\\*/]+\\])", options: .regularExpression) != nil {
-            NSLog("\"\(addressPattern)\" is an invalid address. [] must not contain invalid characters: \\[(?![^\\[\\{\\},?\\*/]+\\])")
+            NSLog("\"\(addressPattern)\" is an invalid address. [] must closed and not contain invalid characters.")
             return nil
         }
         var open = addressPattern.components(separatedBy: "[").count
