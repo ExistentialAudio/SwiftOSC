@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [2.1.0 Unreleased]
 ### Added
  - Support for watchOS
- - Inline documentation
  
  ### Changed
  - Fixed OSCClient connection issue following returning from the background in iOS.
@@ -22,9 +21,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Renamed Blob to OSCBlob
 - Renamed Timetag to OSCTimetag
 - Changed OSCType internal variables to oscData and oscTag
+- OSCAddress and OSCAddressPattern initializer now fail if given an incorrect string value
+
 
 ### Added
-- Support for tvOS
+ - Support for tvOS
+ - Inline documentation
 
 ### Fixed
  - Server would previously crash if certain invalid data was received.  Added more validation on incoming data. 

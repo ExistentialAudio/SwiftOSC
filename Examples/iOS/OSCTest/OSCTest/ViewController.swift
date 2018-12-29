@@ -103,16 +103,21 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
     
     @IBAction func changeDestinationAddressPattern(_ sender: UITextField) {
         if let text = sender.text {
-            destinationAddressPattern = OSCAddressPattern(text)
-            defaults.set(destinationAddressPattern.string, forKey: "destinationAddressPattern")
+            if let address = OSCAddressPattern(text) {
+                destinationAddressPattern = address
+                defaults.set(destinationAddressPattern.string, forKey: "destinationAddressPattern")
+            }
         }
         destinationAddressPatternTextField.text = destinationAddressPattern.string
     }
     
     @IBAction func changeLocalAddressPath(_ sender: UITextField) {
         if let text = sender.text {
-            localAddressPath = OSCAddress(text)
-            defaults.set(localAddressPath.string, forKey: "localAddressPath")
+            if let address = OSCAddress(text) {
+                localAddressPath = address
+                defaults.set(address, forKey: "localAddressPath")
+            }
+            
         }
         localAddressPathTextField.text = localAddressPath.string
     }

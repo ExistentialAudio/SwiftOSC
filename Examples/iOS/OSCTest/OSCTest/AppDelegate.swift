@@ -13,12 +13,12 @@ import SwiftOSC
 var clientHost = "127.0.0.1"
 var clientPort = 8080
 var client: OSCClient?
-var destinationAddressPattern = OSCAddressPattern("/")
+var destinationAddressPattern = OSCAddressPattern("/")!
 
 // Server Setup
 var serverPort = 8080
 var server: OSCServer?
-var localAddressPath = OSCAddress("/")
+var localAddressPath = OSCAddress("/")!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,13 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientPort = defaults.integer(forKey: "clientPort")
         }
         if let addressPattern = defaults.string(forKey: "destinationAddressPattern") {
-            destinationAddressPattern = OSCAddressPattern(addressPattern)
+            destinationAddressPattern = OSCAddressPattern(addressPattern)!
         }
         if defaults.integer(forKey: "serverPort") != 0 {
             serverPort = defaults.integer(forKey: "serverPort")
         }
         if let addressPath = defaults.string(forKey: "localAddressPath") {
-            localAddressPath = OSCAddress(addressPath)
+            localAddressPath = OSCAddress(addressPath)!
         }
         
         // setup osc client and server
