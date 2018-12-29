@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol OSCElement {
-    var data: Data { get }
+    var oscData: Data { get }
 }

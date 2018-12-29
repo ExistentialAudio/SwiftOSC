@@ -7,11 +7,18 @@
 //
 import Foundation
 
+/**
+ An OSC Bundle consists of the OSC-string "#bundle" followed by an OSC Time Tag, followed by zero or more OSC Bundle Elements. The OSC-timetag is a 64-bit fixed point time tag whose semantics are described below.
+ 
+ An OSC Bundle Element consists of its size and its contents. The size is an int32 representing the number of 8-bit bytes in the contents, and will always be a multiple of 4. The contents are either an OSC Message or an OSC Bundle.
+ 
+ Note this recursive definition: bundle may contain bundles.
+*/
 public class OSCBundle: OSCElement, CustomStringConvertible {
     //MARK: Properties
     public var timetag: OSCTimetag
     public var elements:[OSCElement] = []
-    public var data: Data {
+    public var oscData: Data {
         get {
             var data = Data()
             //add "#bundle" tag
@@ -22,9 +29,9 @@ public class OSCBundle: OSCElement, CustomStringConvertible {
             
             //add elements data
             for element in elements {
-                let elementData = element.data
+                let elementData = element.oscData
                 data.append(Int32(elementData.count).toData())
-                data.append(element.data)
+                data.append(element.oscData)
             }
             return data
         }

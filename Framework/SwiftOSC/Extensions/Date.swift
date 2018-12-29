@@ -9,7 +9,7 @@
 import Foundation
 
 extension Date {
-    //initilizes time from string "1990-01-01T00:00:00-00:00"
+    //initilizes time from string in the format of "1990-01-01T00:00:00-00:00"
     init?(_ string: String){
         
         let RFC3339DateFormatter = DateFormatter()

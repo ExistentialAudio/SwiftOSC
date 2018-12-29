@@ -8,11 +8,17 @@
 
 import Foundation
 
+/**
+OSC Messages
+
+An OSC message consists of an OSC Address Pattern followed by an OSC Type Tag String followed by zero or more OSC Arguments.
+
+*/
 public class OSCMessage: OSCElement, CustomStringConvertible {
     //MARK: Properties
     public var address: OSCAddressPattern
     public var arguments:[OSCType?] = []
-    public var data: Data {
+    public var oscData: Data {
         get {
             var data = Data()
             
@@ -95,10 +101,6 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
     }
     
     //MARK: Methods
-    public func add(){
-        self.arguments.append(nil)
-    }
-    
     public func add(_ arguments: OSCType?...){
         self.arguments += arguments
     }

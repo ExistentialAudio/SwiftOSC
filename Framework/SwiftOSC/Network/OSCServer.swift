@@ -163,9 +163,7 @@ public class OSCServer {
         if let addressEnd = messageData.index(of: 0x00){
             
             let addressString = messageData.subdata(in: 0..<addressEnd).toString()
-            var address = OSCAddressPattern()
-            if address.valid(addressString) {
-                address.string = addressString
+            if let address = OSCAddressPattern(addressString) {
                 message = OSCMessage(address)
                 
                 //extract types

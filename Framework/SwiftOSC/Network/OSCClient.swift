@@ -122,7 +122,7 @@ public class OSCClient {
     
     public func send(_ element: OSCElement){
         
-        let data = element.data
+        let data = element.oscData
         connection?.send(content: data, completion: .contentProcessed({ (error) in
             if let error = error {
                 NSLog("Send error: \(error)")
