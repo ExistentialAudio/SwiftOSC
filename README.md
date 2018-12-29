@@ -40,7 +40,7 @@ import SwiftOSC
 #### Step 2
 Create Server
 ```swift
-var server = OSCServer(address: "", port: 8080)
+var server = OSCServer(port: 8080)
 ```
 
 #### Step 3
@@ -65,15 +65,16 @@ Import SwiftOSC framework into your project
 import SwiftOSC
 ```
 #### Step 2
-Create client
+Create OSCClient
 ```swift
-var client = OSCClient(address: "localhost", port: 8080)
+var client = OSCClient(host: "localhost", port: 8080)
 ```
 #### Step 3
-Create a message
+Create an OSCAddressPattern and  OSCMessage
 ```swift
+
 var message = OSCMessage(
-    OSCAddressPattern("/"),
+    OSCAddressPattern("/")!,
     100,
     5.0,
     "Hello World",

@@ -38,59 +38,6 @@ public class OSCClient {
         setupConnection()
     }
     
-    public func change(host: String, port: Int)->Bool{
-        
-        // check if string is empty
-        if host == "" {
-            
-            NSLog("Invalid Hostname: No empty strings allowed")
-            return false
-            
-        } else if port > 65535 && port >= 0{
-            NSLog("Invalid Port: Out of range.")
-            return false
-            
-        } else {
-            
-            self.host = NWEndpoint.Host(host)
-            self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
-            
-            connection?.cancel()
-            setupConnection()
-            return true
-            
-        }
-    }
-    
-    public func change(host: String)->Bool {
-        if host != "" {
-            self.host = NWEndpoint.Host(host)
-            
-            connection?.cancel()
-            setupConnection()
-            return true
-            
-        } else {
-            NSLog("Invalid Hostname: No empty strings allowed")
-            return false
-        }
-    }
-    
-    public func change(port: Int)->Bool {
-        
-        // check port range
-        if port > 65535 && port >= 0{
-            NSLog("Invalid Port: Out of range.")
-            return false
-        }
-        
-        self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
-        
-        connection?.cancel()
-        setupConnection()
-        return true
-    }
-    
     func setupConnection(){
         
         // create the connection

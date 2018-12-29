@@ -32,24 +32,6 @@ public class OSCServer {
         setupListener()
     }
     
-    public func change(port: Int)->Bool{
-        // check port range
-        if port > 65535 && port >= 0{
-            NSLog("Invalid Port: Out of range.")
-            return false
-        }
-        self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
-        
-        // destroy connection and listener
-        connection?.forceCancel()
-        listener?.cancel()
-        
-        // setup new listener
-        setupListener()
-        
-        return true
-    }
-    
     func setupListener() {
         // create the listener
         listener = try! NWListener(using: .udp, on: port)
