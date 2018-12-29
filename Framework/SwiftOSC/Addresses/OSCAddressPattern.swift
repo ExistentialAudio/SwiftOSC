@@ -8,7 +8,7 @@
 
 import Foundation
 
-/**
+    /**
     An OSC Address Pattern is an OSC-string beginning with the character '/' (forward slash).
  
      When an OSC server receives an OSC Message, it must invoke the appropriate OSC Methods in its OSC Address Space based on the OSC Message's OSC Address Pattern. This process is called dispatching the OSC Message to the OSC Methods that match its OSC Address Pattern. All the matching OSC Methods are invoked with the same argument data, namely, the OSC Arguments in the OSC Message.
@@ -29,8 +29,16 @@ import Foundation
      An exclamation point at the beginning of a bracketed string negates the sense of the list, meaning that the list matches any character not in the list. (An exclamation point anywhere besides the first character after the open bracket has no special meaning.)
      A comma-separated list of strings enclosed in curly braces (e.g., "{foo,bar}") in the OSC Address Pattern matches any of the strings in the list.
      Any other character in an OSC Address Pattern can match only the same character.
+ 
+    Because the initializer will fail if given an incorrectly formatted address, it is important to check for nil before adding an OSCAddressPattern to an OSCMessage.
+ 
+```
+if let addressPattern = OSCAddressPattern("/test/this/pattern"){
+    let message = OSCMessage(addressPattern, oscArguments)
+}
+```
 
- */
+     */
 public struct OSCAddressPattern {
     
     //MARK: Properties

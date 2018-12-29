@@ -40,6 +40,11 @@ import Foundation
  
      There are three parts of the OSC Address pattern "/?/b/\*c": "?",
      "b", and "\*c".
+ 
+ ```
+ if let address = OSCAddress("/test/this/address"){
+ }
+ ```
     
 */
 public struct OSCAddress {
