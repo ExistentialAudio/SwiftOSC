@@ -105,7 +105,7 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
         if let text = sender.text {
             if let address = OSCAddressPattern(text) {
                 destinationAddressPattern = address
-                defaults.set(destinationAddressPattern.string, forKey: "destinationAddressPattern")
+                defaults.set(address.string, forKey: "destinationAddressPattern")
             }
         }
         destinationAddressPatternTextField.text = destinationAddressPattern.string
@@ -115,7 +115,7 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
         if let text = sender.text {
             if let address = OSCAddress(text) {
                 localAddressPath = address
-                defaults.set(address, forKey: "localAddressPath")
+                defaults.set(address.string, forKey: "localAddressPath")
             }
             
         }

@@ -17,7 +17,6 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
     var server: OSCServer?
     
     var tableData: [TableData] = []
-    var addressValue = OSCAddress()
 
     @IBOutlet weak var port: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
@@ -78,13 +77,7 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
             defaults.set(sender.integerValue, forKey: "Port")
         }
     }
-    
-    @IBAction func changeOSCAddress(_ sender: NSTextField) {
-        self.addressValue = OSCAddress(sender.stringValue)
-        sender.stringValue = self.addressValue.string
-        defaults.set(self.addressValue.string, forKey: "Address")
-        
-    }
+
     @IBAction func clear(_ sender: NSButton) {
         tableData.removeAll()
         tableView.reloadData()
