@@ -122,9 +122,9 @@
 		034EE01021D6159300C4DD61 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				034EE01121D6159300C4DD61 /* OSCMessage.swift */,
 				034EE01221D6159300C4DD61 /* OSCElementProtocol.swift */,
 				034EE01321D6159300C4DD61 /* OSCBundle.swift */,
+				034EE01121D6159300C4DD61 /* OSCMessage.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
