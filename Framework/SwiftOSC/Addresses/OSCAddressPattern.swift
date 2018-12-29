@@ -8,20 +8,33 @@
 
 import Foundation
 
+/**
+    An OSC Address Pattern is an OSC-string beginning with the character '/' (forward slash).
+ 
+     When an OSC server receives an OSC Message, it must invoke the appropriate OSC Methods in its OSC Address Space based on the OSC Message's OSC Address Pattern. This process is called dispatching the OSC Message to the OSC Methods that match its OSC Address Pattern. All the matching OSC Methods are invoked with the same argument data, namely, the OSC Arguments in the OSC Message.
+ 
+     The parts of an OSC Address or an OSC Address Pattern are the substrings between adjacent pairs of forward slash characters and the substring after the last forward slash character.
+ 
+     A received OSC Message must be disptched to every OSC method in the current OSC Address Space whose OSC Address matches the OSC Message's OSC Address Pattern. An OSC Address Pattern matches an OSC Address if
+ 
+     The OSC Address and the OSC Address Pattern contain the same number of parts; and
+     Each part of the OSC Address Pattern matches the corresponding part of the OSC Address.
+ 
+     A part of an OSC Address Pattern matches a part of an OSC Address if every consecutive character in the OSC Address Pattern matches the next consecutive substring of the OSC Address and every character in the OSC Address is matched by something in the OSC Address Pattern. These are the matching rules for characters in the OSC Address Pattern:
+ 
+     '?' in the OSC Address Pattern matches any single character
+     '*' in the OSC Address Pattern matches any sequence of zero or more characters
+     A string of characters in square brackets (e.g., "[string]") in the OSC Address Pattern matches any character in the string. Inside square brackets, the minus sign (-) and exclamation point (!) have special meanings:
+     two characters separated by a minus sign indicate the range of characters between the given two in ASCII collating sequence. (A minus sign at the end of the string has no special meaning.)
+     An exclamation point at the beginning of a bracketed string negates the sense of the list, meaning that the list matches any character not in the list. (An exclamation point anywhere besides the first character after the open bracket has no special meaning.)
+     A comma-separated list of strings enclosed in curly braces (e.g., "{foo,bar}") in the OSC Address Pattern matches any of the strings in the list.
+     Any other character in an OSC Address Pattern can match only the same character.
+
+ */
 public struct OSCAddressPattern {
     
     //MARK: Properties
-    public var string: String {
-        didSet {
-            if !valid(self.string) {
-                self.string = oldValue
-            } else {
-                self.regex = makeRegex(from: self.string)
-                self.regexPath = makeRegexPath(from: self.regex)
-                
-            }
-        }
-    }
+    public let string: String
     internal var regex = ""
     internal var regexPath = ""
     internal var data: Data {
@@ -36,25 +49,72 @@ public struct OSCAddressPattern {
         }
     }
     
-    //MARK: Initializers
-    public init(){
-        self.string = "/"
-        self.regex = "^/$"
-        self.regexPath = "^/$"
-    }
-    
-    public init(_ addressPattern: String) {
-        self.string = "/"
-        self.regex = "^/$"
-        self.regexPath = "^/$"
-        if valid(addressPattern) {
-            self.string = addressPattern
-            self.regex = makeRegex(from: self.string)
-            self.regexPath = makeRegexPath(from: self.regex)
-        }
-    }
-    
     //MARK: Methods
+    public init?(_ addressPattern: String) {
+        
+        // Check if addressPattern is valid. Return nil if not.
+        // No empty strings
+        if addressPattern == "" {
+            NSLog("\"\(addressPattern)\" is an invalid address: Address is empty.")
+            return nil
+        }
+        // Must start with "/"
+        if addressPattern.first != "/" {
+            NSLog("\"\(addressPattern)\" is an invalid address. Address must begin with \"/\".")
+            return nil
+        }
+        // No more than two "/" in a row
+        if addressPattern.range(of: "/{3,}", options: .regularExpression) != nil {
+            NSLog("\"\(addressPattern)\" is an invalid address. Address must not contain more than two consecutive \"/\".")
+            return nil
+        }
+        // No spaces
+        if addressPattern.range(of: "\\s", options: .regularExpression) != nil {
+            NSLog("\"\(addressPattern)\" is an invalid address. Address must not contain spaces.")
+            return nil
+        }
+        // [ must be closed, no invalid characters inside
+        if addressPattern.range(of: "\\[(?![^\\[\\{\\},?\\*/]+\\])", options: .regularExpression) != nil {
+            NSLog("\"\(addressPattern)\" is an invalid address. [] must not contain invalid characters: \\[(?![^\\[\\{\\},?\\*/]+\\])")
+            return nil
+        }
+        var open = addressPattern.components(separatedBy: "[").count
+        var close = addressPattern.components(separatedBy: "]").count
+        
+        if open != close {
+            NSLog("\"\(addressPattern)\" is an invalid address. [] must be closed.")
+            return nil
+        }
+        
+        // { must be closed, no invalid characters inside
+        if addressPattern.range(of: "\\{(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
+            NSLog("\"\(addressPattern)\" is an invalid address. {} must not contain invalid characters: \\{(?![^\\{\\[\\]?\\*/]+\\})")
+            return nil
+        }
+        open = addressPattern.components(separatedBy: "{").count
+        close = addressPattern.components(separatedBy: "}").count
+        
+        if open != close {
+            NSLog("\"\(addressPattern)\" is an invalid address. {} must be closed.")
+            return nil
+        }
+        
+        // "," only inside {}
+        if addressPattern.range(of: ",(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
+            NSLog("\"\(addressPattern)\" is an invalid address. Must only contain \",\" inside {}.")
+            return nil
+        }
+        if addressPattern.range(of: ",(?<!\\{[^\\{\\[\\]?\\*/]+)", options: .regularExpression) != nil {
+            NSLog("\"\(addressPattern)\" is an invalid address. Must only contain \",\" inside {}.")
+            return nil
+        }
+        
+        self.string = addressPattern
+        self.regex = makeRegex(from: self.string)
+        self.regexPath = makeRegexPath(from: self.regex)
+    }
+    
+    /// Convert addressPattern to a regexPattern for address matching
     internal func makeRegex(from addressPattern: String) -> String {
         var addressPattern = addressPattern
         
@@ -82,6 +142,8 @@ public struct OSCAddressPattern {
         
         return addressPattern
     }
+    
+    /// Convert Regex pattern to match a portion of the address path. Used to route incoming messages.
     internal func makeRegexPath(from regex: String) -> String {
         var regex = regex
         regex = String(regex.dropLast())
@@ -106,67 +168,6 @@ public struct OSCAddressPattern {
 
         return regexContainer
         
-    }
-    internal func valid(_ address: String) ->Bool {
-        
-        //no empty strings
-        if address == "" {
-            NSLog("\"\(self.string)\" is an invalid address: Address is empty.")
-            return false
-        }
-        //must start with "/"
-        if address.first != "/" {
-            NSLog("\"\(self.string)\" is an invalid address. Address must begin with \"/\".")
-            return false
-        }
-        //no more than two "/" in a row
-        if address.range(of: "/{3,}", options: .regularExpression) != nil {
-            NSLog("\"\(self.string)\" is an invalid address. Address must not contain more than two consecutive \"/\".")
-            return false
-        }
-        //no spaces
-        if address.range(of: "\\s", options: .regularExpression) != nil {
-            NSLog("\"\(self.string)\" is an invalid address. Address must not contain spaces.")
-            return false
-        }
-        //[ must be closed, no invalid characters inside
-        if address.range(of: "\\[(?![^\\[\\{\\},?\\*/]+\\])", options: .regularExpression) != nil {
-            NSLog("\"\(self.string)\" is an invalid address. [] must not contain invalid characters: \\[(?![^\\[\\{\\},?\\*/]+\\])")
-            return false
-        }
-        var open = address.components(separatedBy: "[").count
-        var close = address.components(separatedBy: "]").count
-        
-        if open != close {
-            NSLog("\"\(self.string)\" is an invalid address. [] must be closed.")
-            return false
-        }
-        
-        //{ must be closed, no invalid characters inside
-        if address.range(of: "\\{(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
-            NSLog("\"\(self.string)\" is an invalid address. {} must not contain invalid characters: \\{(?![^\\{\\[\\]?\\*/]+\\})")
-            return false
-        }
-        open = address.components(separatedBy: "{").count
-        close = address.components(separatedBy: "}").count
-        
-        if open != close {
-            NSLog("\"\(self.string)\" is an invalid address. {} must be closed.")
-            return false
-        }
-        
-        //"," only inside {}
-        if address.range(of: ",(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
-            NSLog("\"\(self.string)\" is an invalid address. Must only contain \",\" inside {}.")
-            return false
-        }
-        if address.range(of: ",(?<!\\{[^\\{\\[\\]?\\*/]+)", options: .regularExpression) != nil {
-            NSLog("\"\(self.string)\" is an invalid address. Must only contain \",\" inside {}.")
-            return false
-        }
-        
-        //passed all the tests
-        return true
     }
     
     // Returns True if the address matches the address pattern.
