@@ -60,20 +60,21 @@ public class OSCServer {
             self.delegate?.didReceive(data)
         }
         
-        if "#bundle\0".toData() == data.subdata(in: Range(0...7)){//matches string #bundle
-            if let bundle = decodeBundle(data){
-                self.sendToDelegate(bundle)
-            } else {
-                print("invalid packet")
-            }
-        } else {
+        if data[0] == 0x2f { // check if first character is "/"
             if let message = decodeMessage(data){
                 self.sendToDelegate(message)
-            } else {
-                print("invalid packet")
             }
+            
+        } else if data.count > 8 {//make sure we have at least 8 bytes before checking if a bundle.
+            if "#bundle\0".toData() == data.subdata(in: Range(0...7)){//matches string #bundle
+                if let bundle = decodeBundle(data){
+                    self.sendToDelegate(bundle)
+                }
+            }
+        } else {
+            NSLog("Invalid OSCPacket: data must begin with #bundle\\0 or /")
         }
-    }
+}
     
     func decodeBundle(_ data: Data)->OSCBundle? {
         
