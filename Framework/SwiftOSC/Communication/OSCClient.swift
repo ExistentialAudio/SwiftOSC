@@ -19,6 +19,7 @@ public class OSCClient {
         self.address = address
         self.port = port
         client = UDPClient(addr: address, port: port)
+        client.enableBroadcast()
     }
     public func send(_ element: OSCElement){
         var data = element.data
