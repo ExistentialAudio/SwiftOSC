@@ -10,6 +10,14 @@ import UIKit
 import Network
 import SwiftOSC
 
+func printHexString(data: Data){
+    var string = ""
+    for byte in data {
+        let hex = String(format:"%02X", byte)
+        string += hex
+    }
+    print(string)
+}
 
 class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
     
@@ -61,7 +69,7 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
     @IBAction func changeClientHost(_ sender: UITextField) {
         if let host = sender.text{
             if host != clientHost {
-                if let oscClient = OSCClient(host: clientHost, port: clientPort) {
+                if let oscClient = OSCClient(host: host, port: clientPort) {
                     client = oscClient
                     clientHost = host
                     defaults.set(clientHost, forKey: "clientHost")
@@ -76,7 +84,7 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
         if let text = sender.text {
             if let port = Int(text) { // if integer
                 if port != clientPort {
-                    if let oscClient = OSCClient(host: clientHost, port: clientPort) {
+                    if let oscClient = OSCClient(host: clientHost, port: port) {
                         client = oscClient
                         clientPort = port
                         defaults.set(clientPort, forKey: "clientPort")
@@ -129,11 +137,14 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
     @IBAction func sendString(_ sender: UITextField) {
         let message = OSCMessage(destinationAddressPattern, sender.text)
         client?.send(message)
+        printHexString(data: message.oscData)
     }
     @IBAction func sendInteger(_ sender: UISegmentedControl) {
         let message = OSCMessage(destinationAddressPattern, sender.selectedSegmentIndex)
         client?.send(message)
+        printHexString(data: message.oscData)
     }
+    
     @IBAction func sendFloat(_ sender: UISlider) {
         let message = OSCMessage(destinationAddressPattern, sender.value)
         client?.send(message)

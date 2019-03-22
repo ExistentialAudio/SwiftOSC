@@ -91,6 +91,7 @@ public class OSCServer {
         
         if data[0] == 0x2f { // check if first character is "/"
             if let message = decodeMessage(data){
+                print(message)
                 self.sendToDelegate(message)
             }
             

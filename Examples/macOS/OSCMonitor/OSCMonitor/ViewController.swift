@@ -73,7 +73,7 @@ class ViewController: NSViewController, NSTableViewDataSource, OSCDelegate {
     }
     @IBAction func changePort(_ sender: NSTextField) {
         if sender.integerValue != defaults.integer(forKey: "Port") {
-            _ = server?.change(port: sender.integerValue)
+            server = OSCServer(port: sender.integerValue)
             defaults.set(sender.integerValue, forKey: "Port")
         }
     }
