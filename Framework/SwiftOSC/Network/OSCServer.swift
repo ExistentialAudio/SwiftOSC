@@ -74,6 +74,7 @@ public class OSCServer {
     func receive() {
         connection?.receiveMessage { [weak self] (content, context, isCompleted, error) in
             if let data = content {
+                data.printHexString()
                 self?.decodePacket(data)
             }
             

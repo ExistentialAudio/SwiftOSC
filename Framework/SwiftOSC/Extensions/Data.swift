@@ -24,4 +24,13 @@ extension Data {
     }
 }
 
-
+extension Data {
+    public func printHexString() {
+        var string = ""
+        for byte in self {
+            let hex = String(format:"%02X", byte)
+            string += hex
+        }
+        print(string)
+    }
+}

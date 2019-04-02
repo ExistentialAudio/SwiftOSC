@@ -10,15 +10,6 @@ import UIKit
 import Network
 import SwiftOSC
 
-func printHexString(data: Data){
-    var string = ""
-    for byte in data {
-        let hex = String(format:"%02X", byte)
-        string += hex
-    }
-    print(string)
-}
-
 class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
     
     var defaults = UserDefaults.standard
@@ -100,7 +91,7 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
         if let text = sender.text {
             if let port = Int(text) { // if integer
                 if port != serverPort { // if different port
-                    if let oscServer = OSCServer(port: clientPort) {
+                    if let oscServer = OSCServer(port: port) {
                         server = oscServer
                         serverPort = port
                         defaults.set(serverPort, forKey: "serverPort")
@@ -137,12 +128,10 @@ class ViewController: UIViewController, OSCDelegate, UITextFieldDelegate {
     @IBAction func sendString(_ sender: UITextField) {
         let message = OSCMessage(destinationAddressPattern, sender.text)
         client?.send(message)
-        printHexString(data: message.oscData)
     }
     @IBAction func sendInteger(_ sender: UISegmentedControl) {
         let message = OSCMessage(destinationAddressPattern, sender.selectedSegmentIndex)
         client?.send(message)
-        printHexString(data: message.oscData)
     }
     
     @IBAction func sendFloat(_ sender: UISlider) {
