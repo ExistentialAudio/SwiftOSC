@@ -1,6 +1,6 @@
 import Foundation
 
-public class OSCClient {
+@objc public class OSCClient: NSObject {
     public var address: String {
         didSet {
             _ = client.close()
