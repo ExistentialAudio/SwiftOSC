@@ -47,7 +47,7 @@ public class OSCServer {
                 let (data,_,_) = self.server.recv(9216)
                 if let d = data {
                     if self.running {
-                        self.decodePacket(Data(bytes: d))   
+                        self.decodePacket(Data(d))
                     }
                 }
             }
