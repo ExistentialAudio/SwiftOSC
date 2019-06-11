@@ -199,6 +199,7 @@
 				TargetAttributes = {
 					039A7B8421D5753200C52251 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -208,6 +209,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 039A7B7B21D5753200C52251;
 			productRefGroup = 039A7B8621D5753200C52251 /* Products */;
@@ -401,7 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.SwiftOSC;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};
@@ -427,7 +429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.SwiftOSC;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 			};

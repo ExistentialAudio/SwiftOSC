@@ -144,7 +144,7 @@ public class OSCServer {
         var message: OSCMessage
         
         //extract address and check if valid
-        if let addressEnd = messageData.index(of: 0x00){
+        if let addressEnd = messageData.firstIndex(of: 0x00){
             
             let addressString = messageData.subdata(in: 0..<addressEnd).toString()
             if let address = OSCAddressPattern(addressString) {
@@ -152,7 +152,7 @@ public class OSCServer {
                 
                 //extract types
                 messageData = messageData.subdata(in: (addressEnd/4+1)*4..<messageData.count)
-                let typeEnd = messageData.index(of: 0x00)!
+                let typeEnd = messageData.firstIndex(of: 0x00)!
                 let type = messageData.subdata(in: 1..<typeEnd).toString()
                 
                 messageData = messageData.subdata(in: (typeEnd/4+1)*4..<messageData.count)
@@ -166,7 +166,7 @@ public class OSCServer {
                         message.add(Float(messageData.subdata(in: Range(0...3))))
                         messageData = messageData.subdata(in: 4..<messageData.count)
                     case "s"://string
-                        let stringEnd = messageData.index(of: 0x00)!
+                        let stringEnd = messageData.firstIndex(of: 0x00)!
                         message.add(String(messageData.subdata(in: 0..<stringEnd)))
                         messageData = messageData.subdata(in: (stringEnd/4+1)*4..<messageData.count)
                     case "b": //blob
