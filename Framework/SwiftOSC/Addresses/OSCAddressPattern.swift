@@ -59,6 +59,8 @@ public struct OSCAddressPattern {
     internal func makeRegex(from addressPattern: String) -> String {
         var addressPattern = addressPattern
         
+        autoreleasepool {
+        
         //escapes characters: \ + ( ) . ^ $ |
         addressPattern = addressPattern.replacingOccurrences(of: "\\", with: "\\\\")
         addressPattern = addressPattern.replacingOccurrences(of: "+", with: "\\+")
@@ -80,84 +82,102 @@ public struct OSCAddressPattern {
         
         addressPattern = "^" + addressPattern       //matches beginning of string
         addressPattern.append("$")                  //matches end of string
+            
+        }
         
         return addressPattern
     }
+    
     internal func makeRegexPath(from regex: String) -> String {
+
         var regex = regex
-        regex = String(regex.dropLast())
-        regex = String(regex.dropFirst())
-        regex = String(regex.dropFirst())
-
-        var components = regex.components(separatedBy: "/")
         var regexContainer = "^/$|"
-
-        for x in 0 ..< components.count {
-
-            regexContainer += "^"
-
-            for y in 0 ... x {
-                regexContainer += "/" + components[y]
-            }
-
-            regexContainer += "$|"
+        
+        autoreleasepool {
+            
+            regex = String(regex.dropLast())
+            regex = String(regex.dropFirst())
+            regex = String(regex.dropFirst())
+            
+            var components = regex.components(separatedBy: "/")
+                    for x in 0 ..< components.count {
+            
+                        regexContainer += "^"
+            
+                        for y in 0 ... x {
+                            regexContainer += "/" + components[y]
+                        }
+            
+                        regexContainer += "$|"
+                    }
+            
+                    regexContainer = String(regexContainer.dropLast())
+            
         }
-
-        regexContainer = String(regexContainer.dropLast())
 
         return regexContainer
         
     }
     internal func valid(_ address: String) ->Bool {
         
-        //no empty strings
-        if address == "" {
-            return false
-        }
-        //must start with "/"
-        if address.first != "/" {
-            return false
-        }
-        //no more than two "/" in a row
-        if address.range(of: "/{3,}", options: .regularExpression) != nil {
-            return false
-        }
-        //no spaces
-        if address.range(of: "\\s", options: .regularExpression) != nil {
-            return false
-        }
-        //[ must be closed, no invalid characters inside
-        if address.range(of: "\\[(?![^\\[\\{\\},?\\*/]+\\])", options: .regularExpression) != nil {
-            return false
-        }
-        var open = address.components(separatedBy: "[").count
-        var close = address.components(separatedBy: "]").count
+        var isValid = true
         
-        if open != close {
-            return false
+        autoreleasepool {
+            
+            //no empty strings
+            if address == "" {
+                isValid = false
+            } else
+                
+            //must start with "/"
+            if address.first != "/" {
+                isValid = false
+            } else
+            //no more than two "/" in a row
+            if address.range(of: "/{3,}", options: .regularExpression) != nil {
+                isValid = false
+            } else
+            //no spaces
+            if address.range(of: "\\s", options: .regularExpression) != nil {
+                isValid = false
+            } else
+            //[ must be closed, no invalid characters inside
+            if address.range(of: "\\[(?![^\\[\\{\\},?\\*/]+\\])", options: .regularExpression) != nil {
+                isValid = false
+            } else {
+                var open = address.components(separatedBy: "[").count
+                var close = address.components(separatedBy: "]").count
+
+                if open != close {
+                    isValid = false
+                } else
+
+                //{ must be closed, no invalid characters inside
+                if address.range(of: "\\{(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
+                    isValid = false
+                } else {
+                    open = address.components(separatedBy: "{").count
+                    close = address.components(separatedBy: "}").count
+
+                    if open != close {
+                        isValid = false
+                    } else
+
+                    //"," only inside {}
+                    if address.range(of: ",(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
+                        isValid = false
+                    } else
+                    if address.range(of: ",(?<!\\{[^\\{\\[\\]?\\*/]+)", options: .regularExpression) != nil {
+                        isValid = false
+                    }
+                }
+            }
         }
         
-        //{ must be closed, no invalid characters inside
-        if address.range(of: "\\{(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
-            return false
-        }
-        open = address.components(separatedBy: "{").count
-        close = address.components(separatedBy: "}").count
-        
-        if open != close {
-            return false
-        }
-        
-        //"," only inside {}
-        if address.range(of: ",(?![^\\{\\[\\]?\\*/]+\\})", options: .regularExpression) != nil {
-            return false
-        }
-        if address.range(of: ",(?<!\\{[^\\{\\[\\]?\\*/]+)", options: .regularExpression) != nil {
-            return false
-        }
-        
+
         //passed all the tests
-        return true
+        return isValid
+        
     }
     
     // Returns True if the address matches the address pattern.

@@ -35,12 +35,18 @@ public struct OSCAddress {
     
     //MARK: methods
     func valid(_ address: String) ->Bool {
-        //invalid characters: space * , ? [ ] { } OR two or more / in a row AND must start with / AND no empty strings
-        if address.range(of: "[\\s\\*,?\\[\\]\\{\\}]|/{2,}|^[^/]|^$", options: .regularExpression) != nil {
-            //returns false if there are any matches
-            return false
-        } else {
-            return true
+        
+        var isValid = true
+        
+        autoreleasepool {
+            
+            //invalid characters: space * , ? [ ] { } OR two or more / in a row AND must start with / AND no empty strings
+            if address.range(of: "[\\s\\*,?\\[\\]\\{\\}]|/{2,}|^[^/]|^$", options: .regularExpression) != nil {
+                //returns false if there are any matches
+                isValid = false
+            }
         }
+        
+        return isValid
     }
 }
