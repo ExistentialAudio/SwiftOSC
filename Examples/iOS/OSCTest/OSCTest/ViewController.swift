@@ -18,14 +18,46 @@ var address = OSCAddressPattern("/")
 
 class ViewController: UIViewController {
     
+    // User defaults
+    private var defaults = UserDefaults.standard
+    
     //Variables
     var ipAddress = "localhost"
     var port = 8080
     var text = ""
+    
+    // UI Elements
+    @IBOutlet weak var ipAddressLabel: UITextField!
+    @IBOutlet weak var portLabel: UITextField!
+    @IBOutlet weak var addressPatternLabel: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Get defaults and set Labels
+        if let ipAddress = defaults.string(forKey: "ipAddress") {
+            
+            if ipAddress == "" {
+                self.ipAddress = "localhost"
+            }
+            ipAddressLabel.text = ipAddress
+        }
+        port = defaults.integer(forKey: "port")
+        print(port)
+        if port == 0 {
+            self.port = 8080
+        }
+        portLabel.text = String(port)
+        
+        client = OSCClient(address: ipAddress, port: port)
+        
+        _ = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (_) in
+            let message = OSCMessage(address, 0, 0.0, true, "hello world")
+            client.send(message)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +71,8 @@ class ViewController: UIViewController {
         if let text = sender.text {
             ipAddress = text
             client = OSCClient(address: ipAddress, port: port)
+            
+            defaults.set(ipAddress, forKey: "ipAddress")
         }
     }
     
@@ -49,6 +83,8 @@ class ViewController: UIViewController {
                 print(number)
                 port = number
                 client = OSCClient(address: ipAddress, port: port)
+                
+                defaults.set(port, forKey: "port")
             }
         }
     }

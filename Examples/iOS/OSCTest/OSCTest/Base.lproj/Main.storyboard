@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,36 +15,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OSCTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="puF-04-U6e">
-                                <rect key="frame" x="38" y="330.5" width="948" height="31"/>
+                                <rect key="frame" x="38" y="354.66666666666669" width="338" height="31"/>
                                 <connections>
                                     <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="zlf-Jh-YSR"/>
                                 </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="sKM-kg-Mqo">
-                                <rect key="frame" x="465" y="261.5" width="94" height="29"/>
+                                <rect key="frame" x="160" y="285.66666666666669" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="z5b-P3-GNQ"/>
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqh-db-cUa">
-                                <rect key="frame" x="485" y="471.5" width="54" height="30"/>
+                                <rect key="frame" x="180" y="495.66666666666669" width="54" height="30.000000000000057"/>
                                 <state key="normal" title="Impulse"/>
                                 <connections>
                                     <action selector="impulse:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAo-6W-vdj"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRs-0F-Qnh">
-                                <rect key="frame" x="487.5" y="400.5" width="51" height="31"/>
+                                <rect key="frame" x="182.66666666666663" y="424.66666666666669" width="51" height="31"/>
                                 <connections>
                                     <action selector="switcher:" destination="BYZ-38-t0r" eventType="valueChanged" id="ffC-LT-op0"/>
                                 </connections>
                             </switch>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MP-YM-6LL">
-                                <rect key="frame" x="40" y="541.5" width="944" height="30"/>
+                                <rect key="frame" x="40" y="565.66666666666663" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -54,14 +54,14 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6D4-SP-5Io">
-                                <rect key="frame" x="478" y="581.5" width="68" height="30"/>
+                                <rect key="frame" x="173" y="605.66666666666663" width="68" height="30"/>
                                 <state key="normal" title="Send Text"/>
                                 <connections>
                                     <action selector="sendText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LF2-IR-fsF"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="/" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k0E-UG-Frx">
-                                <rect key="frame" x="40" y="191.5" width="944" height="30"/>
+                                <rect key="frame" x="40" y="215.66666666666666" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -71,13 +71,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Pattern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsn-9C-wqG">
-                                <rect key="frame" x="450.5" y="161" width="123" height="20.5"/>
+                                <rect key="frame" x="145.66666666666663" y="185" width="122.99999999999997" height="20.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="localhost" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weZ-5y-gEI">
-                                <rect key="frame" x="40" y="91" width="824" height="30"/>
+                                <rect key="frame" x="40" y="115" width="214" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -87,7 +87,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8080" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiS-Li-w7q">
-                                <rect key="frame" x="884" y="91" width="100" height="30"/>
+                                <rect key="frame" x="274" y="115" width="100" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -97,13 +97,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Port" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAe-LD-kcV">
-                                <rect key="frame" x="917.5" y="60" width="33" height="21"/>
+                                <rect key="frame" x="307.66666666666674" y="84" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss4-Ie-2mh">
-                                <rect key="frame" x="411" y="60" width="82" height="21"/>
+                                <rect key="frame" x="106" y="84" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -148,6 +148,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addressPatternLabel" destination="k0E-UG-Frx" id="mfQ-S8-UbM"/>
+                        <outlet property="ipAddressLabel" destination="weZ-5y-gEI" id="fMn-X7-NsN"/>
+                        <outlet property="portLabel" destination="RiS-Li-w7q" id="n65-lS-PGr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

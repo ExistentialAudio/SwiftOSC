@@ -204,7 +204,7 @@
 				TargetAttributes = {
 					036486751F820BBD00F3D6CE = {
 						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -402,7 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.SwiftOSCiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -424,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinrothmusic.SwiftOSCiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

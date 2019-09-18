@@ -124,7 +124,7 @@
 				TargetAttributes = {
 					031ABE6B1FB64DC7005184D4 = {
 						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -309,12 +309,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 638F7EDPVY;
+				DEVELOPMENT_TEAM = M4VH59A389;
 				INFOPLIST_FILE = OSCTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCTestOld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -325,12 +325,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 638F7EDPVY;
+				DEVELOPMENT_TEAM = M4VH59A389;
 				INFOPLIST_FILE = OSCTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCTestOld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
