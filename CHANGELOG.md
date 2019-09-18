@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.7] - 2019-04-02
+### Added
+- OSCTest saves IP Address and Port to UserDefaults
+
+### Fixes
+- Wrapped strings in autoreleasepool.
+
 ## [1.2.4] - 2019-04-02
 ### Added
 - Enable UDP Client Broadcast
