@@ -19,8 +19,12 @@ extension Data {
 }
 
 extension Data {
-    func toString()->String{
-        return String(data: self, encoding: String.Encoding.utf8)!
+    func toString()->String?{
+        if let string = String(data: self, encoding: String.Encoding.utf8){
+            return string
+        } else {
+            return nil
+        }
     }
 }
 
