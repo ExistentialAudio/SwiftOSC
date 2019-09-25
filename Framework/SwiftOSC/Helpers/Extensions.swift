@@ -46,6 +46,14 @@ extension Date {
     }
 }
 
+extension Date {
+    var oscTimetag: Timetag {
+        get {
+            return Timetag(Date().timeIntervalSince(Date("1900-01-01T00:00:00-00:00")!) * 0x1_0000_0000)
+        }
+    }
+}
+
 extension Int32 {
     func toData() -> Data {
         var int = self.bigEndian

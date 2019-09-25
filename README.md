@@ -98,7 +98,6 @@ client.send(message)
 ```
 
 ## Known Issues
-* All OSC messages are delivered immediately. Timetags are ignored.
 
 ## About
 

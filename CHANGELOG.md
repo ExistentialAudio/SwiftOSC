@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.3.0] - 2019-09-24
+### Added
+- Timetags in OSCBundles are now delivered at the correct time. 
+
 ## [1.2.8] - 2019-09-19
 ### Changed
 - Various bug fixes
