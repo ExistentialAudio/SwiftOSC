@@ -1,4 +1,4 @@
-# SwiftOSC v1.2
+# SwiftOSC v1.3
 
 [![Version](https://img.shields.io/cocoapods/v/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
 [![License](https://img.shields.io/cocoapods/l/SwiftOSC.svg?style=flat)](https://github.com/devinroth/SwiftOSC/blob/master/LICENSE)
