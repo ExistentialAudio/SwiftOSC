@@ -51,7 +51,7 @@ public class OSCMessage: OSCElement, CustomStringConvertible {
                 description += " String<\(string)>"
             }
             if let blob = argument as? Blob {
-                description += " Blob\(blob)"
+                description += " Blob<\(blob)>"
             }
             if let bool = argument as? Bool {
                 description += " <\(bool)>"

@@ -42,9 +42,14 @@ var client = OSCClient(address: "localhost", port: 9000)
 //: Create a message
 var message = OSCMessage(OSCAddressPattern("/test"), 110, 5.0, "Hello World", Blob(), true, false, nil, impulse, Timetag(1))
 
+//: Create a bundle
+var bundle = OSCBundle(Timetag(secondsSinceNow: 5.0), message)
+
 //: ### Step 4
 //: Send message
 client.send(message)
+//: Send message
+client.send(bundle)
 
 //:Keeps playground running in order to send and receive OSC Data
 PlaygroundPage.current.needsIndefiniteExecution = true
