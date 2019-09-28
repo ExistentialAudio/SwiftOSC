@@ -92,7 +92,7 @@ var message = OSCMessage(
 )
 ```
 Create a bundle
-```
+```swift
 var bundle = OSCBundle(Timetag(secondsSinceNow: 5.0), message)
 ```
 
@@ -102,7 +102,7 @@ Send message
 client.send(message)
 ```
 Send bundle
-```
+```swift
 // If the server fully supports timetags, like SwiftOSC, the bundle will be delivered at the correct time.
 client.send(bundle)
 ```
