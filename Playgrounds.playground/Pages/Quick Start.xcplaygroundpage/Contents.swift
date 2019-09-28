@@ -43,6 +43,7 @@ var client = OSCClient(address: "localhost", port: 9000)
 var message = OSCMessage(OSCAddressPattern("/test"), 110, 5.0, "Hello World", Blob(), true, false, nil, impulse, Timetag(1))
 
 //: Create a bundle
+// If the server fully supports timetags, like SwiftOSC, the bundle will be delivered at the correct time.
 var bundle = OSCBundle(Timetag(secondsSinceNow: 5.0), message)
 
 //: ### Step 4
