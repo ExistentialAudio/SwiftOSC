@@ -9,6 +9,11 @@ SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server framework.
 
 *If you are using SwiftOSC in a project, let me know. I would love to make a list of projects using SwiftOSC.*
 
+## Table of Contents
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Projects Using SwiftOSC](#projects-using-swiftosc)
+
 
 ## Installation
 
@@ -108,10 +113,7 @@ Send bundle
 client.send(bundle)
 ```
 
-## Known Issues
+## Projects Using SwiftOSC
 
-## About
-
-[Devin Roth](http://devinrothmusic.com) is a composer and programmer. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
 
 For additional information on Open Sound Control visit http://opensoundcontrol.org/.
