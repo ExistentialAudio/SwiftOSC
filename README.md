@@ -13,7 +13,7 @@ SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server framework.
 ## Installation
 
 ```
-pod 'SwiftOSC', '~> 1.2'
+pod 'SwiftOSC', '~> 1.3'
 ```
 
 OR
