@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03CE670023D57CB400510AC7 /* Timetag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66E423D57CB400510AC7 /* Timetag.swift */; };
+		03CE670123D57CB400510AC7 /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66E523D57CB400510AC7 /* Blob.swift */; };
+		03CE670223D57CB400510AC7 /* Impulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66E623D57CB400510AC7 /* Impulse.swift */; };
+		03CE670323D57CB400510AC7 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66E723D57CB400510AC7 /* Int.swift */; };
+		03CE670423D57CB400510AC7 /* OSCTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66E823D57CB400510AC7 /* OSCTypeProtocol.swift */; };
+		03CE670523D57CB400510AC7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66E923D57CB400510AC7 /* String.swift */; };
+		03CE670623D57CB400510AC7 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66EA23D57CB400510AC7 /* Bool.swift */; };
+		03CE670723D57CB400510AC7 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66EB23D57CB400510AC7 /* Float.swift */; };
+		03CE670823D57CB400510AC7 /* OSCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66F023D57CB400510AC7 /* OSCMessage.swift */; };
+		03CE670923D57CB400510AC7 /* OSCElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66F123D57CB400510AC7 /* OSCElementProtocol.swift */; };
+		03CE670A23D57CB400510AC7 /* OSCBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66F223D57CB400510AC7 /* OSCBundle.swift */; };
+		03CE670B23D57CB400510AC7 /* OSCAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66F423D57CB400510AC7 /* OSCAddress.swift */; };
+		03CE670C23D57CB400510AC7 /* OSCAddressPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66F523D57CB400510AC7 /* OSCAddressPattern.swift */; };
+		03CE670D23D57CB400510AC7 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66F823D57CB400510AC7 /* yudpsocket.c */; };
+		03CE670E23D57CB400510AC7 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66F923D57CB400510AC7 /* yudpsocket.swift */; };
+		03CE670F23D57CB400510AC7 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66FA23D57CB400510AC7 /* ysocket.swift */; };
+		03CE671023D57CB400510AC7 /* OSCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66FB23D57CB400510AC7 /* OSCServer.swift */; };
+		03CE671123D57CB400510AC7 /* OSCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66FC23D57CB400510AC7 /* OSCClient.swift */; };
+		03CE671223D57CB400510AC7 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66FE23D57CB400510AC7 /* Timer.swift */; };
+		03CE671323D57CB400510AC7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE66FF23D57CB400510AC7 /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		032E50EF23D5754D007F03FB /* SwiftOSC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SwiftOSC.h; path = ../tvOS/SwiftOSC.h; sourceTree = "<group>"; };
+		032E50F023D5754D007F03FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03A20E7423D577BF007F93F5 /* SwiftOSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03CE66E423D57CB400510AC7 /* Timetag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timetag.swift; sourceTree = "<group>"; };
+		03CE66E523D57CB400510AC7 /* Blob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
+		03CE66E623D57CB400510AC7 /* Impulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Impulse.swift; sourceTree = "<group>"; };
+		03CE66E723D57CB400510AC7 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		03CE66E823D57CB400510AC7 /* OSCTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCTypeProtocol.swift; sourceTree = "<group>"; };
+		03CE66E923D57CB400510AC7 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		03CE66EA23D57CB400510AC7 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
+		03CE66EB23D57CB400510AC7 /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		03CE66F023D57CB400510AC7 /* OSCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCMessage.swift; sourceTree = "<group>"; };
+		03CE66F123D57CB400510AC7 /* OSCElementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCElementProtocol.swift; sourceTree = "<group>"; };
+		03CE66F223D57CB400510AC7 /* OSCBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCBundle.swift; sourceTree = "<group>"; };
+		03CE66F423D57CB400510AC7 /* OSCAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCAddress.swift; sourceTree = "<group>"; };
+		03CE66F523D57CB400510AC7 /* OSCAddressPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCAddressPattern.swift; sourceTree = "<group>"; };
+		03CE66F823D57CB400510AC7 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		03CE66F923D57CB400510AC7 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
+		03CE66FA23D57CB400510AC7 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		03CE66FB23D57CB400510AC7 /* OSCServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCServer.swift; sourceTree = "<group>"; };
+		03CE66FC23D57CB400510AC7 /* OSCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCClient.swift; sourceTree = "<group>"; };
+		03CE66FE23D57CB400510AC7 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		03CE66FF23D57CB400510AC7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03A20E7123D577BF007F93F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		032E50E223D5754D007F03FB = {
+			isa = PBXGroup;
+			children = (
+				032E50EF23D5754D007F03FB /* SwiftOSC.h */,
+				032E50F023D5754D007F03FB /* Info.plist */,
+				03CE66E223D57CB400510AC7 /* SwiftOSC */,
+				032E50ED23D5754D007F03FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		032E50ED23D5754D007F03FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03A20E7423D577BF007F93F5 /* SwiftOSC.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03CE66E223D57CB400510AC7 /* SwiftOSC */ = {
+			isa = PBXGroup;
+			children = (
+				03CE66E323D57CB400510AC7 /* Types */,
+				03CE66EF23D57CB400510AC7 /* Elements */,
+				03CE66F323D57CB400510AC7 /* Addresses */,
+				03CE66F623D57CB400510AC7 /* Communication */,
+				03CE66FD23D57CB400510AC7 /* Helpers */,
+			);
+			name = SwiftOSC;
+			path = ../SwiftOSC;
+			sourceTree = "<group>";
+		};
+		03CE66E323D57CB400510AC7 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				03CE66E423D57CB400510AC7 /* Timetag.swift */,
+				03CE66E523D57CB400510AC7 /* Blob.swift */,
+				03CE66E623D57CB400510AC7 /* Impulse.swift */,
+				03CE66E723D57CB400510AC7 /* Int.swift */,
+				03CE66E823D57CB400510AC7 /* OSCTypeProtocol.swift */,
+				03CE66E923D57CB400510AC7 /* String.swift */,
+				03CE66EA23D57CB400510AC7 /* Bool.swift */,
+				03CE66EB23D57CB400510AC7 /* Float.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		03CE66EF23D57CB400510AC7 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				03CE66F023D57CB400510AC7 /* OSCMessage.swift */,
+				03CE66F123D57CB400510AC7 /* OSCElementProtocol.swift */,
+				03CE66F223D57CB400510AC7 /* OSCBundle.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		03CE66F323D57CB400510AC7 /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				03CE66F423D57CB400510AC7 /* OSCAddress.swift */,
+				03CE66F523D57CB400510AC7 /* OSCAddressPattern.swift */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
+		03CE66F623D57CB400510AC7 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				03CE66F723D57CB400510AC7 /* ysocket */,
+				03CE66FB23D57CB400510AC7 /* OSCServer.swift */,
+				03CE66FC23D57CB400510AC7 /* OSCClient.swift */,
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+		03CE66F723D57CB400510AC7 /* ysocket */ = {
+			isa = PBXGroup;
+			children = (
+				03CE66F823D57CB400510AC7 /* yudpsocket.c */,
+				03CE66F923D57CB400510AC7 /* yudpsocket.swift */,
+				03CE66FA23D57CB400510AC7 /* ysocket.swift */,
+			);
+			path = ysocket;
+			sourceTree = "<group>";
+		};
+		03CE66FD23D57CB400510AC7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				03CE66FE23D57CB400510AC7 /* Timer.swift */,
+				03CE66FF23D57CB400510AC7 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		03A20E6F23D577BF007F93F5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		03A20E7323D577BF007F93F5 /* SwiftOSC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03A20E7923D577BF007F93F5 /* Build configuration list for PBXNativeTarget "SwiftOSC" */;
+			buildPhases = (
+				03A20E6F23D577BF007F93F5 /* Headers */,
+				03A20E7023D577BF007F93F5 /* Sources */,
+				03A20E7123D577BF007F93F5 /* Frameworks */,
+				03A20E7223D577BF007F93F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftOSC;
+			productName = SwiftOSC;
+			productReference = 03A20E7423D577BF007F93F5 /* SwiftOSC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		032E50E323D5754D007F03FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Devin Roth";
+				TargetAttributes = {
+					03A20E7323D577BF007F93F5 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 032E50E623D5754D007F03FB /* Build configuration list for PBXProject "watchOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 032E50E223D5754D007F03FB;
+			productRefGroup = 032E50ED23D5754D007F03FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03A20E7323D577BF007F93F5 /* SwiftOSC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03A20E7223D577BF007F93F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03A20E7023D577BF007F93F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CE670923D57CB400510AC7 /* OSCElementProtocol.swift in Sources */,
+				03CE670C23D57CB400510AC7 /* OSCAddressPattern.swift in Sources */,
+				03CE670523D57CB400510AC7 /* String.swift in Sources */,
+				03CE670123D57CB400510AC7 /* Blob.swift in Sources */,
+				03CE670423D57CB400510AC7 /* OSCTypeProtocol.swift in Sources */,
+				03CE670023D57CB400510AC7 /* Timetag.swift in Sources */,
+				03CE671123D57CB400510AC7 /* OSCClient.swift in Sources */,
+				03CE670E23D57CB400510AC7 /* yudpsocket.swift in Sources */,
+				03CE671223D57CB400510AC7 /* Timer.swift in Sources */,
+				03CE670D23D57CB400510AC7 /* yudpsocket.c in Sources */,
+				03CE670823D57CB400510AC7 /* OSCMessage.swift in Sources */,
+				03CE670723D57CB400510AC7 /* Float.swift in Sources */,
+				03CE670F23D57CB400510AC7 /* ysocket.swift in Sources */,
+				03CE670A23D57CB400510AC7 /* OSCBundle.swift in Sources */,
+				03CE670223D57CB400510AC7 /* Impulse.swift in Sources */,
+				03CE671323D57CB400510AC7 /* Extensions.swift in Sources */,
+				03CE670323D57CB400510AC7 /* Int.swift in Sources */,
+				03CE670B23D57CB400510AC7 /* OSCAddress.swift in Sources */,
+				03CE670623D57CB400510AC7 /* Bool.swift in Sources */,
+				03CE671023D57CB400510AC7 /* OSCServer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		032E50F223D5754D007F03FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		032E50F323D5754D007F03FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		03A20E7A23D577BF007F93F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q5C99V536K;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = audio.existential.SwiftOSC;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		03A20E7B23D577BF007F93F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Q5C99V536K;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = audio.existential.SwiftOSC;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		032E50E623D5754D007F03FB /* Build configuration list for PBXProject "watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				032E50F223D5754D007F03FB /* Debug */,
+				032E50F323D5754D007F03FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03A20E7923D577BF007F93F5 /* Build configuration list for PBXNativeTarget "SwiftOSC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03A20E7A23D577BF007F93F5 /* Debug */,
+				03A20E7B23D577BF007F93F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 032E50E323D5754D007F03FB /* Project object */;
+}

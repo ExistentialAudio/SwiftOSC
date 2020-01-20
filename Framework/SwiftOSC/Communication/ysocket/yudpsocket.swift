@@ -136,7 +136,7 @@ public class UDPServer: YSocket{
     //TODO add multycast and boardcast
     public func recv(_ expectlen:Int)->([UInt8]?,String,Int){
         if let fd:Int32 = self.fd{
-            var buff:[UInt8] = [UInt8](repeating: 0x0,count: expectlen)
+            let buff:[UInt8] = [UInt8](repeating: 0x0,count: expectlen)
             var remoteipbuff:[Int8] = [Int8](repeating: 0x0,count: 16)
             var remoteport:Int32=0
             let readLen:Int32=c_yudpsocket_recive(fd, buff: buff, len: Int32(expectlen), ip: &remoteipbuff, port: &remoteport)

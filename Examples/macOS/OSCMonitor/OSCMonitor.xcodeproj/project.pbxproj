@@ -31,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		031E89072394D57C00B2126B /* OSCMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OSCMonitor.entitlements; sourceTree = "<group>"; };
 		033827B21D3999590065A3A7 /* OSCMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033827B51D3999590065A3A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033827B71D3999590065A3A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		033827B41D3999590065A3A7 /* OSCMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				031E89072394D57C00B2126B /* OSCMonitor.entitlements */,
 				033827B51D3999590065A3A7 /* AppDelegate.swift */,
 				033827B71D3999590065A3A7 /* ViewController.swift */,
 				033827B91D3999590065A3A7 /* Assets.xcassets */,
@@ -119,12 +121,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Devin Roth Music";
 				TargetAttributes = {
 					033827B11D3999590065A3A7 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 638F7EDPVY;
+						DevelopmentTeam = Q5C99V536K;
 						DevelopmentTeamName = "Devin Roth (Personal Team)";
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
@@ -299,11 +301,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OSCMonitor/OSCMonitor.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q5C99V536K;
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = audio.existential.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -314,11 +319,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OSCMonitor/OSCMonitor.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q5C99V536K;
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = audio.existential.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

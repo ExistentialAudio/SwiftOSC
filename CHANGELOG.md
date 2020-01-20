@@ -5,7 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.4.0] - Unreleased
+### Added
+- Support for watchOS and tvOS
+
+### Changed
+- Added OSC prefix to data types.
+
+## [1.3.1] - 2020-01-19
+### Changed
+- Changed OSCClient and OSCServer from public to open allowing for mocks
+- OSCServerDelegate protocol conforms to class
+- Changed var to let in a number of places.
+- 
 
 ## [1.3.0] - 2019-09-24
 ### Added

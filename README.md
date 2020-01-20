@@ -1,4 +1,4 @@
-# SwiftOSC v1.3
+# SwiftOSC v1.4
 
 [![Version](https://img.shields.io/cocoapods/v/SwiftOSC.svg?style=flat)](http://cocoapods.org/pods/SwiftOSC)
 [![License](https://img.shields.io/cocoapods/l/SwiftOSC.svg?style=flat)](https://github.com/devinroth/SwiftOSC/blob/master/LICENSE)
@@ -7,12 +7,18 @@
 SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server framework.
 
 
+*If you are using SwiftOSC in a project, let me know. I would love to make a list of projects using SwiftOSC.*
+
+## Table of Contents
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Projects Using SwiftOSC](#projects-using-swiftosc)
 
 
 ## Installation
 
 ```
-pod 'SwiftOSC', '~> 1.2'
+pod 'SwiftOSC', '~> 1.4'
 ```
 
 OR
@@ -107,10 +113,7 @@ Send bundle
 client.send(bundle)
 ```
 
-## Known Issues
+## Projects Using SwiftOSC
 
-## About
-
-[Devin Roth](http://devinrothmusic.com) is a composer and programmer. When not composing, teaching, or being a dad, Devin attempts to make his life more efficient by writing programs.
 
 For additional information on Open Sound Control visit http://opensoundcontrol.org/.
