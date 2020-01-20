@@ -126,7 +126,7 @@
 				TargetAttributes = {
 					033827B11D3999590065A3A7 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 638F7EDPVY;
+						DevelopmentTeam = Q5C99V536K;
 						DevelopmentTeamName = "Devin Roth (Personal Team)";
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
@@ -304,10 +304,11 @@
 				CODE_SIGN_ENTITLEMENTS = OSCMonitor/OSCMonitor.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q5C99V536K;
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = audio.existential.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -321,10 +322,11 @@
 				CODE_SIGN_ENTITLEMENTS = OSCMonitor/OSCMonitor.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q5C99V536K;
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftosc.OSCMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = audio.existential.OSCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
