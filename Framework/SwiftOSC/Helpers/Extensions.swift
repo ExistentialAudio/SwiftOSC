@@ -81,6 +81,8 @@ extension String {
     func toData()->Data{
         return self.data(using: String.Encoding.utf8)!
     }
+    
+    // add padding to string
     func toDataBase32()->Data {
         var data = self.data(using: String.Encoding.utf8)!
         var value:UInt8 = 0
