@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Support for watchOS and tvOS
 
+### Changed
+- Added OSC prefix to data types.
 
 ## [1.3.1] - 2020-01-19
 ### Changed
