@@ -38,12 +38,6 @@
       location = "group:Framework"
       name = "Framework">
       <FileRef
-         location = "group:tvOS/tvOS.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:watchOS/watchOS.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:iOS/iOS.xcodeproj">
       </FileRef>
       <FileRef

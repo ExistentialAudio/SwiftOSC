@@ -3,9 +3,8 @@ import Foundation
 
 
 
-/**
-  *For sending OSC messages to another OSC device on the network, or to another application on the current machine.*
- */
+
+/// For sending OSC messages to another OSC device on the network, or to another application on the current machine.
 @objc open class OSCClient: NSObject {
     
     /// Returns the current address, or sets the address messages will be sent to.
@@ -43,14 +42,20 @@ import Foundation
 
     
     /**
-     *Send a message to current address and port*
+     Send a message to current address and port
      
-    - Parameters:
-       - element: An OSCElement is an abstract protocol inherited by OSCMessage and OSCBundle.
-     
-    - Important:
+     - Important:
         If the OSCClient is not connected to a valid address and port, this method will not throw an error. You are responsible for managing
         a vaild connection.
+    
+     - Parameters:
+       - element: An OSCElement is an abstract protocol inherited by OSCMessage and OSCBundle.
+     
+     ~~~
+     // Here's an example of its usage
+     let message = OSCMessage(someAddress, 4.14)
+     myClient.send(message)
+     ~~~
     */
     open func send(_ element: OSCElement) {
         let data = element.data
