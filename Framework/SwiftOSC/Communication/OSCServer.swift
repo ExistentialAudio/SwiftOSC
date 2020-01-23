@@ -1,5 +1,10 @@
 import Foundation
 
+
+
+
+
+/// Delegate for OSCServer. In most cases, you only need to implement didReceive(message).
 public protocol OSCServerDelegate: class {
     func didReceive(_ data: Data)
     func didReceive(_ bundle: OSCBundle)
@@ -11,23 +16,50 @@ extension OSCServerDelegate {
     public func didReceive(_ message: OSCMessage){}
 }
 
+
+
+
+
+/// Used to receive OSC messages from another source, which are sent to the delegate.
 open class OSCServer {
+    
+    /// Returns the current address, or sets the address messages will be sent to.
     open var address: String {
         didSet {
             _ = server.close()
             server = UDPServer(addr: self.address, port:self.port)
         }
     }
+    
+    /// Returns the current port, or sets the port messages will be sent to.
     open var port: Int {
         didSet {
             _ = server.close()
             server = UDPServer(addr: self.address, port:self.port)
         }
     }
+    
+    /// Callbacks are send to this instance.
     open var delegate: OSCServerDelegate?
-    open var running = false
+    
+    /// Returns the state of the server if its enabled or not.
+    open fileprivate(set) var running = false
+    
     var server: UDPServer
     
+    
+    /**
+     Creates a new OSCServer
+     
+     - Parameters:
+       - address: Could be an IP address, or just "localhost" for sending internally in your computer. For most cases, just leave this with a blank String
+       - port: Must be a vaild port that's not being used.
+     
+     ~~~
+     // An example of usage
+     let server = OSCServer(address: "", port: 8080)
+     ~~~
+    */
     public init(address: String, port: Int){
         self.address = address
         self.port = port
@@ -35,12 +67,19 @@ open class OSCServer {
         run()
     }
     
-    open func start(){
+    
+    /// Allows messages to be received
+    open func start() {
         running = true
     }
+    
+    
+    /// Stops messages from being received. Does not free up the port.
     open func stop(){
         running = false
     }
+    
+    
     func run() {
         DispatchQueue.global().async{
             while true {
@@ -54,6 +93,7 @@ open class OSCServer {
             }
         }
     }
+    
     
     func decodePacket(_ data: Data){
         
@@ -79,7 +119,8 @@ open class OSCServer {
             }
         }
         
-}
+    }
+    
     
     func decodeBundle(_ data: Data)->OSCBundle? {
         
@@ -114,6 +155,7 @@ open class OSCServer {
         }
         return bundle
     }
+    
     
     func decodeMessage(_ data: Data)->OSCMessage?{
         var message: OSCMessage?
@@ -182,6 +224,8 @@ open class OSCServer {
         }
         return message
     }
+    
+    
     func sendToDelegate(_ element: OSCElement){
         DispatchQueue.main.async {
             if let message = element as? OSCMessage {
@@ -206,6 +250,7 @@ open class OSCServer {
             }
         }
     }
+    
     
     deinit {
         _ = server.close()

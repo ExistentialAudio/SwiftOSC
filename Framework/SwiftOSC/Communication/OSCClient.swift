@@ -27,9 +27,9 @@ import Foundation
         
     
     /**
-     *Creates a new OSCClient*
+     Creates a new OSCClient
      
-    - Parameters:
+     - Parameters:
        - address: Could be an IP address, or just "localhost" for sending internally in your computer
        - port: Must be a vaild port that's not being used.
     */
