@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A protocol for all the OSC types. The types are: Blob, Bool, Float, Impluse, Int, String, Timetag
 public protocol OSCType {
     var tag: String { get }
     var data: Data { get }

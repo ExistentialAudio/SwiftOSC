@@ -8,6 +8,15 @@
 
 import Foundation
 
+
+
+
+
+/**
+The address of the message.
+   
+*This struct validates the OSC address you pass into it. Invalid characters are: space * , ? [ ] { } OR two or more / in a row AND must start with / AND no empty strings*
+*/
 public struct OSCAddress {
     
     //MARK: Properties
@@ -24,6 +33,8 @@ public struct OSCAddress {
     public init() {
         self.string = "/"
     }
+    
+    
     public init(_ address: String) {
         self.string = "/"
         if valid(address) {
@@ -32,6 +43,7 @@ public struct OSCAddress {
             NSLog("\"\(address)\" is an invalid address")
         }
     }
+    
     
     //MARK: methods
     func valid(_ address: String) ->Bool {

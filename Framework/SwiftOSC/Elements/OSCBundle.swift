@@ -1,9 +1,18 @@
 import Foundation
 
+
+
+
+
+/// Used to group two or more OSCElements. In most cases, you can bundle two or more OSCMessages to be sent at the same time.
 public class OSCBundle: OSCElement, CustomStringConvertible {
+    
     //MARK: Properties
+    
     public var timetag: Timetag
+    /// An array of OSCElements that is or will be grouped in the bundle.
     public var elements:[OSCElement] = []
+    /// The whole OSC message in Data form. This has the all the elements in a single Data type.
     public var data: Data {
         get {
             var data = Data()
@@ -22,6 +31,8 @@ public class OSCBundle: OSCElement, CustomStringConvertible {
             return data
         }
     }
+    
+    /// A String version of the whole OSC message. This is helpful for printing and debuging.
     public var description: String {
         get {
             return "OSCBundle [Timetag<\(self.timetag)> Elements<\(elements.count)>]"
