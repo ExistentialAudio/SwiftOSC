@@ -16,16 +16,15 @@ extension Float: OSCType {
     }
     public var data: Data {
         get {
-            var float = CFConvertFloat32HostToSwapped(Float32(self))
-            let buffer = UnsafeBufferPointer(start: &float, count: 1)
-            return Data(buffer: buffer)
+            // first turn float into a byte array
+            let bytes: [UInt8] = withUnsafeBytes(of: self.bitPattern.bigEndian, Array.init)
+            return Data(bytes)
         }
     }
     init(_ data:Data){
-        var float = CFConvertFloat32HostToSwapped(Float())
-        let buffer = UnsafeMutableBufferPointer(start: &float, count: 1)
-        _ = data.copyBytes(to: buffer)
-        self = Float(CFConvertFloat32SwappedToHost(float))
+        // recover float from a byte array
+        let result = Float(bitPattern: UInt32(bigEndian: data.withUnsafeBytes { $0.load(as: UInt32.self) }))
+        self = result
     }
 }
 
@@ -38,9 +37,9 @@ extension Double: OSCType {
     }
     public var data: Data {
         get {
-            var float = CFConvertFloat32HostToSwapped(Float32(self))
-            let buffer = UnsafeBufferPointer(start: &float, count: 1)
-            return Data(buffer: buffer)
+            // first turn float into a byte array
+            let bytes: [UInt8] = withUnsafeBytes(of: Float(self.bitPattern.bigEndian), Array.init)
+            return Data(bytes)
         }
     }
 }
