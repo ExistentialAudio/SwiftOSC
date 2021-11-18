@@ -14,11 +14,14 @@ public class OSCServer {
     public var delegate: OSCDelegate?
     
     var listener: NWListener?
-    var port: NWEndpoint.Port
+    public private(set) var port: NWEndpoint.Port
+    public private(set) var name: String
     var queue: DispatchQueue
     var connection: NWConnection?
     
-    public init?(port: Int) {
+    public var running: Bool = false
+    
+    public init?(port: Int, bonjourName: String) {
         
         // check port range
         if port > 65535 && port >= 0{
@@ -26,6 +29,7 @@ public class OSCServer {
             return nil
         }
         
+        if bonjourName == nil { self.name = "OSCServer" } else { self.name = bonjourName }
         self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
         queue = DispatchQueue(label: "SwiftOSC Server")
         
@@ -33,8 +37,19 @@ public class OSCServer {
     }
     
     func setupListener() {
+       
+        // advertise Bonjour
+        let udpOption = NWProtocolUDP.Options()
+        let params = NWParameters(dtls: nil, udp: udpOption)
+        params.includePeerToPeer = true
+        
         // create the listener
-        listener = try! NWListener(using: .udp, on: port)
+        listener = try! NWListener(using: params, on: port)
+        
+        // Bonjour service
+        listener?.service = NWListener.Service(name: name,
+                                                  type: "_osc._udp",
+                                                  domain: nil)
         
         // handle incoming connections server will only respond to the latest connection
         listener?.newConnectionHandler = { [weak self] (newConnection) in
@@ -68,13 +83,14 @@ public class OSCServer {
         
         // start the listener
         listener?.start(queue: queue)
+        self.running = true
     }
     
     // receive
     func receive() {
         connection?.receiveMessage { [weak self] (content, context, isCompleted, error) in
             if let data = content {
-                data.printHexString()
+                // data.printHexString()
                 self?.decodePacket(data)
             }
             
@@ -92,7 +108,7 @@ public class OSCServer {
         
         if data[0] == 0x2f { // check if first character is "/"
             if let message = decodeMessage(data){
-                print(message)
+                // print(message)
                 self.sendToDelegate(message)
             }
             
@@ -229,10 +245,15 @@ public class OSCServer {
         }
     }
     
-    public func restart() {
+    public func stop() {
         // destroy connection and listener
         connection?.forceCancel()
         listener?.cancel()
+        self.running = false
+    }
+    
+    public func restart() {
+        self.stop()
         
         // setup new listener
         setupListener()
