@@ -15,7 +15,7 @@ public class OSCClient {
     var queue: DispatchQueue
     
     var host: NWEndpoint.Host
-    var port: NWEndpoint.Port
+    public var port: NWEndpoint.Port
     
     public init?(host: String, port: Int) {
         
