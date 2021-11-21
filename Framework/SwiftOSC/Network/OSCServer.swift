@@ -22,7 +22,7 @@ public class OSCServer {
     public var running: Bool = false
     var bonjour: Bool = false
     
-    public init?(port: Int, bonjourName: String?) {
+    public init?(port: Int, bonjourName: String? = nil) {
         
         // check port range
         if port > 65535 && port >= 0{
