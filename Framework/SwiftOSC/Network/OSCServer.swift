@@ -176,7 +176,11 @@ public class OSCServer {
                 
                 //extract types
                 messageData = messageData.subdata(in: (addressEnd/4+1)*4..<messageData.count)
-                let typeEnd = messageData.firstIndex(of: 0x00)!
+                
+                // TotalMix Bulk data crash
+                // ERROR Thread 10: Fatal error: Unexpectedly found nil while unwrapping an Optional value
+//                let typeEnd = messageData.firstIndex(of: 0x00)!
+                guard let typeEnd = messageData.firstIndex(of: 0x00) else { print("*** dirty fix 'type end found nil' *** "); return nil }
                 let type = messageData.subdata(in: 1..<typeEnd).toString()
                 
                 messageData = messageData.subdata(in: (typeEnd/4+1)*4..<messageData.count)
