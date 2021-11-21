@@ -20,8 +20,9 @@ public class OSCServer {
     var connection: NWConnection?
     
     public var running: Bool = false
+    var bonjour: Bool = false
     
-    public init?(port: Int, bonjourName: String) {
+    public init?(port: Int, bonjourName: String?) {
         
         // check port range
         if port > 65535 && port >= 0{
@@ -29,7 +30,12 @@ public class OSCServer {
             return nil
         }
         
-        if bonjourName == nil { self.name = "OSCServer" } else { self.name = bonjourName }
+        //        if bonjourName == nil { self.name = "OSCServer" } else { self.name = bonjourName }
+        
+        if bonjourName != nil {
+            bonjour = true
+            self.name = bonjourName
+        }
         self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
         queue = DispatchQueue(label: "SwiftOSC Server")
         
@@ -37,19 +43,20 @@ public class OSCServer {
     }
     
     func setupListener() {
-       
+        
         // advertise Bonjour
         let udpOption = NWProtocolUDP.Options()
         let params = NWParameters(dtls: nil, udp: udpOption)
-        params.includePeerToPeer = true
+        if bonjour { params.includePeerToPeer = true }
         
         // create the listener
         listener = try! NWListener(using: params, on: port)
         
         // Bonjour service
-        listener?.service = NWListener.Service(name: name,
-                                                  type: "_osc._udp",
-                                                  domain: nil)
+        if bonjour { listener?.service = NWListener.Service(name: name,
+                                                            type: "_osc._udp",
+                                                            domain: nil)
+        }
         
         // handle incoming connections server will only respond to the latest connection
         listener?.newConnectionHandler = { [weak self] (newConnection) in
