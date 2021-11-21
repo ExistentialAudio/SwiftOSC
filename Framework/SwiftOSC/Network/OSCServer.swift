@@ -32,7 +32,8 @@ public class OSCServer {
         
         //        if bonjourName == nil { self.name = "OSCServer" } else { self.name = bonjourName }
         
-        if bonjourName != nil {
+//        if bonjourName != nil {
+        if let bonjourName = bonjourName {
             bonjour = true
             self.name = bonjourName
         }
