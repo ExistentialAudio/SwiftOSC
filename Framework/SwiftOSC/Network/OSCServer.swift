@@ -30,9 +30,6 @@ public class OSCServer {
             return nil
         }
         
-        //        if bonjourName == nil { self.name = "OSCServer" } else { self.name = bonjourName }
-        
-//        if bonjourName != nil {
         if let bonjourName = bonjourName {
             bonjour = true
             self.name = bonjourName
@@ -110,8 +107,9 @@ public class OSCServer {
     
     func decodePacket(_ data: Data){
         
-        DispatchQueue.main.async {
-            self.delegate?.didReceive(data)
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.delegate?.didReceive(data)
         }
         
         if data[0] == 0x2f { // check if first character is "/"
@@ -229,23 +227,26 @@ public class OSCServer {
         }
     }
     func sendToDelegate(_ element: OSCElement){
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
             if let message = element as? OSCMessage {
-                self.delegate?.didReceive(message)
+                strongSelf.delegate?.didReceive(message)
             }
             if let bundle = element as? OSCBundle {
                 
                 // send to delegate at the correct time
                 if bundle.timetag.secondsSinceNow < 0 {
-                    self.delegate?.didReceive(bundle)
+                    strongSelf.delegate?.didReceive(bundle)
                     for element in bundle.elements {
-                        self.sendToDelegate(element)
+                        strongSelf.sendToDelegate(element)
                     }
                 } else {
                     DispatchQueue.main.asyncAfter(deadline: .now() + bundle.timetag.secondsSinceNow, execute: {
-                        self.delegate?.didReceive(bundle)
+                        [weak self] in
+                            guard let strongSelf = self else { return }
+                        strongSelf.delegate?.didReceive(bundle)
                         for element in bundle.elements {
-                            self.sendToDelegate(element)
+                            strongSelf.sendToDelegate(element)
                         }
                     })
                 }
