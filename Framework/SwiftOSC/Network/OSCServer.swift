@@ -11,7 +11,7 @@ import Network
 
 public class OSCServer {
     
-    public var delegate: OSCDelegate?
+    public weak var delegate: OSCDelegate?
     
     var listener: NWListener?
     public private(set) var port: NWEndpoint.Port
