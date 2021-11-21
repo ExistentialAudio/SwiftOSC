@@ -140,23 +140,25 @@ public class OSCServer {
             let length = Int(bundleData.subdata(in: Range(0...3)).toInt32())
             let nextData = bundleData.subdata(in: 4..<length+4)
             bundleData = bundleData.subdata(in:length+4..<bundleData.count)
-            if "#bundle\0".toData() == nextData.subdata(in: Range(0...7)){//matches string #bundle
-                if let newbundle = self.decodeBundle(nextData){
-                    bundle.add(newbundle)
-                } else {
-                    return nil
-                }
-            } else if nextData[0] == 0x2f { // matches /
+            // SwiftOSC isssue OSCServer crashes #52
+            // it's not a proper fix since you can have a bundle in a bundle
+//            if "#bundle\0".toData() == nextData.subdata(in: Range(0...7)){//matches string #bundle
+//                if let newbundle = self.decodeBundle(nextData){
+//                    bundle.add(newbundle)
+//                } else {
+//                    return nil
+//                }
+//            } else if nextData[0] == 0x2f { // matches /
                 
                 if let message = self.decodeMessage(nextData) {
                     bundle.add(message)
                 } else {
                     return nil
                 }
-            } else {
-                NSLog("Invalid OSCBundle: Bundle data must begin with #bundle\\0 or /.")
-                return nil
-            }
+//            } else {
+//                NSLog("Invalid OSCBundle: Bundle data must begin with #bundle\\0 or /.")
+//                return nil
+//            }
         }
         return bundle
     }
