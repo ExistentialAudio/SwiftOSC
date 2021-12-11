@@ -6,7 +6,7 @@ let package = Package(
     name: "SwiftOSC",
 	 platforms: [
 			  .macOS(.v10_14),
-			  .iOS(.v10),
+			  .iOS(.v12),
 			  .watchOS(.v5)
 		 ],
     products: [
