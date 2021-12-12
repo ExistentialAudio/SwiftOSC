@@ -10,39 +10,39 @@ import Foundation
 import Network
 
 public class OSCClient {
-    
+
     var connection: NWConnection?
     var queue: DispatchQueue
-    
-    var host: NWEndpoint.Host
-    public var port: NWEndpoint.Port
-    
+
+    public private(set) var host: NWEndpoint.Host
+    public private(set) var port: NWEndpoint.Port
+
     public init?(host: String, port: Int) {
-        
+
         // check if string is empty
         if host == "" {
-            
+
             NSLog("Invalid Hostname: No empty strings allowed.")
             return nil
-            
+
         }
         if port > 65535 && port >= 0{
             NSLog("Invalid Port: Out of range.")
             return nil
         }
-        
+
         self.host = NWEndpoint.Host(host)
         self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
-        
+
         queue = DispatchQueue(label: "SwiftOSC Client")
         setupConnection()
     }
-    
+
     func setupConnection(){
-        
+
         // create the connection
         connection = NWConnection(host: host, port: port, using: .udp)
-        
+
         // setup state update handler
         connection?.stateUpdateHandler = { [weak self] (newState) in
             switch newState {
@@ -62,13 +62,13 @@ public class OSCClient {
                 break
             }
         }
-        
+
         // start the connection
         connection?.start(queue: queue)
     }
-    
+
     public func send(_ element: OSCElement){
-        
+
         let data = element.oscData
         connection?.send(content: data, completion: .contentProcessed({ (error) in
             if let error = error {
@@ -80,7 +80,7 @@ public class OSCClient {
         // destroy connection and listener
         connection?.forceCancel()
 
-        
+
         // setup new listener
         setupConnection()
     }
