@@ -77,10 +77,13 @@ public class OSCServer {
             switch newState {
             case .ready:
                 NSLog("Listening on port \(String(describing: self?.listener?.port))")
+                self?.running = true
             case .failed(let error):
                 NSLog("Listener failed with error \(error)")
+                self?.running = false
             case .cancelled:
                 NSLog("Listener cancelled")
+                self?.running = false
             default:
                 break
             }
@@ -88,7 +91,6 @@ public class OSCServer {
         
         // start the listener
         listener?.start(queue: queue)
-        self.running = true
     }
     
     // receive
