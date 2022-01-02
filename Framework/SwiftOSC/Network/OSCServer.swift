@@ -81,6 +81,7 @@ public class OSCServer {
             case .failed(let error):
                 NSLog("Listener failed with error \(error)")
                 self?.running = false
+                self?.restart()
             case .cancelled:
                 NSLog("Listener cancelled")
                 self?.running = false
