@@ -19,7 +19,7 @@ public class OSCServer {
     var queue: DispatchQueue
     var connection: NWConnection?
     
-    public var running: Bool = false
+    public private(set) var running: Bool = false
     var bonjour: Bool = false
     
     public init?(port: Int, bonjourName: String? = nil) {
