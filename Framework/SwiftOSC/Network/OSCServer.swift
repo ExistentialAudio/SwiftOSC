@@ -13,13 +13,13 @@ public class OSCServer {
     
     public weak var delegate: OSCDelegate?
     
-    var listener: NWListener?
+    public var listener: NWListener?
     public private(set) var port: NWEndpoint.Port
     public private(set) var name: String?
     var queue: DispatchQueue
     var connection: NWConnection?
     
-    public private(set) var running: Bool = false
+    public private(set) var ready: Bool = false
     var bonjour: Bool = false
     
     public init?(port: Int, bonjourName: String? = nil) {
@@ -77,14 +77,14 @@ public class OSCServer {
             switch newState {
             case .ready:
                 NSLog("Listening on port \(String(describing: self?.listener?.port))")
-                self?.running = true
+                self?.ready = true
             case .failed(let error):
                 NSLog("Listener failed with error \(error)")
-                self?.running = false
+                self?.ready = false
                 self?.restart()
             case .cancelled:
                 NSLog("Listener cancelled")
-                self?.running = false
+                self?.ready = false
             default:
                 break
             }
@@ -267,7 +267,6 @@ public class OSCServer {
         // destroy connection and listener
         connection?.forceCancel()
         listener?.cancel()
-        self.running = false
     }
     
     public func restart() {
