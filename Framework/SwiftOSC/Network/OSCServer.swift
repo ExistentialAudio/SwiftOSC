@@ -23,7 +23,7 @@ public class OSCServer {
     public private(set) var ready: Bool = false
     var bonjour: Bool = false
     
-    public init?(port: Int, bonjourName: String? = nil, domain: String = nil) {
+    public init?(port: Int, bonjourName: String? = nil, domain: String? = nil) {
         
         self.domain = domain
         
