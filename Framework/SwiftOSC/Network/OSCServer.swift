@@ -16,7 +16,7 @@ public class OSCServer {
     public var listener: NWListener?
     public private(set) var port: NWEndpoint.Port
     public private(set) var name: String?
-    public private(set) var domain: String
+    public private(set) var domain: String?
     var queue: DispatchQueue
     var connection: NWConnection?
     
