@@ -16,13 +16,16 @@ public class OSCServer {
     public var listener: NWListener?
     public private(set) var port: NWEndpoint.Port
     public private(set) var name: String?
+    public private(set) var domain: String
     var queue: DispatchQueue
     var connection: NWConnection?
     
     public private(set) var ready: Bool = false
     var bonjour: Bool = false
     
-    public init?(port: Int, bonjourName: String? = nil) {
+    public init?(port: Int, bonjourName: String? = nil, domain: String = nil) {
+        
+        self.domain = domain
         
         // check port range
         if port > 65535 && port >= 0{
@@ -53,7 +56,7 @@ public class OSCServer {
         // Bonjour service
         if bonjour { listener?.service = NWListener.Service(name: name,
                                                             type: "_osc._udp",
-                                                            domain: nil)
+                                                            domain: domain)
         }
         
         // handle incoming connections server will only respond to the latest connection
