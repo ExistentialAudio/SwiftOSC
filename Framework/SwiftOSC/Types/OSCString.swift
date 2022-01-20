@@ -29,7 +29,7 @@ extension String: OSCType {
     }
     init(_ data:Data){
         guard let dataString = String(data: data, encoding: String.Encoding.utf8) else {
-            print("SwiftOSC StringDataError: String(describing: data))
+            print("SwiftOSC StringDataError: \(String(describing: data))")
                   self = "<OSCStringDataError>"
                   return }
         self = dataString
