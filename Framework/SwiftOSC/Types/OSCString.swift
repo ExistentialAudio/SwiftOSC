@@ -28,7 +28,7 @@ extension String: OSCType {
         }
     }
     init(_ data:Data){
-        guard let dataString = String(data: data, encoding: String.Encoding.utf8) else { print(String(describing: data)) } // debug
+        guard let dataString = String(data: data, encoding: String.Encoding.utf8) else { print(String(describing: data)); return } // debug
         self = dataString
         // self = String(data: data, encoding: String.Encoding.utf8)!
     }
