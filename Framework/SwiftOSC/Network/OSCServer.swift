@@ -77,11 +77,18 @@ public class OSCServer {
         
         // handle service registration changes 
         listener?.serviceRegistrationUpdateHandler = { (serviceChange) in
-                switch serviceChange {
+            switch(serviceChange) {
                 case .add(let endpoint):
                     switch endpoint {
-                    case let .service(name, _, _, domain):
-                        print("listening as name '\(name)', domain:'\(domain)'")
+                    case let .service(name: name, type: type, domain: domain, interface: interface):
+                        print("Listener: Service registered:",name,type,domain,interface)
+                    default:
+                        break
+                    }
+                case .remove(let endpoint):
+                    switch endpoint {
+                        case let .service(name: name, type: type, domain: domain, interface: interface):
+                            print("Listener: Service removed:",name,type,domain,interface)
                     default:
                         break
                     }
