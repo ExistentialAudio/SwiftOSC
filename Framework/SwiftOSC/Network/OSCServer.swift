@@ -75,6 +75,21 @@ public class OSCServer {
             self?.receive()
         }
         
+        // handle service registration changes 
+        listener?.serviceRegistrationUpdateHandler = { (serviceChange) in
+                switch serviceChange {
+                case .add(let endpoint):
+                    switch endpoint {
+                    case let .service(name, _, _, domain):
+                        print("listening as name '\(name)', domain:'\(domain)'")
+                    default:
+                        break
+                    }
+                default:
+                    break
+                }
+            }
+        
         // Handle listener state changes
         listener?.stateUpdateHandler = { [weak self] (newState) in
             switch newState {
