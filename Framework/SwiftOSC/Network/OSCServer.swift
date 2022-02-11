@@ -74,29 +74,7 @@ public class OSCServer {
             self?.connection?.start(queue: (self?.queue)!)
             self?.receive()
         }
-        
-        // handle service registration changes 
-        listener?.serviceRegistrationUpdateHandler = { (serviceChange) in
-            switch(serviceChange) {
-                case .add(let endpoint):
-                    switch endpoint {
-                    case let .service(name: name, type: type, domain: domain, interface: interface):
-                        print("Listener: Service registered:",name,type,domain,interface)
-                    default:
-                        break
-                    }
-                case .remove(let endpoint):
-                    switch endpoint {
-                        case let .service(name: name, type: type, domain: domain, interface: interface):
-                            print("Listener: Service removed:",name,type,domain,interface)
-                    default:
-                        break
-                    }
-                default:
-                    break
-                }
-            }
-        
+                
         // Handle listener state changes
         listener?.stateUpdateHandler = { [weak self] (newState) in
             switch newState {
