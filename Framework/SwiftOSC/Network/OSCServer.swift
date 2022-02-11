@@ -38,7 +38,7 @@ public class OSCServer {
             self.name = bonjourName
         }
         self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
-        queue = DispatchQueue(label: "SwiftOSC Server")
+        queue = .main // DispatchQueue(label: "SwiftOSC Server")
         
         setupListener()
     }
