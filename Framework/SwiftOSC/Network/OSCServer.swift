@@ -48,7 +48,7 @@ public class OSCServer {
         // advertise Bonjour
         let udpOption = NWProtocolUDP.Options()
         let params = NWParameters(dtls: nil, udp: udpOption)
-        if bonjour { params.includePeerToPeer = true }
+        //if bonjour { params.includePeerToPeer = true }
         
         // create the listener
         listener = try! NWListener(using: params, on: port)
