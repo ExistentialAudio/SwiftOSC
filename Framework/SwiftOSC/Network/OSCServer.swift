@@ -292,6 +292,7 @@ public class OSCServer {
         // destroy connection and listener
         connection?.forceCancel()
         listener?.cancel()
+        listener = nil
     }
     
     public func restart() {
