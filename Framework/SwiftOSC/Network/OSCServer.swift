@@ -62,17 +62,17 @@ public class OSCServer {
         // handle incoming connections server will only respond to the latest connection
         listener?.newConnectionHandler = { [weak self] (newConnection) in
             guard let self = self else { print("SwiftOSC Server newConnectionHandler error"); return }
-            NSLog("\(self.name ?? "SwiftOSC Server"): New Connection from \(String(describing: newConnection))")
+            NSLog("\(self.name): New Connection from \(String(describing: newConnection))")
             
             // cancel previous connection
-            if self?.connection != nil {
-                NSLog("\(self.name ?? "SwiftOSC Server"): Cancelling connection: \(String(describing: newConnection))")
-                self?.connection?.cancel()
+            if self.connection != nil {
+                NSLog("\(self.name): Cancelling connection: \(String(describing: newConnection))")
+                self.connection?.cancel()
             }
             
-            self?.connection = newConnection
-            self?.connection?.start(queue: (self?.queue)!)
-            self?.receive()
+            self.connection = newConnection
+            self.connection?.start(queue: (self.queue)!)
+            self.receive()
         }
                 
         // Handle listener state changes
@@ -80,15 +80,15 @@ public class OSCServer {
             guard let self = self else { print("SwiftOSC Server stateUpdateHandler error"); return }
             switch newState {
             case .ready:
-                NSLog("\(self.name ?? "SwiftOSC Server"): Listening on port \(String(describing: self?.listener?.port))")
-                self?.ready = true
+                NSLog("\(self.name): Listening on port \(String(describing: self.listener?.port))")
+                self.ready = true
             case .failed(let error):
-                NSLog("\(self.name ?? "SwiftOSC Server"): Listener failed with error \(error)")
-                self?.ready = false
-                self?.restart()
+                NSLog("\(self.name): Listener failed with error \(error)")
+                self.ready = false
+                self.restart()
             case .cancelled:
-                NSLog("\(self.name ?? "SwiftOSC Server"): Listener cancelled")
-                self?.ready = false
+                NSLog("\(self.name): Listener cancelled")
+                self.ready = false
             default:
                 break
             }
