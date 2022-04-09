@@ -56,15 +56,18 @@ public class OSCClient {
                 NSLog("SWiftOSC Client is restarting.")
                 self?.setupConnection()
             case .cancelled:
+                NSLog("SWiftOSC Client cancelled.")
                 self?.ready = false
                 break
             case .waiting(let error):
                 self?.ready = false
                 NSLog("SwiftOSC Client waiting with error \(error)")
             case .preparing:
+                NSLog("SWiftOSC Client is preparing.")
                 self?.ready = false
                 break
             case .setup:
+                NSLog("SWiftOSC Client is setting up.")
                 self?.ready = false
                 break
             }
