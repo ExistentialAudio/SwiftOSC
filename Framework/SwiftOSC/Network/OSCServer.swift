@@ -80,7 +80,7 @@ public class OSCServer {
             guard let self = self else { print("SwiftOSC Server stateUpdateHandler error"); return }
             switch newState {
             case .ready:
-                NSLog("\(self.name ?? "SwiftOSC server"): Listening on port \(String(describing: self.listener?.port))")
+                NSLog("\(self.name ?? "SwiftOSC server"): Listening on port \(String(describing: self.listener?.port ?? "<nil>")), delegate: \(String(describing: self.delegate ?? "<nil>"))")
                 self.ready = true
             case .failed(let error):
                 NSLog("\(self.name ?? "SwiftOSC server"): Listener failed with error \(error)")
