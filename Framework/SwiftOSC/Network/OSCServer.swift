@@ -270,11 +270,11 @@ public class OSCServer {
         // destroy connection and listener
         connection?.forceCancel()
         listener?.cancel()
-        listener = nil
+        // listener = nil
     }
     
     public func restart() {
-        self.stop()
+        stop()
         
         // setup new listener
         setupListener()
