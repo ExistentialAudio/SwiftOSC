@@ -71,7 +71,7 @@ public class OSCServer {
             }
             
             self.connection = newConnection
-            self.connection?.start(queue: (self.queue)!)
+            self.connection?.start(queue: (self.queue))
             self.receive()
         }
                 
