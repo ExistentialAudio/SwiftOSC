@@ -61,7 +61,7 @@ public class OSCServer {
         
         // handle incoming connections server will only respond to the latest connection
         listener?.newConnectionHandler = { [weak self] (newConnection) in
-            guard let self = self
+            guard let self = self else { print("SwiftOSC Server newConnectionHandler error"); return }
             NSLog("\(self.name ?? "SwiftOSC Server"): New Connection from \(String(describing: newConnection))")
             
             // cancel previous connection
@@ -77,7 +77,7 @@ public class OSCServer {
                 
         // Handle listener state changes
         listener?.stateUpdateHandler = { [weak self] (newState) in
-            guard let self = self
+            guard let self = self else { print("SwiftOSC Server stateUpdateHandler error"); return }
             switch newState {
             case .ready:
                 NSLog("\(self.name ?? "SwiftOSC Server"): Listening on port \(String(describing: self?.listener?.port))")
