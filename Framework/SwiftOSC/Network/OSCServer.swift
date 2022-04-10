@@ -196,7 +196,7 @@ public class OSCServer {
                      }
                     let customMessage = buildCustomMessage()
                     print("nOSC_ *** dirty fix 'type end found nil' *** ", customMessage.description)
-                    return customMessage //; return nil }
+                    return customMessage } //; return nil }
                 let type = messageData.subdata(in: 1..<typeEnd).toString()
                 
                 messageData = messageData.subdata(in: (typeEnd/4+1)*4..<messageData.count)
