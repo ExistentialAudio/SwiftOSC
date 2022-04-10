@@ -190,7 +190,7 @@ public class OSCServer {
                 guard let typeEnd = messageData.firstIndex(of: 0x00) else {
                     func buildCustomMessage() -> OSCMessage {
                         let customMessage: OSCMessage = OSCMessage(OSCAddressPattern("/OSCError")!)
-                        customMessage.add(String("\(name ?? String(port)) OSC exception_ *** dirty fix 'type end found nil' *** (TotalMix bundle data with missing type end)"))
+                        customMessage.add(String("\(name ?? Int(port)) OSC exception_ *** dirty fix 'type end found nil' *** (TotalMix bundle data with missing type end)"))
                         return customMessage
                      }
                     let customMessage = buildCustomMessage()
