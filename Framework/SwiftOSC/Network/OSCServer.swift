@@ -194,7 +194,7 @@ public class OSCServer {
                         return customMessage
                      }
                     let customMessage = buildCustomMessage()
-                    print("OSC exception_ *** dirty fix 'type end found nil' *** (TotalMix bundle data with missing type end)", customMessage.description)
+                    NSLog("SwiftOSCServer exception_ *** dirty fix 'type end found nil' ***")
                     return customMessage }
                 let type = messageData.subdata(in: 1..<typeEnd).toString()
                 
