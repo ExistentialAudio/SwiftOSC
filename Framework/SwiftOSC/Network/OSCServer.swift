@@ -188,15 +188,14 @@ public class OSCServer {
                 // ERROR Thread 10: Fatal error: Unexpectedly found nil while unwrapping an Optional value
 //                let typeEnd = messageData.firstIndex(of: 0x00)!
                 guard let typeEnd = messageData.firstIndex(of: 0x00) else {
-                    //print("*** dirty fix 'type end found nil' *** ")
                     func buildCustomMessage() -> OSCMessage {
                         let customMessage: OSCMessage = OSCMessage(OSCAddressPattern("/OSCError")!)
-                        customMessage.add(String("*** dirty fix 'type end found nil' ***"))
+                        customMessage.add(String("OSC exception_ *** dirty fix 'type end found nil' *** (TotalMix bundle data with missing type end)"))
                         return customMessage
                      }
                     let customMessage = buildCustomMessage()
-                    print("nOSC_ *** dirty fix 'type end found nil' *** ", customMessage.description)
-                    return customMessage } //; return nil }
+                    print("OSC exception_ *** dirty fix 'type end found nil' *** (TotalMix bundle data with missing type end)", customMessage.description)
+                    return customMessage }
                 let type = messageData.subdata(in: 1..<typeEnd).toString()
                 
                 messageData = messageData.subdata(in: (typeEnd/4+1)*4..<messageData.count)
