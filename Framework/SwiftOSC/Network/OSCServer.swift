@@ -18,7 +18,7 @@ public class OSCServer {
     public private(set) var name: String?
     public private(set) var domain: String?
     var queue: DispatchQueue
-    var connection: NWConnection?
+    public var connection: NWConnection?
     
     public private(set) var ready: Bool = false
     var bonjour: Bool = false
