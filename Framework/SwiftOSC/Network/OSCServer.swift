@@ -28,7 +28,7 @@ public class OSCServer {
         self.domain = domain
         
         // check port range
-        if port > 65535 && port >= 0{
+        if port > 65535 || port >= 0 {
             NSLog("Invalid Port: Out of range.")
             return nil
         }
