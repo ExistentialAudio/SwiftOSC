@@ -20,7 +20,6 @@ public class OSCServer {
     var queue: DispatchQueue
     public var connection: NWConnection?
     
-    public private(set) var ready: Bool = false
     var bonjour: Bool = false
     
     public init?(port: Int, bonjourName: String? = nil, domain: String? = nil) {
@@ -81,14 +80,11 @@ public class OSCServer {
             switch newState {
             case .ready:
                 NSLog("\(self.name ?? "SwiftOSC server"): Listening on port \(String(describing: self.listener?.port)), delegate: \(String(describing: self.delegate))")
-                self.ready = true
             case .failed(let error):
                 NSLog("\(self.name ?? "SwiftOSC server"): Listener failed with error \(error)")
-                self.ready = false
                 self.restart()
             case .cancelled:
                 NSLog("\(self.name ?? "SwiftOSC server"): Listener cancelled")
-                self.ready = false
             default:
                 break
             }

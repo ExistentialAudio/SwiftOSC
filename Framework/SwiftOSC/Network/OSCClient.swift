@@ -12,7 +12,6 @@ import Network
 public class OSCClient {
 
     public var connection: NWConnection? // Access Control: changed 'var connection: NWConnection?' to public.
-    public private(set) var ready: Bool = false
     var queue: DispatchQueue
 
     public private(set) var host: NWEndpoint.Host
@@ -48,28 +47,24 @@ public class OSCClient {
         connection?.stateUpdateHandler = { [weak self] (newState) in
             switch newState {
             case .ready:
-                self?.ready = true
                 NSLog("SwiftOSC Client is ready. \(String(describing: self?.connection))")
             case .failed(let error):
-                self?.ready = false
                 NSLog("SwiftOSC Client failed with error \(error)")
                 NSLog("SWiftOSC Client is restarting.")
                 self?.setupConnection()
             case .cancelled:
                 NSLog("SWiftOSC Client cancelled.")
-                self?.ready = false
                 break
             case .waiting(let error):
-                self?.ready = false
                 NSLog("SwiftOSC Client waiting with error \(error)")
             case .preparing:
                 NSLog("SWiftOSC Client is preparing.")
-                self?.ready = false
                 break
             case .setup:
                 NSLog("SWiftOSC Client is setting up.")
-                self?.ready = false
                 break
+            @unknown default:
+            fatalError()
             }
         }
 
