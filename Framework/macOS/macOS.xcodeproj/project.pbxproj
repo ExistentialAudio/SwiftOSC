@@ -200,7 +200,7 @@
 				TargetAttributes = {
 					0339A3531D37FCEB0060ED91 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 638F7EDPVY;
+						DevelopmentTeam = FNLF39495D;
 						DevelopmentTeamName = "Devin Roth (Personal Team)";
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
@@ -387,6 +387,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FNLF39495D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -409,8 +410,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FNLF39495D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

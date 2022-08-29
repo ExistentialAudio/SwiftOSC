@@ -108,6 +108,8 @@
 			dependencies = (
 			);
 			name = OSCMonitor;
+			packageProductDependencies = (
+			);
 			productName = OSCMonitor;
 			productReference = 033827B21D3999590065A3A7 /* OSCMonitor.app */;
 			productType = "com.apple.product-type.application";
@@ -124,7 +126,7 @@
 				TargetAttributes = {
 					033827B11D3999590065A3A7 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 638F7EDPVY;
+						DevelopmentTeam = FNLF39495D;
 						DevelopmentTeamName = "Devin Roth (Personal Team)";
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
@@ -133,13 +135,15 @@
 			};
 			buildConfigurationList = 033827AD1D3999590065A3A7 /* Build configuration list for PBXProject "OSCMonitor" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
 			mainGroup = 033827A91D3999590065A3A7;
+			packageReferences = (
+			);
 			productRefGroup = 033827B31D3999590065A3A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,6 +302,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FNLF39495D;
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
@@ -314,6 +319,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FNLF39495D;
 				INFOPLIST_FILE = OSCMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
