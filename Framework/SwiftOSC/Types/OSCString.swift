@@ -28,6 +28,19 @@ extension String: OSCType {
         }
     }
     init(_ data:Data){
-        self = String(data: data, encoding: String.Encoding.utf8)!
+        if let dataString = String(data: data, encoding: String.Encoding.utf8) {
+            self = dataString
+            return
+        }
+        
+        if let dataString = String(data: data, encoding: String.Encoding.windowsCP1252) {
+            self = dataString
+            return
+        }
+        
+        print("SwiftOSC StringDataError: \(String(describing: data))")
+        self = "<OSCStringDataError>"
+            
+        // self = String(data: data, encoding: String.Encoding.utf8)! // was crashing on german umlaut characters
     }
 }

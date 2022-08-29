@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol OSCDelegate {
+public protocol OSCDelegate: AnyObject {
     func didReceive(_ data: Data)
     func didReceive(_ bundle: OSCBundle)
     func didReceive(_ message: OSCMessage)

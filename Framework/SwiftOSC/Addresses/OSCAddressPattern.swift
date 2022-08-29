@@ -180,20 +180,24 @@ public struct OSCAddressPattern {
     
     // Returns True if the address matches the address pattern.
     public func matches(_ address: OSCAddress)->Bool{
-        if address.string.range(of: self.regex, options: .regularExpression) == nil {
-            return false
-        } else {
-            return true
+        var maches = true
+        autoreleasepool {
+            if address.string.range(of: self.regex, options: .regularExpression) == nil {
+                maches = false
+            }
         }
+        return maches
     }
     
     // Returns True if the address is along the path of the address pattern
     public func matches(path: OSCAddress)->Bool{
-        if path.string.range(of: self.regexPath, options: .regularExpression) == nil {
-            return false
-        } else {
-            return true
+        var maches = true
+        autoreleasepool {
+            if path.string.range(of: self.regexPath, options: .regularExpression) == nil {
+                maches = false
+            }
         }
+        return maches
     }
 }
 

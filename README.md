@@ -10,11 +10,23 @@ SwiftOSC is a Swift Open Sound Control (OSC) 1.1 client and server framework.
 
 ## Installation
 
-```
+### [CocoaPods](http://cocoapods.org)
+
+````ruby
 pod 'SwiftOSC', '~> 2.0'
+````
+
+### [Swift Package Manager](https://swift.org/package-manager/)
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/soundflix/SwiftOSC.git", from: "2.0")
+]
 ```
 
-OR
+Alternatively, you can add the package [directly via Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
+
+OR install locally:
 
 ### Step 1
 
@@ -22,7 +34,7 @@ Clone or download repository from Github.
 
 ### Step 2
 
-Open SwiftOSC.xcworkspace and build SwiftOSC frameworks. 
+Open SwiftOSC.xcworkspace and build SwiftOSC frameworks.
 
 ### Step 3
 
@@ -47,7 +59,7 @@ var server = OSCServer(port: 8080)
 Setup server delegate to handle incoming OSC Data
 ```swift
 class OSCHandler: OSCServerDelegate {
-    
+
     func didReceive(_ message: OSCMessage){
         if let integer = message.arguments[0] as? Int {
             print("Received int \(integer)")
@@ -93,7 +105,7 @@ client.send(message)
 ```
 ## Known Issues
  - OSCClient loses connection following returning from being in the background. Call client.restart() in this situation.\
- 
+
 
 ## About
 

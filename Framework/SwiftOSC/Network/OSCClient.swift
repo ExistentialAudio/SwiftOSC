@@ -10,39 +10,39 @@ import Foundation
 import Network
 
 public class OSCClient {
-    
-    var connection: NWConnection?
+
+    public var connection: NWConnection? // Access Control: changed 'var connection: NWConnection?' to public.
     var queue: DispatchQueue
-    
-    var host: NWEndpoint.Host
-    var port: NWEndpoint.Port
-    
+
+    public private(set) var host: NWEndpoint.Host
+    public private(set) var port: NWEndpoint.Port
+
     public init?(host: String, port: Int) {
-        
+
         // check if string is empty
         if host == "" {
-            
+
             NSLog("Invalid Hostname: No empty strings allowed.")
             return nil
-            
+
         }
-        if port > 65535 && port >= 0{
+        if port > 65535 || port <= 0 {
             NSLog("Invalid Port: Out of range.")
             return nil
         }
-        
+
         self.host = NWEndpoint.Host(host)
         self.port = NWEndpoint.Port(integerLiteral: UInt16(port))
-        
+
         queue = DispatchQueue(label: "SwiftOSC Client")
         setupConnection()
     }
-    
+
     func setupConnection(){
-        
+
         // create the connection
         connection = NWConnection(host: host, port: port, using: .udp)
-        
+
         // setup state update handler
         connection?.stateUpdateHandler = { [weak self] (newState) in
             switch newState {
@@ -53,22 +53,27 @@ public class OSCClient {
                 NSLog("SWiftOSC Client is restarting.")
                 self?.setupConnection()
             case .cancelled:
+                NSLog("SWiftOSC Client cancelled.")
                 break
             case .waiting(let error):
                 NSLog("SwiftOSC Client waiting with error \(error)")
             case .preparing:
+                NSLog("SWiftOSC Client is preparing.")
                 break
             case .setup:
+                NSLog("SWiftOSC Client is setting up.")
                 break
+            @unknown default:
+            fatalError()
             }
         }
-        
+
         // start the connection
         connection?.start(queue: queue)
     }
-    
+
     public func send(_ element: OSCElement){
-        
+
         let data = element.oscData
         connection?.send(content: data, completion: .contentProcessed({ (error) in
             if let error = error {
@@ -80,7 +85,7 @@ public class OSCClient {
         // destroy connection and listener
         connection?.forceCancel()
 
-        
+
         // setup new listener
         setupConnection()
     }
